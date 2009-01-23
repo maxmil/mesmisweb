@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-size: 12px;
+}
+
+td.niSum{
+  vertical-align: top;
+  padding: 5px;
+}
+
+.niSum .niCreatedAt{
+    display: inline;
+}
+.niSum .niTitle{
+    display: inline;
+    font-weight: bold;
+}
+.niSum .niDescrip{
+}
