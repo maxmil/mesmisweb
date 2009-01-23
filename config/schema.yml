@@ -1,14 +1,13 @@
 propel:
   user:
-    id:          ~
-    name:         {type: varchar(50), required: true}
-    surname1:      {type: varchar(50), required: true}
-    surname2:      {type: varchar(50)}
-    email:        {type: varchar(255), required: true}
-    password:      {type: varchar(255), required: true}
-    institution:    {type: varchar(255)}
-    created_at:     ~
-    updated_at:     ~
+    id:              ~
+    name:            {type: varchar(50), required: true}
+    surname1:        {type: varchar(50), required: true}
+    surname2:        {type: varchar(50)}
+    email:           {type: varchar(255), required: true}
+    institution:     {type: varchar(255)}
+    created_at:      ~
+    updated_at:      ~
   visit:
     user_id:         ~
     ip:              {type: varchar(15)}
