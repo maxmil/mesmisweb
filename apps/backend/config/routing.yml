@@ -1,0 +1,29 @@
+news_item:
+  class: sfPropelRouteCollection
+  options:
+    model:               NewsItem
+    module:              news_item
+    prefix_path:         news_item
+    column:              id
+    with_wildcard_routes: true
+
+content:
+  class: sfPropelRouteCollection
+  options:
+    model:               Content
+    module:              content
+    prefix_path:         content
+    column:              id
+    with_wildcard_routes: true
+
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

@@ -1,0 +1,48 @@
+propel:
+  user:
+    id:          ~
+    name:         {type: varchar(50), required: true}
+    surname1:      {type: varchar(50), required: true}
+    surname2:      {type: varchar(50)}
+    email:        {type: varchar(255), required: true}
+    password:      {type: varchar(255), required: true}
+    institution:    {type: varchar(255)}
+    created_at:     ~
+    updated_at:     ~
+  visit:
+    user_id:         ~
+    ip:              {type: varchar(15)}
+    created_at:      ~
+  content:
+    id:              ~
+    alias:           {type: varchar(50)}
+    title:           {type: longvarchar, required: true}
+    body:            {type: longvarchar}
+    state:           {type: varchar(10), default: PUBLISH}
+    created_at:      ~
+    updated_at:      ~
+  news_item:
+    id:              ~
+    title:           {type: varchar(255), required: true}
+    descrip:         {type: longvarchar, required: true}
+    body:            {type: longvarchar}
+    photo_filename:  {type: varchar(255)}
+    priority:        {type: integer}
+    state:           {type: varchar(10), default: PUBLISH}
+    created_at:      ~
+    updated_at:      ~
+  product:
+    id:              ~
+    title:           {type: varchar(255), required: true}
+    descrip:         {type: longvarchar}
+    photo_filename:  {type: varchar(255)}
+    attach_filename: {type: varchar(255)}
+    url:             {type: varchar(255)}
+    state:           {type: varchar(10), default: PUBLISH}
+    created_at:      ~
+    updated_at:      ~
+  download:
+    user_id:         ~
+    product_id:      ~
+    created_at:      ~
+    
