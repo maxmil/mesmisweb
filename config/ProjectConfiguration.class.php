@@ -1,6 +1,6 @@
 <?php
 
-require_once '/mnt/data/project/gira/web-mesmis/src/RELEASE_1_2_0/lib/autoload/sfCoreAutoload.class.php';
+require_once '/usr/share/php/symfony/autoload/sfCoreAutoload.class.php';
 sfCoreAutoload::register();
 
 class ProjectConfiguration extends sfProjectConfiguration
