@@ -17,17 +17,16 @@ propel:
     alias:           {type: varchar(50)}
     title:           {type: longvarchar, required: true}
     body:            {type: longvarchar}
-    state:           {type: varchar(10), default: PUBLISH}
+    state:           {type: varchar(10), default: PUBLISHED}
     created_at:      ~
     updated_at:      ~
   news_item:
     id:              ~
     title:           {type: varchar(255), required: true}
-    descrip:         {type: longvarchar, required: true}
     body:            {type: longvarchar}
     photo_filename:  {type: varchar(255)}
     priority:        {type: integer}
-    state:           {type: varchar(10), default: PUBLISH}
+    state:           {type: varchar(10), default: PUBLISHED}
     created_at:      ~
     updated_at:      ~
   product:
@@ -37,7 +36,7 @@ propel:
     photo_filename:  {type: varchar(255)}
     attach_filename: {type: varchar(255)}
     url:             {type: varchar(255)}
-    state:           {type: varchar(10), default: PUBLISH}
+    state:           {type: varchar(10), default: PUBLISHED}
     created_at:      ~
     updated_at:      ~
   download:

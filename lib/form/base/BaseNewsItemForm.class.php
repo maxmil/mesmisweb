@@ -15,7 +15,6 @@ class BaseNewsItemForm extends BaseFormPropel
     $this->setWidgets(array(
       'id'             => new sfWidgetFormInputHidden(),
       'title'          => new sfWidgetFormInput(),
-      'descrip'        => new sfWidgetFormTextarea(),
       'body'           => new sfWidgetFormTextarea(),
       'photo_filename' => new sfWidgetFormInput(),
       'priority'       => new sfWidgetFormInput(),
@@ -27,7 +26,6 @@ class BaseNewsItemForm extends BaseFormPropel
     $this->setValidators(array(
       'id'             => new sfValidatorPropelChoice(array('model' => 'NewsItem', 'column' => 'id', 'required' => false)),
       'title'          => new sfValidatorString(array('max_length' => 255)),
-      'descrip'        => new sfValidatorString(),
       'body'           => new sfValidatorString(array('required' => false)),
       'photo_filename' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'priority'       => new sfValidatorInteger(array('required' => false)),

@@ -56,7 +56,7 @@ CREATE TABLE `content`
 	`alias` VARCHAR(50),
 	`title` TEXT  NOT NULL,
 	`body` TEXT,
-	`state` VARCHAR(10) default 'PUBLISH',
+	`state` VARCHAR(10) default 'PUBLISHED',
 	`created_at` DATETIME,
 	`updated_at` DATETIME,
 	PRIMARY KEY (`id`)
@@ -73,11 +73,10 @@ CREATE TABLE `news_item`
 (
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
 	`title` VARCHAR(255)  NOT NULL,
-	`descrip` TEXT  NOT NULL,
 	`body` TEXT,
 	`photo_filename` VARCHAR(255),
 	`priority` INTEGER,
-	`state` VARCHAR(10) default 'PUBLISH',
+	`state` VARCHAR(10) default 'PUBLISHED',
 	`created_at` DATETIME,
 	`updated_at` DATETIME,
 	PRIMARY KEY (`id`)
@@ -98,7 +97,7 @@ CREATE TABLE `product`
 	`photo_filename` VARCHAR(255),
 	`attach_filename` VARCHAR(255),
 	`url` VARCHAR(255),
-	`state` VARCHAR(10) default 'PUBLISH',
+	`state` VARCHAR(10) default 'PUBLISHED',
 	`created_at` DATETIME,
 	`updated_at` DATETIME,
 	PRIMARY KEY (`id`)

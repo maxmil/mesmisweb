@@ -15,3 +15,52 @@
 #     password: changeme
 #     name:     Kris Wallsmith
 #     email:    kris.wallsmith@symfony-project.com
+
+NewsItem:
+  item1:
+    title: Nuevo libro disponible
+    body: Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis.
+    photo_filename: item1.jpg
+    priority: 10
+  item2:
+    title: Llegan marciando a morelia
+    body: Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos.
+    photo_filename: item1.jpg
+    priority: 10
+  item3:
+    title: No hay noticias
+    body: Nada que comentar
+    photo_filename: item1.jpg
+    priority: 10
+  item4:
+    title: En 2012 se acaba el mundo
+    body: Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido.
+    photo_filename: item1.jpg
+    priority: 10
+  item5:
+    title: Mexico 10 - Estados Unidos 0
+    body: Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos.
+    photo_filename: item1.jpg
+    priority: 10
+  item6:
+    title: Todos somos contentos
+    body: Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año?
+    photo_filename: item1.jpg
+    priority: 10
+  item7:
+    title: Ya no se me ocurren más noticias
+    body: Con lo cual está tien poco texto.
+    photo_filename: item1.jpg
+    priority: 10
+  item8:
+    title: La noticia más importante
+    body: Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia.
+    photo_filename: item1.jpg
+    priority: 100
+  item9:
+    title: Una noticia no publicada
+    body: No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. v
+    photo_filename: item1.jpg
+    priority: 100
+    state: UNPUBLISHED
+

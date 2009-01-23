@@ -16,7 +16,6 @@ class BaseNewsItemFormFilter extends BaseFormFilterPropel
   {
     $this->setWidgets(array(
       'title'          => new sfWidgetFormFilterInput(),
-      'descrip'        => new sfWidgetFormFilterInput(),
       'body'           => new sfWidgetFormFilterInput(),
       'photo_filename' => new sfWidgetFormFilterInput(),
       'priority'       => new sfWidgetFormFilterInput(),
@@ -27,7 +26,6 @@ class BaseNewsItemFormFilter extends BaseFormFilterPropel
 
     $this->setValidators(array(
       'title'          => new sfValidatorPass(array('required' => false)),
-      'descrip'        => new sfValidatorPass(array('required' => false)),
       'body'           => new sfValidatorPass(array('required' => false)),
       'photo_filename' => new sfValidatorPass(array('required' => false)),
       'priority'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
@@ -53,7 +51,6 @@ class BaseNewsItemFormFilter extends BaseFormFilterPropel
     return array(
       'id'             => 'Number',
       'title'          => 'Text',
-      'descrip'        => 'Text',
       'body'           => 'Text',
       'photo_filename' => 'Text',
       'priority'       => 'Number',
