@@ -8,9 +8,11 @@
   </head>
   <body>
     <div id="language">
-      English
-      Español
+      <a href="?culture=en">English</a>
+      <a href="?culture=es">Español</a>
     </div>
+    <div><?php include_partial('global/mainMenu') ?></div>
+
     <?php echo $sf_content ?>
   </body>
 </html>

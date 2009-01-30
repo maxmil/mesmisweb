@@ -1,9 +1,21 @@
+news_item_read:
+  url: /:sf_culture/news/read/:id
+  requirements: { sf_culture: (?:es|en) }
+  param: { module: news, action: view }
+
+news_items_list:
+  url: /:sf_culture/news
+  requirements: { sf_culture: (?:es|en) }
+  param: { module: news, action: index }
+
 content:
-  url:   /content/:alias
+  url:   /:sf_culture/content/:alias
+  requirements: { sf_culture: (?:es|en) }
   param: { module: content, action: index }
 
 static:
-  url:   /static/:content
+  url:   /:sf_culture/static/:content
+  requirements: { sf_culture: (?:es|en) }
   param: { module: static, action: index }
 
 # default rules
@@ -11,9 +23,16 @@ homepage:
   url:   /
   param: { module: news, action: index }
 
+hompage_culture:
+  url:   /:culture
+  requirements: { sf_culture: (?:es|en) }
+  param: { module: news, action: index }
+
 default_index:
-  url:   /:module
+  url:   /:culture/:module
+  requirements: { sf_culture: (?:es|en) }
   param: { action: index }
 
 default:
-  url:   /:module/:action/*
+  url:   /:culture/:module/:action/*
+  requirements: { sf_culture: (?:es|en) }

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xliff version="1.0">
+  <file orginal="global" source-language="es" datatype="plaintext" date="2009-01-30T18:48:54Z">
+    <body>
+      <trans-unit id="1">
+        <source>El Proyecto Mesmis</source>
+        <target>The Mesmis project</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>El Marco Mesmis</source>
+        <target>The Mesmis Framework</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>Recursos</source>
+        <target>Resources</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>V&#xED;nculos Relacionados</source>
+        <target>Links</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

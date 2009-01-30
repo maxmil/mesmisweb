@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Base class that represents a row from the 'visit' table.
+ * Base class that represents a row from the 'product_i18n' table.
  *
  * 
  *
@@ -11,36 +11,48 @@
  *
  * @package    lib.model.om
  */
-abstract class BaseVisit extends BaseObject  implements Persistent {
+abstract class BaseProductI18n extends BaseObject  implements Persistent {
 
 
-  const PEER = 'VisitPeer';
+  const PEER = 'ProductI18nPeer';
 
 	/**
 	 * The Peer class.
 	 * Instance provides a convenient way of calling static methods on a class
 	 * that calling code may not be able to identify.
-	 * @var        VisitPeer
+	 * @var        ProductI18nPeer
 	 */
 	protected static $peer;
 
 	/**
-	 * The value for the user_id field.
-	 * @var        int
-	 */
-	protected $user_id;
-
-	/**
-	 * The value for the ip field.
+	 * The value for the title field.
 	 * @var        string
 	 */
-	protected $ip;
+	protected $title;
 
 	/**
-	 * The value for the created_at field.
+	 * The value for the descrip field.
 	 * @var        string
 	 */
-	protected $created_at;
+	protected $descrip;
+
+	/**
+	 * The value for the photo_filename field.
+	 * @var        string
+	 */
+	protected $photo_filename;
+
+	/**
+	 * The value for the attach_filename field.
+	 * @var        string
+	 */
+	protected $attach_filename;
+
+	/**
+	 * The value for the url field.
+	 * @var        string
+	 */
+	protected $url;
 
 	/**
 	 * The value for the id field.
@@ -49,9 +61,15 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	protected $id;
 
 	/**
-	 * @var        User
+	 * The value for the culture field.
+	 * @var        string
 	 */
-	protected $aUser;
+	protected $culture;
+
+	/**
+	 * @var        Product
+	 */
+	protected $aProduct;
 
 	/**
 	 * Flag to prevent endless save loop, if this object is referenced
@@ -68,7 +86,7 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	protected $alreadyInValidation = false;
 
 	/**
-	 * Initializes internal state of BaseVisit object.
+	 * Initializes internal state of BaseProductI18n object.
 	 * @see        applyDefaults()
 	 */
 	public function __construct()
@@ -88,61 +106,53 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	}
 
 	/**
-	 * Get the [user_id] column value.
-	 * 
-	 * @return     int
-	 */
-	public function getUserId()
-	{
-		return $this->user_id;
-	}
-
-	/**
-	 * Get the [ip] column value.
+	 * Get the [title] column value.
 	 * 
 	 * @return     string
 	 */
-	public function getIp()
+	public function getTitle()
 	{
-		return $this->ip;
+		return $this->title;
 	}
 
 	/**
-	 * Get the [optionally formatted] temporal [created_at] column value.
+	 * Get the [descrip] column value.
 	 * 
-	 *
-	 * @param      string $format The date/time format string (either date()-style or strftime()-style).
-	 *							If format is NULL, then the raw DateTime object will be returned.
-	 * @return     mixed Formatted date/time value as string or DateTime object (if format is NULL), NULL if column is NULL, and 0 if column value is 0000-00-00 00:00:00
-	 * @throws     PropelException - if unable to parse/validate the date/time value.
+	 * @return     string
 	 */
-	public function getCreatedAt($format = 'Y-m-d H:i:s')
+	public function getDescrip()
 	{
-		if ($this->created_at === null) {
-			return null;
-		}
+		return $this->descrip;
+	}
 
+	/**
+	 * Get the [photo_filename] column value.
+	 * 
+	 * @return     string
+	 */
+	public function getPhotoFilename()
+	{
+		return $this->photo_filename;
+	}
 
-		if ($this->created_at === '0000-00-00 00:00:00') {
-			// while technically this is not a default value of NULL,
-			// this seems to be closest in meaning.
-			return null;
-		} else {
-			try {
-				$dt = new DateTime($this->created_at);
-			} catch (Exception $x) {
-				throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->created_at, true), $x);
-			}
-		}
+	/**
+	 * Get the [attach_filename] column value.
+	 * 
+	 * @return     string
+	 */
+	public function getAttachFilename()
+	{
+		return $this->attach_filename;
+	}
 
-		if ($format === null) {
-			// Because propel.useDateTimeClass is TRUE, we return a DateTime object.
-			return $dt;
-		} elseif (strpos($format, '%') !== false) {
-			return strftime($format, $dt->format('U'));
-		} else {
-			return $dt->format($format);
-		}
+	/**
+	 * Get the [url] column value.
+	 * 
+	 * @return     string
+	 */
+	public function getUrl()
+	{
+		return $this->url;
 	}
 
 	/**
@@ -156,103 +166,120 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	}
 
 	/**
-	 * Set the value of [user_id] column.
+	 * Get the [culture] column value.
 	 * 
-	 * @param      int $v new value
-	 * @return     Visit The current object (for fluent API support)
+	 * @return     string
 	 */
-	public function setUserId($v)
+	public function getCulture()
 	{
-		if ($v !== null) {
-			$v = (int) $v;
-		}
-
-		if ($this->user_id !== $v) {
-			$this->user_id = $v;
-			$this->modifiedColumns[] = VisitPeer::USER_ID;
-		}
-
-		if ($this->aUser !== null && $this->aUser->getId() !== $v) {
-			$this->aUser = null;
-		}
-
-		return $this;
-	} // setUserId()
+		return $this->culture;
+	}
 
 	/**
-	 * Set the value of [ip] column.
+	 * Set the value of [title] column.
 	 * 
 	 * @param      string $v new value
-	 * @return     Visit The current object (for fluent API support)
+	 * @return     ProductI18n The current object (for fluent API support)
 	 */
-	public function setIp($v)
+	public function setTitle($v)
 	{
 		if ($v !== null) {
 			$v = (string) $v;
 		}
 
-		if ($this->ip !== $v) {
-			$this->ip = $v;
-			$this->modifiedColumns[] = VisitPeer::IP;
+		if ($this->title !== $v) {
+			$this->title = $v;
+			$this->modifiedColumns[] = ProductI18nPeer::TITLE;
 		}
 
 		return $this;
-	} // setIp()
+	} // setTitle()
 
 	/**
-	 * Sets the value of [created_at] column to a normalized version of the date/time value specified.
+	 * Set the value of [descrip] column.
 	 * 
-	 * @param      mixed $v string, integer (timestamp), or DateTime value.  Empty string will
-	 *						be treated as NULL for temporal objects.
-	 * @return     Visit The current object (for fluent API support)
+	 * @param      string $v new value
+	 * @return     ProductI18n The current object (for fluent API support)
 	 */
-	public function setCreatedAt($v)
+	public function setDescrip($v)
 	{
-		// we treat '' as NULL for temporal objects because DateTime('') == DateTime('now')
-		// -- which is unexpected, to say the least.
-		if ($v === null || $v === '') {
-			$dt = null;
-		} elseif ($v instanceof DateTime) {
-			$dt = $v;
-		} else {
-			// some string/numeric value passed; we normalize that so that we can
-			// validate it.
-			try {
-				if (is_numeric($v)) { // if it's a unix timestamp
-					$dt = new DateTime('@'.$v, new DateTimeZone('UTC'));
-					// We have to explicitly specify and then change the time zone because of a
-					// DateTime bug: http://bugs.php.net/bug.php?id=43003
-					$dt->setTimeZone(new DateTimeZone(date_default_timezone_get()));
-				} else {
-					$dt = new DateTime($v);
-				}
-			} catch (Exception $x) {
-				throw new PropelException('Error parsing date/time value: ' . var_export($v, true), $x);
-			}
+		if ($v !== null) {
+			$v = (string) $v;
 		}
 
-		if ( $this->created_at !== null || $dt !== null ) {
-			// (nested ifs are a little easier to read in this case)
-
-			$currNorm = ($this->created_at !== null && $tmpDt = new DateTime($this->created_at)) ? $tmpDt->format('Y-m-d H:i:s') : null;
-			$newNorm = ($dt !== null) ? $dt->format('Y-m-d H:i:s') : null;
-
-			if ( ($currNorm !== $newNorm) // normalized values don't match 
-					)
-			{
-				$this->created_at = ($dt ? $dt->format('Y-m-d H:i:s') : null);
-				$this->modifiedColumns[] = VisitPeer::CREATED_AT;
-			}
-		} // if either are not null
+		if ($this->descrip !== $v) {
+			$this->descrip = $v;
+			$this->modifiedColumns[] = ProductI18nPeer::DESCRIP;
+		}
 
 		return $this;
-	} // setCreatedAt()
+	} // setDescrip()
+
+	/**
+	 * Set the value of [photo_filename] column.
+	 * 
+	 * @param      string $v new value
+	 * @return     ProductI18n The current object (for fluent API support)
+	 */
+	public function setPhotoFilename($v)
+	{
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->photo_filename !== $v) {
+			$this->photo_filename = $v;
+			$this->modifiedColumns[] = ProductI18nPeer::PHOTO_FILENAME;
+		}
+
+		return $this;
+	} // setPhotoFilename()
+
+	/**
+	 * Set the value of [attach_filename] column.
+	 * 
+	 * @param      string $v new value
+	 * @return     ProductI18n The current object (for fluent API support)
+	 */
+	public function setAttachFilename($v)
+	{
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->attach_filename !== $v) {
+			$this->attach_filename = $v;
+			$this->modifiedColumns[] = ProductI18nPeer::ATTACH_FILENAME;
+		}
+
+		return $this;
+	} // setAttachFilename()
+
+	/**
+	 * Set the value of [url] column.
+	 * 
+	 * @param      string $v new value
+	 * @return     ProductI18n The current object (for fluent API support)
+	 */
+	public function setUrl($v)
+	{
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->url !== $v) {
+			$this->url = $v;
+			$this->modifiedColumns[] = ProductI18nPeer::URL;
+		}
+
+		return $this;
+	} // setUrl()
 
 	/**
 	 * Set the value of [id] column.
 	 * 
 	 * @param      int $v new value
-	 * @return     Visit The current object (for fluent API support)
+	 * @return     ProductI18n The current object (for fluent API support)
 	 */
 	public function setId($v)
 	{
@@ -262,11 +289,35 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 
 		if ($this->id !== $v) {
 			$this->id = $v;
-			$this->modifiedColumns[] = VisitPeer::ID;
+			$this->modifiedColumns[] = ProductI18nPeer::ID;
+		}
+
+		if ($this->aProduct !== null && $this->aProduct->getId() !== $v) {
+			$this->aProduct = null;
 		}
 
 		return $this;
 	} // setId()
+
+	/**
+	 * Set the value of [culture] column.
+	 * 
+	 * @param      string $v new value
+	 * @return     ProductI18n The current object (for fluent API support)
+	 */
+	public function setCulture($v)
+	{
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->culture !== $v) {
+			$this->culture = $v;
+			$this->modifiedColumns[] = ProductI18nPeer::CULTURE;
+		}
+
+		return $this;
+	} // setCulture()
 
 	/**
 	 * Indicates whether the columns in this object are only set to default values.
@@ -305,10 +356,13 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	{
 		try {
 
-			$this->user_id = ($row[$startcol + 0] !== null) ? (int) $row[$startcol + 0] : null;
-			$this->ip = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
-			$this->created_at = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
-			$this->id = ($row[$startcol + 3] !== null) ? (int) $row[$startcol + 3] : null;
+			$this->title = ($row[$startcol + 0] !== null) ? (string) $row[$startcol + 0] : null;
+			$this->descrip = ($row[$startcol + 1] !== null) ? (string) $row[$startcol + 1] : null;
+			$this->photo_filename = ($row[$startcol + 2] !== null) ? (string) $row[$startcol + 2] : null;
+			$this->attach_filename = ($row[$startcol + 3] !== null) ? (string) $row[$startcol + 3] : null;
+			$this->url = ($row[$startcol + 4] !== null) ? (string) $row[$startcol + 4] : null;
+			$this->id = ($row[$startcol + 5] !== null) ? (int) $row[$startcol + 5] : null;
+			$this->culture = ($row[$startcol + 6] !== null) ? (string) $row[$startcol + 6] : null;
 			$this->resetModified();
 
 			$this->setNew(false);
@@ -318,10 +372,10 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 			}
 
 			// FIXME - using NUM_COLUMNS may be clearer.
-			return $startcol + 4; // 4 = VisitPeer::NUM_COLUMNS - VisitPeer::NUM_LAZY_LOAD_COLUMNS).
+			return $startcol + 7; // 7 = ProductI18nPeer::NUM_COLUMNS - ProductI18nPeer::NUM_LAZY_LOAD_COLUMNS).
 
 		} catch (Exception $e) {
-			throw new PropelException("Error populating Visit object", $e);
+			throw new PropelException("Error populating ProductI18n object", $e);
 		}
 	}
 
@@ -341,8 +395,8 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	public function ensureConsistency()
 	{
 
-		if ($this->aUser !== null && $this->user_id !== $this->aUser->getId()) {
-			$this->aUser = null;
+		if ($this->aProduct !== null && $this->id !== $this->aProduct->getId()) {
+			$this->aProduct = null;
 		}
 	} // ensureConsistency
 
@@ -367,13 +421,13 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(ProductI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
 		// We don't need to alter the object instance pool; we're just modifying this instance
 		// already in the pool.
 
-		$stmt = VisitPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
+		$stmt = ProductI18nPeer::doSelectStmt($this->buildPkeyCriteria(), $con);
 		$row = $stmt->fetch(PDO::FETCH_NUM);
 		$stmt->closeCursor();
 		if (!$row) {
@@ -383,7 +437,7 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 
 		if ($deep) {  // also de-associate any related objects?
 
-			$this->aUser = null;
+			$this->aProduct = null;
 		} // if (deep)
 	}
 
@@ -399,7 +453,7 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	public function delete(PropelPDO $con = null)
 	{
 
-    foreach (sfMixer::getCallables('BaseVisit:delete:pre') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18n:delete:pre') as $callable)
     {
       $ret = call_user_func($callable, $this, $con);
       if ($ret)
@@ -414,12 +468,12 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(ProductI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 		
 		$con->beginTransaction();
 		try {
-			VisitPeer::doDelete($this, $con);
+			ProductI18nPeer::doDelete($this, $con);
 			$this->setDeleted(true);
 			$con->commit();
 		} catch (PropelException $e) {
@@ -428,7 +482,7 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 		}
 	
 
-    foreach (sfMixer::getCallables('BaseVisit:delete:post') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18n:delete:post') as $callable)
     {
       call_user_func($callable, $this, $con);
     }
@@ -450,7 +504,7 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	public function save(PropelPDO $con = null)
 	{
 
-    foreach (sfMixer::getCallables('BaseVisit:save:pre') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18n:save:pre') as $callable)
     {
       $affectedRows = call_user_func($callable, $this, $con);
       if (is_int($affectedRows))
@@ -460,29 +514,24 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
     }
 
 
-    if ($this->isNew() && !$this->isColumnModified(VisitPeer::CREATED_AT))
-    {
-      $this->setCreatedAt(time());
-    }
-
 		if ($this->isDeleted()) {
 			throw new PropelException("You cannot save an object that has been deleted.");
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(ProductI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 		
 		$con->beginTransaction();
 		try {
 			$affectedRows = $this->doSave($con);
 			$con->commit();
-    foreach (sfMixer::getCallables('BaseVisit:save:post') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18n:save:post') as $callable)
     {
       call_user_func($callable, $this, $con, $affectedRows);
     }
 
-			VisitPeer::addInstanceToPool($this);
+			ProductI18nPeer::addInstanceToPool($this);
 			return $affectedRows;
 		} catch (PropelException $e) {
 			$con->rollBack();
@@ -512,30 +561,25 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 			// method.  This object relates to these object(s) by a
 			// foreign key reference.
 
-			if ($this->aUser !== null) {
-				if ($this->aUser->isModified() || $this->aUser->isNew()) {
-					$affectedRows += $this->aUser->save($con);
+			if ($this->aProduct !== null) {
+				if ($this->aProduct->isModified() || ($this->aProduct->getCulture() && $this->aProduct->getCurrentProductI18n()->isModified()) || $this->aProduct->isNew()) {
+					$affectedRows += $this->aProduct->save($con);
 				}
-				$this->setUser($this->aUser);
+				$this->setProduct($this->aProduct);
 			}
 
-			if ($this->isNew() ) {
-				$this->modifiedColumns[] = VisitPeer::ID;
-			}
 
 			// If this object has been modified, then save it to the database.
 			if ($this->isModified()) {
 				if ($this->isNew()) {
-					$pk = VisitPeer::doInsert($this, $con);
+					$pk = ProductI18nPeer::doInsert($this, $con);
 					$affectedRows += 1; // we are assuming that there is only 1 row per doInsert() which
 										 // should always be true here (even though technically
 										 // BasePeer::doInsert() can insert multiple rows).
 
-					$this->setId($pk);  //[IMV] update autoincrement primary key
-
 					$this->setNew(false);
 				} else {
-					$affectedRows += VisitPeer::doUpdate($this, $con);
+					$affectedRows += ProductI18nPeer::doUpdate($this, $con);
 				}
 
 				$this->resetModified(); // [HL] After being saved an object is no longer 'modified'
@@ -612,14 +656,14 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 			// method.  This object relates to these object(s) by a
 			// foreign key reference.
 
-			if ($this->aUser !== null) {
-				if (!$this->aUser->validate($columns)) {
-					$failureMap = array_merge($failureMap, $this->aUser->getValidationFailures());
+			if ($this->aProduct !== null) {
+				if (!$this->aProduct->validate($columns)) {
+					$failureMap = array_merge($failureMap, $this->aProduct->getValidationFailures());
 				}
 			}
 
 
-			if (($retval = VisitPeer::doValidate($this, $columns)) !== true) {
+			if (($retval = ProductI18nPeer::doValidate($this, $columns)) !== true) {
 				$failureMap = array_merge($failureMap, $retval);
 			}
 
@@ -642,7 +686,7 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	 */
 	public function getByName($name, $type = BasePeer::TYPE_PHPNAME)
 	{
-		$pos = VisitPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+		$pos = ProductI18nPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 		$field = $this->getByPosition($pos);
 		return $field;
 	}
@@ -658,16 +702,25 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	{
 		switch($pos) {
 			case 0:
-				return $this->getUserId();
+				return $this->getTitle();
 				break;
 			case 1:
-				return $this->getIp();
+				return $this->getDescrip();
 				break;
 			case 2:
-				return $this->getCreatedAt();
+				return $this->getPhotoFilename();
 				break;
 			case 3:
+				return $this->getAttachFilename();
+				break;
+			case 4:
+				return $this->getUrl();
+				break;
+			case 5:
 				return $this->getId();
+				break;
+			case 6:
+				return $this->getCulture();
 				break;
 			default:
 				return null;
@@ -688,12 +741,15 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	 */
 	public function toArray($keyType = BasePeer::TYPE_PHPNAME, $includeLazyLoadColumns = true)
 	{
-		$keys = VisitPeer::getFieldNames($keyType);
+		$keys = ProductI18nPeer::getFieldNames($keyType);
 		$result = array(
-			$keys[0] => $this->getUserId(),
-			$keys[1] => $this->getIp(),
-			$keys[2] => $this->getCreatedAt(),
-			$keys[3] => $this->getId(),
+			$keys[0] => $this->getTitle(),
+			$keys[1] => $this->getDescrip(),
+			$keys[2] => $this->getPhotoFilename(),
+			$keys[3] => $this->getAttachFilename(),
+			$keys[4] => $this->getUrl(),
+			$keys[5] => $this->getId(),
+			$keys[6] => $this->getCulture(),
 		);
 		return $result;
 	}
@@ -710,7 +766,7 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	 */
 	public function setByName($name, $value, $type = BasePeer::TYPE_PHPNAME)
 	{
-		$pos = VisitPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
+		$pos = ProductI18nPeer::translateFieldName($name, $type, BasePeer::TYPE_NUM);
 		return $this->setByPosition($pos, $value);
 	}
 
@@ -726,16 +782,25 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	{
 		switch($pos) {
 			case 0:
-				$this->setUserId($value);
+				$this->setTitle($value);
 				break;
 			case 1:
-				$this->setIp($value);
+				$this->setDescrip($value);
 				break;
 			case 2:
-				$this->setCreatedAt($value);
+				$this->setPhotoFilename($value);
 				break;
 			case 3:
+				$this->setAttachFilename($value);
+				break;
+			case 4:
+				$this->setUrl($value);
+				break;
+			case 5:
 				$this->setId($value);
+				break;
+			case 6:
+				$this->setCulture($value);
 				break;
 		} // switch()
 	}
@@ -759,12 +824,15 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	 */
 	public function fromArray($arr, $keyType = BasePeer::TYPE_PHPNAME)
 	{
-		$keys = VisitPeer::getFieldNames($keyType);
+		$keys = ProductI18nPeer::getFieldNames($keyType);
 
-		if (array_key_exists($keys[0], $arr)) $this->setUserId($arr[$keys[0]]);
-		if (array_key_exists($keys[1], $arr)) $this->setIp($arr[$keys[1]]);
-		if (array_key_exists($keys[2], $arr)) $this->setCreatedAt($arr[$keys[2]]);
-		if (array_key_exists($keys[3], $arr)) $this->setId($arr[$keys[3]]);
+		if (array_key_exists($keys[0], $arr)) $this->setTitle($arr[$keys[0]]);
+		if (array_key_exists($keys[1], $arr)) $this->setDescrip($arr[$keys[1]]);
+		if (array_key_exists($keys[2], $arr)) $this->setPhotoFilename($arr[$keys[2]]);
+		if (array_key_exists($keys[3], $arr)) $this->setAttachFilename($arr[$keys[3]]);
+		if (array_key_exists($keys[4], $arr)) $this->setUrl($arr[$keys[4]]);
+		if (array_key_exists($keys[5], $arr)) $this->setId($arr[$keys[5]]);
+		if (array_key_exists($keys[6], $arr)) $this->setCulture($arr[$keys[6]]);
 	}
 
 	/**
@@ -774,12 +842,15 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	 */
 	public function buildCriteria()
 	{
-		$criteria = new Criteria(VisitPeer::DATABASE_NAME);
+		$criteria = new Criteria(ProductI18nPeer::DATABASE_NAME);
 
-		if ($this->isColumnModified(VisitPeer::USER_ID)) $criteria->add(VisitPeer::USER_ID, $this->user_id);
-		if ($this->isColumnModified(VisitPeer::IP)) $criteria->add(VisitPeer::IP, $this->ip);
-		if ($this->isColumnModified(VisitPeer::CREATED_AT)) $criteria->add(VisitPeer::CREATED_AT, $this->created_at);
-		if ($this->isColumnModified(VisitPeer::ID)) $criteria->add(VisitPeer::ID, $this->id);
+		if ($this->isColumnModified(ProductI18nPeer::TITLE)) $criteria->add(ProductI18nPeer::TITLE, $this->title);
+		if ($this->isColumnModified(ProductI18nPeer::DESCRIP)) $criteria->add(ProductI18nPeer::DESCRIP, $this->descrip);
+		if ($this->isColumnModified(ProductI18nPeer::PHOTO_FILENAME)) $criteria->add(ProductI18nPeer::PHOTO_FILENAME, $this->photo_filename);
+		if ($this->isColumnModified(ProductI18nPeer::ATTACH_FILENAME)) $criteria->add(ProductI18nPeer::ATTACH_FILENAME, $this->attach_filename);
+		if ($this->isColumnModified(ProductI18nPeer::URL)) $criteria->add(ProductI18nPeer::URL, $this->url);
+		if ($this->isColumnModified(ProductI18nPeer::ID)) $criteria->add(ProductI18nPeer::ID, $this->id);
+		if ($this->isColumnModified(ProductI18nPeer::CULTURE)) $criteria->add(ProductI18nPeer::CULTURE, $this->culture);
 
 		return $criteria;
 	}
@@ -794,31 +865,43 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	 */
 	public function buildPkeyCriteria()
 	{
-		$criteria = new Criteria(VisitPeer::DATABASE_NAME);
+		$criteria = new Criteria(ProductI18nPeer::DATABASE_NAME);
 
-		$criteria->add(VisitPeer::ID, $this->id);
+		$criteria->add(ProductI18nPeer::ID, $this->id);
+		$criteria->add(ProductI18nPeer::CULTURE, $this->culture);
 
 		return $criteria;
 	}
 
 	/**
-	 * Returns the primary key for this object (row).
-	 * @return     int
+	 * Returns the composite primary key for this object.
+	 * The array elements will be in same order as specified in XML.
+	 * @return     array
 	 */
 	public function getPrimaryKey()
 	{
-		return $this->getId();
+		$pks = array();
+
+		$pks[0] = $this->getId();
+
+		$pks[1] = $this->getCulture();
+
+		return $pks;
 	}
 
 	/**
-	 * Generic method to set the primary key (id column).
+	 * Set the [composite] primary key.
 	 *
-	 * @param      int $key Primary key.
+	 * @param      array $keys The elements of the composite key (order must match the order in XML file).
 	 * @return     void
 	 */
-	public function setPrimaryKey($key)
+	public function setPrimaryKey($keys)
 	{
-		$this->setId($key);
+
+		$this->setId($keys[0]);
+
+		$this->setCulture($keys[1]);
+
 	}
 
 	/**
@@ -827,23 +910,29 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	 * If desired, this method can also make copies of all associated (fkey referrers)
 	 * objects.
 	 *
-	 * @param      object $copyObj An object of Visit (or compatible) type.
+	 * @param      object $copyObj An object of ProductI18n (or compatible) type.
 	 * @param      boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
 	 * @throws     PropelException
 	 */
 	public function copyInto($copyObj, $deepCopy = false)
 	{
 
-		$copyObj->setUserId($this->user_id);
+		$copyObj->setTitle($this->title);
 
-		$copyObj->setIp($this->ip);
+		$copyObj->setDescrip($this->descrip);
 
-		$copyObj->setCreatedAt($this->created_at);
+		$copyObj->setPhotoFilename($this->photo_filename);
+
+		$copyObj->setAttachFilename($this->attach_filename);
+
+		$copyObj->setUrl($this->url);
+
+		$copyObj->setId($this->id);
+
+		$copyObj->setCulture($this->culture);
 
 
 		$copyObj->setNew(true);
-
-		$copyObj->setId(NULL); // this is a auto-increment column, so set to default value
 
 	}
 
@@ -856,7 +945,7 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	 * objects.
 	 *
 	 * @param      boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-	 * @return     Visit Clone of current object.
+	 * @return     ProductI18n Clone of current object.
 	 * @throws     PropelException
 	 */
 	public function copy($deepCopy = false)
@@ -875,37 +964,37 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 	 * same instance for all member of this class. The method could therefore
 	 * be static, but this would prevent one from overriding the behavior.
 	 *
-	 * @return     VisitPeer
+	 * @return     ProductI18nPeer
 	 */
 	public function getPeer()
 	{
 		if (self::$peer === null) {
-			self::$peer = new VisitPeer();
+			self::$peer = new ProductI18nPeer();
 		}
 		return self::$peer;
 	}
 
 	/**
-	 * Declares an association between this object and a User object.
+	 * Declares an association between this object and a Product object.
 	 *
-	 * @param      User $v
-	 * @return     Visit The current object (for fluent API support)
+	 * @param      Product $v
+	 * @return     ProductI18n The current object (for fluent API support)
 	 * @throws     PropelException
 	 */
-	public function setUser(User $v = null)
+	public function setProduct(Product $v = null)
 	{
 		if ($v === null) {
-			$this->setUserId(NULL);
+			$this->setId(NULL);
 		} else {
-			$this->setUserId($v->getId());
+			$this->setId($v->getId());
 		}
 
-		$this->aUser = $v;
+		$this->aProduct = $v;
 
 		// Add binding for other direction of this n:n relationship.
-		// If this object has already been added to the User object, it will not be re-added.
+		// If this object has already been added to the Product object, it will not be re-added.
 		if ($v !== null) {
-			$v->addVisit($this);
+			$v->addProductI18n($this);
 		}
 
 		return $this;
@@ -913,27 +1002,27 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 
 
 	/**
-	 * Get the associated User object
+	 * Get the associated Product object
 	 *
 	 * @param      PropelPDO Optional Connection object.
-	 * @return     User The associated User object.
+	 * @return     Product The associated Product object.
 	 * @throws     PropelException
 	 */
-	public function getUser(PropelPDO $con = null)
+	public function getProduct(PropelPDO $con = null)
 	{
-		if ($this->aUser === null && ($this->user_id !== null)) {
-			$c = new Criteria(UserPeer::DATABASE_NAME);
-			$c->add(UserPeer::ID, $this->user_id);
-			$this->aUser = UserPeer::doSelectOne($c, $con);
+		if ($this->aProduct === null && ($this->id !== null)) {
+			$c = new Criteria(ProductPeer::DATABASE_NAME);
+			$c->add(ProductPeer::ID, $this->id);
+			$this->aProduct = ProductPeer::doSelectOne($c, $con);
 			/* The following can be used additionally to
 			   guarantee the related object contains a reference
 			   to this object.  This level of coupling may, however, be
 			   undesirable since it could result in an only partially populated collection
 			   in the referenced object.
-			   $this->aUser->addVisits($this);
+			   $this->aProduct->addProductI18ns($this);
 			 */
 		}
-		return $this->aUser;
+		return $this->aProduct;
 	}
 
 	/**
@@ -950,15 +1039,15 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
 		if ($deep) {
 		} // if ($deep)
 
-			$this->aUser = null;
+			$this->aProduct = null;
 	}
 
 
   public function __call($method, $arguments)
   {
-    if (!$callable = sfMixer::getCallable('BaseVisit:'.$method))
+    if (!$callable = sfMixer::getCallable('BaseProductI18n:'.$method))
     {
-      throw new sfException(sprintf('Call to undefined method BaseVisit::%s', $method));
+      throw new sfException(sprintf('Call to undefined method BaseProductI18n::%s', $method));
     }
 
     array_unshift($arguments, $this);
@@ -967,4 +1056,4 @@ abstract class BaseVisit extends BaseObject  implements Persistent {
   }
 
 
-} // BaseVisit
+} // BaseProductI18n

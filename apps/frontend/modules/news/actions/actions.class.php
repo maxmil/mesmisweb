@@ -17,7 +17,6 @@ class newsActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-
     $c = new Criteria();
     $c->add(NewsItemPeer::STATE, NewsItemPeer::STATE_PUBLISHED);
     $c->addDescendingOrderByColumn(NewsItemPeer::PRIORITY);
@@ -28,5 +27,15 @@ class newsActions extends sfActions
     $this->pager = $pager;
     //$this->newsItems = NewsItemPeer::doSelect($c);
     //$this->forward('default', 'module');
+  }
+
+  public function executeView(sfWebRequest $request)
+  {
+    $id = $request->getParameter("id");
+
+    $this->newsItem = NewsItemPeer::retrieveByPK($id);
+
+    $this->forward404If(empty($this->newsItem));
+    $this->forward404If($this->newsItem->getState() != NewsItemPeer::STATE_PUBLISHED);
   }
 }

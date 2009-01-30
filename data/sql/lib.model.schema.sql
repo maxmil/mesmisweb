@@ -54,12 +54,30 @@ CREATE TABLE `content`
 (
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
 	`alias` VARCHAR(50),
-	`title` TEXT  NOT NULL,
-	`body` TEXT,
 	`state` VARCHAR(10) default 'PUBLISHED',
 	`created_at` DATETIME,
 	`updated_at` DATETIME,
 	PRIMARY KEY (`id`)
+)Type=InnoDB;
+
+#-----------------------------------------------------------------------------
+#-- content_i18n
+#-----------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `content_i18n`;
+
+
+CREATE TABLE `content_i18n`
+(
+	`title` TEXT  NOT NULL,
+	`body` TEXT,
+	`id` INTEGER  NOT NULL,
+	`culture` VARCHAR(7)  NOT NULL,
+	PRIMARY KEY (`id`,`culture`),
+	CONSTRAINT `content_i18n_FK_1`
+		FOREIGN KEY (`id`)
+		REFERENCES `content` (`id`)
+		ON DELETE CASCADE
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
@@ -72,14 +90,32 @@ DROP TABLE IF EXISTS `news_item`;
 CREATE TABLE `news_item`
 (
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
-	`title` VARCHAR(255)  NOT NULL,
-	`body` TEXT,
 	`photo_filename` VARCHAR(255),
 	`priority` INTEGER,
 	`state` VARCHAR(10) default 'PUBLISHED',
 	`created_at` DATETIME,
 	`updated_at` DATETIME,
 	PRIMARY KEY (`id`)
+)Type=InnoDB;
+
+#-----------------------------------------------------------------------------
+#-- news_item_i18n
+#-----------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `news_item_i18n`;
+
+
+CREATE TABLE `news_item_i18n`
+(
+	`title` VARCHAR(255)  NOT NULL,
+	`body` TEXT,
+	`id` INTEGER  NOT NULL,
+	`culture` VARCHAR(7)  NOT NULL,
+	PRIMARY KEY (`id`,`culture`),
+	CONSTRAINT `news_item_i18n_FK_1`
+		FOREIGN KEY (`id`)
+		REFERENCES `news_item` (`id`)
+		ON DELETE CASCADE
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
@@ -92,15 +128,33 @@ DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product`
 (
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
+	`state` VARCHAR(10) default 'PUBLISHED',
+	`created_at` DATETIME,
+	`updated_at` DATETIME,
+	PRIMARY KEY (`id`)
+)Type=InnoDB;
+
+#-----------------------------------------------------------------------------
+#-- product_i18n
+#-----------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `product_i18n`;
+
+
+CREATE TABLE `product_i18n`
+(
 	`title` VARCHAR(255)  NOT NULL,
 	`descrip` TEXT,
 	`photo_filename` VARCHAR(255),
 	`attach_filename` VARCHAR(255),
 	`url` VARCHAR(255),
-	`state` VARCHAR(10) default 'PUBLISHED',
-	`created_at` DATETIME,
-	`updated_at` DATETIME,
-	PRIMARY KEY (`id`)
+	`id` INTEGER  NOT NULL,
+	`culture` VARCHAR(7)  NOT NULL,
+	PRIMARY KEY (`id`,`culture`),
+	CONSTRAINT `product_i18n_FK_1`
+		FOREIGN KEY (`id`)
+		REFERENCES `product` (`id`)
+		ON DELETE CASCADE
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------

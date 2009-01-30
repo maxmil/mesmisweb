@@ -1,1 +1,1 @@
-<?php include_partial($content); ?>
+<?php include_partial($content . '_' . $culture); ?>

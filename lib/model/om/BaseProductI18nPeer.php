@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Base static class for performing query and update operations on the 'visit' table.
+ * Base static class for performing query and update operations on the 'product_i18n' table.
  *
  * 
  *
@@ -11,40 +11,49 @@
  *
  * @package    lib.model.om
  */
-abstract class BaseVisitPeer {
+abstract class BaseProductI18nPeer {
 
 	/** the default database name for this class */
 	const DATABASE_NAME = 'propel';
 
 	/** the table name for this class */
-	const TABLE_NAME = 'visit';
+	const TABLE_NAME = 'product_i18n';
 
 	/** A class that can be returned by this peer. */
-	const CLASS_DEFAULT = 'lib.model.Visit';
+	const CLASS_DEFAULT = 'lib.model.ProductI18n';
 
 	/** The total number of columns. */
-	const NUM_COLUMNS = 4;
+	const NUM_COLUMNS = 7;
 
 	/** The number of lazy-loaded columns. */
 	const NUM_LAZY_LOAD_COLUMNS = 0;
 
-	/** the column name for the USER_ID field */
-	const USER_ID = 'visit.USER_ID';
+	/** the column name for the TITLE field */
+	const TITLE = 'product_i18n.TITLE';
 
-	/** the column name for the IP field */
-	const IP = 'visit.IP';
+	/** the column name for the DESCRIP field */
+	const DESCRIP = 'product_i18n.DESCRIP';
 
-	/** the column name for the CREATED_AT field */
-	const CREATED_AT = 'visit.CREATED_AT';
+	/** the column name for the PHOTO_FILENAME field */
+	const PHOTO_FILENAME = 'product_i18n.PHOTO_FILENAME';
+
+	/** the column name for the ATTACH_FILENAME field */
+	const ATTACH_FILENAME = 'product_i18n.ATTACH_FILENAME';
+
+	/** the column name for the URL field */
+	const URL = 'product_i18n.URL';
 
 	/** the column name for the ID field */
-	const ID = 'visit.ID';
+	const ID = 'product_i18n.ID';
+
+	/** the column name for the CULTURE field */
+	const CULTURE = 'product_i18n.CULTURE';
 
 	/**
-	 * An identiy map to hold any loaded instances of Visit objects.
+	 * An identiy map to hold any loaded instances of ProductI18n objects.
 	 * This must be public so that other peer classes can access this when hydrating from JOIN
 	 * queries.
-	 * @var        array Visit[]
+	 * @var        array ProductI18n[]
 	 */
 	public static $instances = array();
 
@@ -61,11 +70,11 @@ abstract class BaseVisitPeer {
 	 * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
 	 */
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('UserId', 'Ip', 'CreatedAt', 'Id', ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('userId', 'ip', 'createdAt', 'id', ),
-		BasePeer::TYPE_COLNAME => array (self::USER_ID, self::IP, self::CREATED_AT, self::ID, ),
-		BasePeer::TYPE_FIELDNAME => array ('user_id', 'ip', 'created_at', 'id', ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+		BasePeer::TYPE_PHPNAME => array ('Title', 'Descrip', 'PhotoFilename', 'AttachFilename', 'Url', 'Id', 'Culture', ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('title', 'descrip', 'photoFilename', 'attachFilename', 'url', 'id', 'culture', ),
+		BasePeer::TYPE_COLNAME => array (self::TITLE, self::DESCRIP, self::PHOTO_FILENAME, self::ATTACH_FILENAME, self::URL, self::ID, self::CULTURE, ),
+		BasePeer::TYPE_FIELDNAME => array ('title', 'descrip', 'photo_filename', 'attach_filename', 'url', 'id', 'culture', ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
 	);
 
 	/**
@@ -75,11 +84,11 @@ abstract class BaseVisitPeer {
 	 * e.g. self::$fieldNames[BasePeer::TYPE_PHPNAME]['Id'] = 0
 	 */
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('UserId' => 0, 'Ip' => 1, 'CreatedAt' => 2, 'Id' => 3, ),
-		BasePeer::TYPE_STUDLYPHPNAME => array ('userId' => 0, 'ip' => 1, 'createdAt' => 2, 'id' => 3, ),
-		BasePeer::TYPE_COLNAME => array (self::USER_ID => 0, self::IP => 1, self::CREATED_AT => 2, self::ID => 3, ),
-		BasePeer::TYPE_FIELDNAME => array ('user_id' => 0, 'ip' => 1, 'created_at' => 2, 'id' => 3, ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, )
+		BasePeer::TYPE_PHPNAME => array ('Title' => 0, 'Descrip' => 1, 'PhotoFilename' => 2, 'AttachFilename' => 3, 'Url' => 4, 'Id' => 5, 'Culture' => 6, ),
+		BasePeer::TYPE_STUDLYPHPNAME => array ('title' => 0, 'descrip' => 1, 'photoFilename' => 2, 'attachFilename' => 3, 'url' => 4, 'id' => 5, 'culture' => 6, ),
+		BasePeer::TYPE_COLNAME => array (self::TITLE => 0, self::DESCRIP => 1, self::PHOTO_FILENAME => 2, self::ATTACH_FILENAME => 3, self::URL => 4, self::ID => 5, self::CULTURE => 6, ),
+		BasePeer::TYPE_FIELDNAME => array ('title' => 0, 'descrip' => 1, 'photo_filename' => 2, 'attach_filename' => 3, 'url' => 4, 'id' => 5, 'culture' => 6, ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, )
 	);
 
 	/**
@@ -89,7 +98,7 @@ abstract class BaseVisitPeer {
 	public static function getMapBuilder()
 	{
 		if (self::$mapBuilder === null) {
-			self::$mapBuilder = new VisitMapBuilder();
+			self::$mapBuilder = new ProductI18nMapBuilder();
 		}
 		return self::$mapBuilder;
 	}
@@ -139,12 +148,12 @@ abstract class BaseVisitPeer {
 	 *		$c->addJoin(TablePeer::alias("alias1", TablePeer::PRIMARY_KEY_COLUMN), TablePeer::PRIMARY_KEY_COLUMN);
 	 * </code>
 	 * @param      string $alias The alias for the current table.
-	 * @param      string $column The column name for current table. (i.e. VisitPeer::COLUMN_NAME).
+	 * @param      string $column The column name for current table. (i.e. ProductI18nPeer::COLUMN_NAME).
 	 * @return     string
 	 */
 	public static function alias($alias, $column)
 	{
-		return str_replace(VisitPeer::TABLE_NAME.'.', $alias.'.', $column);
+		return str_replace(ProductI18nPeer::TABLE_NAME.'.', $alias.'.', $column);
 	}
 
 	/**
@@ -161,13 +170,19 @@ abstract class BaseVisitPeer {
 	public static function addSelectColumns(Criteria $criteria)
 	{
 
-		$criteria->addSelectColumn(VisitPeer::USER_ID);
+		$criteria->addSelectColumn(ProductI18nPeer::TITLE);
 
-		$criteria->addSelectColumn(VisitPeer::IP);
+		$criteria->addSelectColumn(ProductI18nPeer::DESCRIP);
 
-		$criteria->addSelectColumn(VisitPeer::CREATED_AT);
+		$criteria->addSelectColumn(ProductI18nPeer::PHOTO_FILENAME);
 
-		$criteria->addSelectColumn(VisitPeer::ID);
+		$criteria->addSelectColumn(ProductI18nPeer::ATTACH_FILENAME);
+
+		$criteria->addSelectColumn(ProductI18nPeer::URL);
+
+		$criteria->addSelectColumn(ProductI18nPeer::ID);
+
+		$criteria->addSelectColumn(ProductI18nPeer::CULTURE);
 
 	}
 
@@ -187,27 +202,27 @@ abstract class BaseVisitPeer {
 		// We need to set the primary table name, since in the case that there are no WHERE columns
 		// it will be impossible for the BasePeer::createSelectSql() method to determine which
 		// tables go into the FROM clause.
-		$criteria->setPrimaryTableName(VisitPeer::TABLE_NAME);
+		$criteria->setPrimaryTableName(ProductI18nPeer::TABLE_NAME);
 
 		if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
 			$criteria->setDistinct();
 		}
 
 		if (!$criteria->hasSelectClause()) {
-			VisitPeer::addSelectColumns($criteria);
+			ProductI18nPeer::addSelectColumns($criteria);
 		}
 
 		$criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
 		$criteria->setDbName(self::DATABASE_NAME); // Set the correct dbName
 
 		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(ProductI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
 
-    foreach (sfMixer::getCallables('BaseVisitPeer:doCount:doCount') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18nPeer:doCount:doCount') as $callable)
     {
-      call_user_func($callable, 'BaseVisitPeer', $criteria, $con);
+      call_user_func($callable, 'BaseProductI18nPeer', $criteria, $con);
     }
 
 
@@ -227,7 +242,7 @@ abstract class BaseVisitPeer {
 	 *
 	 * @param      Criteria $criteria object used to create the SELECT statement.
 	 * @param      PropelPDO $con
-	 * @return     Visit
+	 * @return     ProductI18n
 	 * @throws     PropelException Any exceptions caught during processing will be
 	 *		 rethrown wrapped into a PropelException.
 	 */
@@ -235,7 +250,7 @@ abstract class BaseVisitPeer {
 	{
 		$critcopy = clone $criteria;
 		$critcopy->setLimit(1);
-		$objects = VisitPeer::doSelect($critcopy, $con);
+		$objects = ProductI18nPeer::doSelect($critcopy, $con);
 		if ($objects) {
 			return $objects[0];
 		}
@@ -252,7 +267,7 @@ abstract class BaseVisitPeer {
 	 */
 	public static function doSelect(Criteria $criteria, PropelPDO $con = null)
 	{
-		return VisitPeer::populateObjects(VisitPeer::doSelectStmt($criteria, $con));
+		return ProductI18nPeer::populateObjects(ProductI18nPeer::doSelectStmt($criteria, $con));
 	}
 	/**
 	 * Prepares the Criteria object and uses the parent doSelect() method to execute a PDOStatement.
@@ -270,19 +285,19 @@ abstract class BaseVisitPeer {
 	public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
 	{
 
-    foreach (sfMixer::getCallables('BaseVisitPeer:doSelectStmt:doSelectStmt') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18nPeer:doSelectStmt:doSelectStmt') as $callable)
     {
-      call_user_func($callable, 'BaseVisitPeer', $criteria, $con);
+      call_user_func($callable, 'BaseProductI18nPeer', $criteria, $con);
     }
 
 
 		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(ProductI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
 		if (!$criteria->hasSelectClause()) {
 			$criteria = clone $criteria;
-			VisitPeer::addSelectColumns($criteria);
+			ProductI18nPeer::addSelectColumns($criteria);
 		}
 
 		// Set the correct dbName
@@ -300,14 +315,14 @@ abstract class BaseVisitPeer {
 	 * to the cache in order to ensure that the same objects are always returned by doSelect*()
 	 * and retrieveByPK*() calls.
 	 *
-	 * @param      Visit $value A Visit object.
+	 * @param      ProductI18n $value A ProductI18n object.
 	 * @param      string $key (optional) key to use for instance map (for performance boost if key was already calculated externally).
 	 */
-	public static function addInstanceToPool(Visit $obj, $key = null)
+	public static function addInstanceToPool(ProductI18n $obj, $key = null)
 	{
 		if (Propel::isInstancePoolingEnabled()) {
 			if ($key === null) {
-				$key = (string) $obj->getId();
+				$key = serialize(array((string) $obj->getId(), (string) $obj->getCulture()));
 			} // if key === null
 			self::$instances[$key] = $obj;
 		}
@@ -321,18 +336,18 @@ abstract class BaseVisitPeer {
 	 * methods in your stub classes -- you may need to explicitly remove objects
 	 * from the cache in order to prevent returning objects that no longer exist.
 	 *
-	 * @param      mixed $value A Visit object or a primary key value.
+	 * @param      mixed $value A ProductI18n object or a primary key value.
 	 */
 	public static function removeInstanceFromPool($value)
 	{
 		if (Propel::isInstancePoolingEnabled() && $value !== null) {
-			if (is_object($value) && $value instanceof Visit) {
-				$key = (string) $value->getId();
-			} elseif (is_scalar($value)) {
+			if (is_object($value) && $value instanceof ProductI18n) {
+				$key = serialize(array((string) $value->getId(), (string) $value->getCulture()));
+			} elseif (is_array($value) && count($value) === 2) {
 				// assume we've been passed a primary key
-				$key = (string) $value;
+				$key = serialize(array((string) $value[0], (string) $value[1]));
 			} else {
-				$e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or Visit object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
+				$e = new PropelException("Invalid value passed to removeInstanceFromPool().  Expected primary key or ProductI18n object; got " . (is_object($value) ? get_class($value) . ' object.' : var_export($value,true)));
 				throw $e;
 			}
 
@@ -347,7 +362,7 @@ abstract class BaseVisitPeer {
 	 * a multi-column primary key, a serialize()d version of the primary key will be returned.
 	 *
 	 * @param      string $key The key (@see getPrimaryKeyHash()) for this instance.
-	 * @return     Visit Found object or NULL if 1) no instance exists for specified key or 2) instance pooling has been disabled.
+	 * @return     ProductI18n Found object or NULL if 1) no instance exists for specified key or 2) instance pooling has been disabled.
 	 * @see        getPrimaryKeyHash()
 	 */
 	public static function getInstanceFromPool($key)
@@ -383,10 +398,10 @@ abstract class BaseVisitPeer {
 	public static function getPrimaryKeyHashFromRow($row, $startcol = 0)
 	{
 		// If the PK cannot be derived from the row, return NULL.
-		if ($row[$startcol + 3] === null) {
+		if ($row[$startcol + 5] === null && $row[$startcol + 6] === null) {
 			return null;
 		}
-		return (string) $row[$startcol + 3];
+		return serialize(array((string) $row[$startcol + 5], (string) $row[$startcol + 6]));
 	}
 
 	/**
@@ -401,12 +416,12 @@ abstract class BaseVisitPeer {
 		$results = array();
 	
 		// set the class once to avoid overhead in the loop
-		$cls = VisitPeer::getOMClass();
+		$cls = ProductI18nPeer::getOMClass();
 		$cls = substr('.'.$cls, strrpos('.'.$cls, '.') + 1);
 		// populate the object(s)
 		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-			$key = VisitPeer::getPrimaryKeyHashFromRow($row, 0);
-			if (null !== ($obj = VisitPeer::getInstanceFromPool($key))) {
+			$key = ProductI18nPeer::getPrimaryKeyHashFromRow($row, 0);
+			if (null !== ($obj = ProductI18nPeer::getInstanceFromPool($key))) {
 				// We no longer rehydrate the object, since this can cause data loss.
 				// See http://propel.phpdb.org/trac/ticket/509
 				// $obj->hydrate($row, 0, true); // rehydrate
@@ -416,7 +431,7 @@ abstract class BaseVisitPeer {
 				$obj = new $cls();
 				$obj->hydrate($row);
 				$results[] = $obj;
-				VisitPeer::addInstanceToPool($obj, $key);
+				ProductI18nPeer::addInstanceToPool($obj, $key);
 			} // if key exists
 		}
 		$stmt->closeCursor();
@@ -424,7 +439,7 @@ abstract class BaseVisitPeer {
 	}
 
 	/**
-	 * Returns the number of rows matching criteria, joining the related User table
+	 * Returns the number of rows matching criteria, joining the related Product table
 	 *
 	 * @param      Criteria $c
 	 * @param      boolean $distinct Whether to select only distinct columns; deprecated: use Criteria->setDistinct() instead.
@@ -432,7 +447,7 @@ abstract class BaseVisitPeer {
 	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
 	 * @return     int Number of matching rows.
 	 */
-	public static function doCountJoinUser(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	public static function doCountJoinProduct(Criteria $criteria, $distinct = false, PropelPDO $con = null, $join_behavior = Criteria::LEFT_JOIN)
 	{
 		// we're going to modify criteria, so copy it first
 		$criteria = clone $criteria;
@@ -440,14 +455,14 @@ abstract class BaseVisitPeer {
 		// We need to set the primary table name, since in the case that there are no WHERE columns
 		// it will be impossible for the BasePeer::createSelectSql() method to determine which
 		// tables go into the FROM clause.
-		$criteria->setPrimaryTableName(VisitPeer::TABLE_NAME);
+		$criteria->setPrimaryTableName(ProductI18nPeer::TABLE_NAME);
 
 		if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
 			$criteria->setDistinct();
 		}
 
 		if (!$criteria->hasSelectClause()) {
-			VisitPeer::addSelectColumns($criteria);
+			ProductI18nPeer::addSelectColumns($criteria);
 		}
 
 		$criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
@@ -456,15 +471,15 @@ abstract class BaseVisitPeer {
 		$criteria->setDbName(self::DATABASE_NAME);
 
 		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(ProductI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
-		$criteria->addJoin(array(VisitPeer::USER_ID,), array(UserPeer::ID,), $join_behavior);
+		$criteria->addJoin(array(ProductI18nPeer::ID,), array(ProductPeer::ID,), $join_behavior);
 
 
-    foreach (sfMixer::getCallables('BaseVisitPeer:doCount:doCount') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18nPeer:doCount:doCount') as $callable)
     {
-      call_user_func($callable, 'BaseVisitPeer', $criteria, $con);
+      call_user_func($callable, 'BaseProductI18nPeer', $criteria, $con);
     }
 
 
@@ -481,20 +496,20 @@ abstract class BaseVisitPeer {
 
 
 	/**
-	 * Selects a collection of Visit objects pre-filled with their User objects.
+	 * Selects a collection of ProductI18n objects pre-filled with their Product objects.
 	 * @param      Criteria  $c
 	 * @param      PropelPDO $con
 	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-	 * @return     array Array of Visit objects.
+	 * @return     array Array of ProductI18n objects.
 	 * @throws     PropelException Any exceptions caught during processing will be
 	 *		 rethrown wrapped into a PropelException.
 	 */
-	public static function doSelectJoinUser(Criteria $c, $con = null, $join_behavior = Criteria::LEFT_JOIN)
+	public static function doSelectJoinProduct(Criteria $c, $con = null, $join_behavior = Criteria::LEFT_JOIN)
 	{
 
-    foreach (sfMixer::getCallables('BaseVisitPeer:doSelectJoin:doSelectJoin') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18nPeer:doSelectJoin:doSelectJoin') as $callable)
     {
-      call_user_func($callable, 'BaseVisitPeer', $c, $con);
+      call_user_func($callable, 'BaseProductI18nPeer', $c, $con);
     }
 
 
@@ -505,45 +520,45 @@ abstract class BaseVisitPeer {
 			$c->setDbName(self::DATABASE_NAME);
 		}
 
-		VisitPeer::addSelectColumns($c);
-		$startcol = (VisitPeer::NUM_COLUMNS - VisitPeer::NUM_LAZY_LOAD_COLUMNS);
-		UserPeer::addSelectColumns($c);
+		ProductI18nPeer::addSelectColumns($c);
+		$startcol = (ProductI18nPeer::NUM_COLUMNS - ProductI18nPeer::NUM_LAZY_LOAD_COLUMNS);
+		ProductPeer::addSelectColumns($c);
 
-		$c->addJoin(array(VisitPeer::USER_ID,), array(UserPeer::ID,), $join_behavior);
+		$c->addJoin(array(ProductI18nPeer::ID,), array(ProductPeer::ID,), $join_behavior);
 		$stmt = BasePeer::doSelect($c, $con);
 		$results = array();
 
 		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-			$key1 = VisitPeer::getPrimaryKeyHashFromRow($row, 0);
-			if (null !== ($obj1 = VisitPeer::getInstanceFromPool($key1))) {
+			$key1 = ProductI18nPeer::getPrimaryKeyHashFromRow($row, 0);
+			if (null !== ($obj1 = ProductI18nPeer::getInstanceFromPool($key1))) {
 				// We no longer rehydrate the object, since this can cause data loss.
 				// See http://propel.phpdb.org/trac/ticket/509
 				// $obj1->hydrate($row, 0, true); // rehydrate
 			} else {
 
-				$omClass = VisitPeer::getOMClass();
+				$omClass = ProductI18nPeer::getOMClass();
 
 				$cls = substr('.'.$omClass, strrpos('.'.$omClass, '.') + 1);
 				$obj1 = new $cls();
 				$obj1->hydrate($row);
-				VisitPeer::addInstanceToPool($obj1, $key1);
+				ProductI18nPeer::addInstanceToPool($obj1, $key1);
 			} // if $obj1 already loaded
 
-			$key2 = UserPeer::getPrimaryKeyHashFromRow($row, $startcol);
+			$key2 = ProductPeer::getPrimaryKeyHashFromRow($row, $startcol);
 			if ($key2 !== null) {
-				$obj2 = UserPeer::getInstanceFromPool($key2);
+				$obj2 = ProductPeer::getInstanceFromPool($key2);
 				if (!$obj2) {
 
-					$omClass = UserPeer::getOMClass();
+					$omClass = ProductPeer::getOMClass();
 
 					$cls = substr('.'.$omClass, strrpos('.'.$omClass, '.') + 1);
 					$obj2 = new $cls();
 					$obj2->hydrate($row, $startcol);
-					UserPeer::addInstanceToPool($obj2, $key2);
+					ProductPeer::addInstanceToPool($obj2, $key2);
 				} // if obj2 already loaded
 
-				// Add the $obj1 (Visit) to $obj2 (User)
-				$obj2->addVisit($obj1);
+				// Add the $obj1 (ProductI18n) to $obj2 (Product)
+				$obj2->addProductI18n($obj1);
 
 			} // if joined row was not null
 
@@ -571,14 +586,14 @@ abstract class BaseVisitPeer {
 		// We need to set the primary table name, since in the case that there are no WHERE columns
 		// it will be impossible for the BasePeer::createSelectSql() method to determine which
 		// tables go into the FROM clause.
-		$criteria->setPrimaryTableName(VisitPeer::TABLE_NAME);
+		$criteria->setPrimaryTableName(ProductI18nPeer::TABLE_NAME);
 
 		if ($distinct && !in_array(Criteria::DISTINCT, $criteria->getSelectModifiers())) {
 			$criteria->setDistinct();
 		}
 
 		if (!$criteria->hasSelectClause()) {
-			VisitPeer::addSelectColumns($criteria);
+			ProductI18nPeer::addSelectColumns($criteria);
 		}
 
 		$criteria->clearOrderByColumns(); // ORDER BY won't ever affect the count
@@ -587,14 +602,14 @@ abstract class BaseVisitPeer {
 		$criteria->setDbName(self::DATABASE_NAME);
 
 		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(ProductI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
-		$criteria->addJoin(array(VisitPeer::USER_ID,), array(UserPeer::ID,), $join_behavior);
+		$criteria->addJoin(array(ProductI18nPeer::ID,), array(ProductPeer::ID,), $join_behavior);
 
-    foreach (sfMixer::getCallables('BaseVisitPeer:doCount:doCount') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18nPeer:doCount:doCount') as $callable)
     {
-      call_user_func($callable, 'BaseVisitPeer', $criteria, $con);
+      call_user_func($callable, 'BaseProductI18nPeer', $criteria, $con);
     }
 
 
@@ -610,21 +625,21 @@ abstract class BaseVisitPeer {
 	}
 
 	/**
-	 * Selects a collection of Visit objects pre-filled with all related objects.
+	 * Selects a collection of ProductI18n objects pre-filled with all related objects.
 	 *
 	 * @param      Criteria  $c
 	 * @param      PropelPDO $con
 	 * @param      String    $join_behavior the type of joins to use, defaults to Criteria::LEFT_JOIN
-	 * @return     array Array of Visit objects.
+	 * @return     array Array of ProductI18n objects.
 	 * @throws     PropelException Any exceptions caught during processing will be
 	 *		 rethrown wrapped into a PropelException.
 	 */
 	public static function doSelectJoinAll(Criteria $c, $con = null, $join_behavior = Criteria::LEFT_JOIN)
 	{
 
-    foreach (sfMixer::getCallables('BaseVisitPeer:doSelectJoinAll:doSelectJoinAll') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18nPeer:doSelectJoinAll:doSelectJoinAll') as $callable)
     {
-      call_user_func($callable, 'BaseVisitPeer', $c, $con);
+      call_user_func($callable, 'BaseProductI18nPeer', $c, $con);
     }
 
 
@@ -635,49 +650,49 @@ abstract class BaseVisitPeer {
 			$c->setDbName(self::DATABASE_NAME);
 		}
 
-		VisitPeer::addSelectColumns($c);
-		$startcol2 = (VisitPeer::NUM_COLUMNS - VisitPeer::NUM_LAZY_LOAD_COLUMNS);
+		ProductI18nPeer::addSelectColumns($c);
+		$startcol2 = (ProductI18nPeer::NUM_COLUMNS - ProductI18nPeer::NUM_LAZY_LOAD_COLUMNS);
 
-		UserPeer::addSelectColumns($c);
-		$startcol3 = $startcol2 + (UserPeer::NUM_COLUMNS - UserPeer::NUM_LAZY_LOAD_COLUMNS);
+		ProductPeer::addSelectColumns($c);
+		$startcol3 = $startcol2 + (ProductPeer::NUM_COLUMNS - ProductPeer::NUM_LAZY_LOAD_COLUMNS);
 
-		$c->addJoin(array(VisitPeer::USER_ID,), array(UserPeer::ID,), $join_behavior);
+		$c->addJoin(array(ProductI18nPeer::ID,), array(ProductPeer::ID,), $join_behavior);
 		$stmt = BasePeer::doSelect($c, $con);
 		$results = array();
 
 		while ($row = $stmt->fetch(PDO::FETCH_NUM)) {
-			$key1 = VisitPeer::getPrimaryKeyHashFromRow($row, 0);
-			if (null !== ($obj1 = VisitPeer::getInstanceFromPool($key1))) {
+			$key1 = ProductI18nPeer::getPrimaryKeyHashFromRow($row, 0);
+			if (null !== ($obj1 = ProductI18nPeer::getInstanceFromPool($key1))) {
 				// We no longer rehydrate the object, since this can cause data loss.
 				// See http://propel.phpdb.org/trac/ticket/509
 				// $obj1->hydrate($row, 0, true); // rehydrate
 			} else {
-				$omClass = VisitPeer::getOMClass();
+				$omClass = ProductI18nPeer::getOMClass();
 
 				$cls = substr('.'.$omClass, strrpos('.'.$omClass, '.') + 1);
 				$obj1 = new $cls();
 				$obj1->hydrate($row);
-				VisitPeer::addInstanceToPool($obj1, $key1);
+				ProductI18nPeer::addInstanceToPool($obj1, $key1);
 			} // if obj1 already loaded
 
-			// Add objects for joined User rows
+			// Add objects for joined Product rows
 
-			$key2 = UserPeer::getPrimaryKeyHashFromRow($row, $startcol2);
+			$key2 = ProductPeer::getPrimaryKeyHashFromRow($row, $startcol2);
 			if ($key2 !== null) {
-				$obj2 = UserPeer::getInstanceFromPool($key2);
+				$obj2 = ProductPeer::getInstanceFromPool($key2);
 				if (!$obj2) {
 
-					$omClass = UserPeer::getOMClass();
+					$omClass = ProductPeer::getOMClass();
 
 
 					$cls = substr('.'.$omClass, strrpos('.'.$omClass, '.') + 1);
 					$obj2 = new $cls();
 					$obj2->hydrate($row, $startcol2);
-					UserPeer::addInstanceToPool($obj2, $key2);
+					ProductPeer::addInstanceToPool($obj2, $key2);
 				} // if obj2 loaded
 
-				// Add the $obj1 (Visit) to the collection in $obj2 (User)
-				$obj2->addVisit($obj1);
+				// Add the $obj1 (ProductI18n) to the collection in $obj2 (Product)
+				$obj2->addProductI18n($obj1);
 			} // if joined row not null
 
 			$results[] = $obj1;
@@ -714,13 +729,13 @@ abstract class BaseVisitPeer {
 	 */
 	public static function getOMClass()
 	{
-		return VisitPeer::CLASS_DEFAULT;
+		return ProductI18nPeer::CLASS_DEFAULT;
 	}
 
 	/**
-	 * Method perform an INSERT on the database, given a Visit or Criteria object.
+	 * Method perform an INSERT on the database, given a ProductI18n or Criteria object.
 	 *
-	 * @param      mixed $values Criteria or Visit object containing data that is used to create the INSERT statement.
+	 * @param      mixed $values Criteria or ProductI18n object containing data that is used to create the INSERT statement.
 	 * @param      PropelPDO $con the PropelPDO connection to use
 	 * @return     mixed The new primary key.
 	 * @throws     PropelException Any exceptions caught during processing will be
@@ -729,9 +744,9 @@ abstract class BaseVisitPeer {
 	public static function doInsert($values, PropelPDO $con = null)
 	{
 
-    foreach (sfMixer::getCallables('BaseVisitPeer:doInsert:pre') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18nPeer:doInsert:pre') as $callable)
     {
-      $ret = call_user_func($callable, 'BaseVisitPeer', $values, $con);
+      $ret = call_user_func($callable, 'BaseProductI18nPeer', $values, $con);
       if (false !== $ret)
       {
         return $ret;
@@ -740,17 +755,13 @@ abstract class BaseVisitPeer {
 
 
 		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(ProductI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 
 		if ($values instanceof Criteria) {
 			$criteria = clone $values; // rename for clarity
 		} else {
-			$criteria = $values->buildCriteria(); // build Criteria from Visit object
-		}
-
-		if ($criteria->containsKey(VisitPeer::ID) && $criteria->keyContainsValue(VisitPeer::ID) ) {
-			throw new PropelException('Cannot insert a value for auto-increment primary key ('.VisitPeer::ID.')');
+			$criteria = $values->buildCriteria(); // build Criteria from ProductI18n object
 		}
 
 
@@ -769,18 +780,18 @@ abstract class BaseVisitPeer {
 		}
 
 		
-    foreach (sfMixer::getCallables('BaseVisitPeer:doInsert:post') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18nPeer:doInsert:post') as $callable)
     {
-      call_user_func($callable, 'BaseVisitPeer', $values, $con, $pk);
+      call_user_func($callable, 'BaseProductI18nPeer', $values, $con, $pk);
     }
 
     return $pk;
 	}
 
 	/**
-	 * Method perform an UPDATE on the database, given a Visit or Criteria object.
+	 * Method perform an UPDATE on the database, given a ProductI18n or Criteria object.
 	 *
-	 * @param      mixed $values Criteria or Visit object containing data that is used to create the UPDATE statement.
+	 * @param      mixed $values Criteria or ProductI18n object containing data that is used to create the UPDATE statement.
 	 * @param      PropelPDO $con The connection to use (specify PropelPDO connection object to exert more control over transactions).
 	 * @return     int The number of affected rows (if supported by underlying database driver).
 	 * @throws     PropelException Any exceptions caught during processing will be
@@ -789,9 +800,9 @@ abstract class BaseVisitPeer {
 	public static function doUpdate($values, PropelPDO $con = null)
 	{
 
-    foreach (sfMixer::getCallables('BaseVisitPeer:doUpdate:pre') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18nPeer:doUpdate:pre') as $callable)
     {
-      $ret = call_user_func($callable, 'BaseVisitPeer', $values, $con);
+      $ret = call_user_func($callable, 'BaseProductI18nPeer', $values, $con);
       if (false !== $ret)
       {
         return $ret;
@@ -800,7 +811,7 @@ abstract class BaseVisitPeer {
 
 
 		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(ProductI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 
 		$selectCriteria = new Criteria(self::DATABASE_NAME);
@@ -808,10 +819,13 @@ abstract class BaseVisitPeer {
 		if ($values instanceof Criteria) {
 			$criteria = clone $values; // rename for clarity
 
-			$comparison = $criteria->getComparison(VisitPeer::ID);
-			$selectCriteria->add(VisitPeer::ID, $criteria->remove(VisitPeer::ID), $comparison);
+			$comparison = $criteria->getComparison(ProductI18nPeer::ID);
+			$selectCriteria->add(ProductI18nPeer::ID, $criteria->remove(ProductI18nPeer::ID), $comparison);
 
-		} else { // $values is Visit object
+			$comparison = $criteria->getComparison(ProductI18nPeer::CULTURE);
+			$selectCriteria->add(ProductI18nPeer::CULTURE, $criteria->remove(ProductI18nPeer::CULTURE), $comparison);
+
+		} else { // $values is ProductI18n object
 			$criteria = $values->buildCriteria(); // gets full criteria
 			$selectCriteria = $values->buildPkeyCriteria(); // gets criteria w/ primary key(s)
 		}
@@ -822,30 +836,30 @@ abstract class BaseVisitPeer {
 		$ret = BasePeer::doUpdate($selectCriteria, $criteria, $con);
 	
 
-    foreach (sfMixer::getCallables('BaseVisitPeer:doUpdate:post') as $callable)
+    foreach (sfMixer::getCallables('BaseProductI18nPeer:doUpdate:post') as $callable)
     {
-      call_user_func($callable, 'BaseVisitPeer', $values, $con, $ret);
+      call_user_func($callable, 'BaseProductI18nPeer', $values, $con, $ret);
     }
 
     return $ret;
   }
 
 	/**
-	 * Method to DELETE all rows from the visit table.
+	 * Method to DELETE all rows from the product_i18n table.
 	 *
 	 * @return     int The number of affected rows (if supported by underlying database driver).
 	 */
 	public static function doDeleteAll($con = null)
 	{
 		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(ProductI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 		$affectedRows = 0; // initialize var to track total num of affected rows
 		try {
 			// use transaction because $criteria could contain info
 			// for more than one table or we could emulating ON DELETE CASCADE, etc.
 			$con->beginTransaction();
-			$affectedRows += BasePeer::doDeleteAll(VisitPeer::TABLE_NAME, $con);
+			$affectedRows += BasePeer::doDeleteAll(ProductI18nPeer::TABLE_NAME, $con);
 			$con->commit();
 			return $affectedRows;
 		} catch (PropelException $e) {
@@ -855,9 +869,9 @@ abstract class BaseVisitPeer {
 	}
 
 	/**
-	 * Method perform a DELETE on the database, given a Visit or Criteria object OR a primary key value.
+	 * Method perform a DELETE on the database, given a ProductI18n or Criteria object OR a primary key value.
 	 *
-	 * @param      mixed $values Criteria or Visit object or primary key or array of primary keys
+	 * @param      mixed $values Criteria or ProductI18n object or primary key or array of primary keys
 	 *              which is used to create the DELETE statement
 	 * @param      PropelPDO $con the connection to use
 	 * @return     int 	The number of affected rows (if supported by underlying database driver).  This includes CASCADE-related rows
@@ -868,20 +882,20 @@ abstract class BaseVisitPeer {
 	 public static function doDelete($values, PropelPDO $con = null)
 	 {
 		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
+			$con = Propel::getConnection(ProductI18nPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
 
 		if ($values instanceof Criteria) {
 			// invalidate the cache for all objects of this type, since we have no
 			// way of knowing (without running a query) what objects should be invalidated
 			// from the cache based on this Criteria.
-			VisitPeer::clearInstancePool();
+			ProductI18nPeer::clearInstancePool();
 
 			// rename for clarity
 			$criteria = clone $values;
-		} elseif ($values instanceof Visit) {
+		} elseif ($values instanceof ProductI18n) {
 			// invalidate the cache for this single object
-			VisitPeer::removeInstanceFromPool($values);
+			ProductI18nPeer::removeInstanceFromPool($values);
 			// create criteria based on pk values
 			$criteria = $values->buildPkeyCriteria();
 		} else {
@@ -890,11 +904,22 @@ abstract class BaseVisitPeer {
 
 
 			$criteria = new Criteria(self::DATABASE_NAME);
-			$criteria->add(VisitPeer::ID, (array) $values, Criteria::IN);
+			// primary key is composite; we therefore, expect
+			// the primary key passed to be an array of pkey
+			// values
+			if (count($values) == count($values, COUNT_RECURSIVE)) {
+				// array is not multi-dimensional
+				$values = array($values);
+			}
 
-			foreach ((array) $values as $singleval) {
-				// we can invalidate the cache for this single object
-				VisitPeer::removeInstanceFromPool($singleval);
+			foreach ($values as $value) {
+
+				$criterion = $criteria->getNewCriterion(ProductI18nPeer::ID, $value[0]);
+				$criterion->addAnd($criteria->getNewCriterion(ProductI18nPeer::CULTURE, $value[1]));
+				$criteria->addOr($criterion);
+
+				// we can invalidate the cache for this single PK
+				ProductI18nPeer::removeInstanceFromPool($value);
 			}
 		}
 
@@ -919,24 +944,24 @@ abstract class BaseVisitPeer {
 	}
 
 	/**
-	 * Validates all modified columns of given Visit object.
+	 * Validates all modified columns of given ProductI18n object.
 	 * If parameter $columns is either a single column name or an array of column names
 	 * than only those columns are validated.
 	 *
 	 * NOTICE: This does not apply to primary or foreign keys for now.
 	 *
-	 * @param      Visit $obj The object to validate.
+	 * @param      ProductI18n $obj The object to validate.
 	 * @param      mixed $cols Column name or array of column names.
 	 *
 	 * @return     mixed TRUE if all columns are valid or the error message of the first invalid column.
 	 */
-	public static function doValidate(Visit $obj, $cols = null)
+	public static function doValidate(ProductI18n $obj, $cols = null)
 	{
 		$columns = array();
 
 		if ($cols) {
-			$dbMap = Propel::getDatabaseMap(VisitPeer::DATABASE_NAME);
-			$tableMap = $dbMap->getTable(VisitPeer::TABLE_NAME);
+			$dbMap = Propel::getDatabaseMap(ProductI18nPeer::DATABASE_NAME);
+			$tableMap = $dbMap->getTable(ProductI18nPeer::TABLE_NAME);
 
 			if (! is_array($cols)) {
 				$cols = array($cols);
@@ -952,11 +977,11 @@ abstract class BaseVisitPeer {
 
 		}
 
-		$res =  BasePeer::doValidate(VisitPeer::DATABASE_NAME, VisitPeer::TABLE_NAME, $columns);
+		$res =  BasePeer::doValidate(ProductI18nPeer::DATABASE_NAME, ProductI18nPeer::TABLE_NAME, $columns);
     if ($res !== true) {
         $request = sfContext::getInstance()->getRequest();
         foreach ($res as $failed) {
-            $col = VisitPeer::translateFieldname($failed->getColumn(), BasePeer::TYPE_COLNAME, BasePeer::TYPE_PHPNAME);
+            $col = ProductI18nPeer::translateFieldname($failed->getColumn(), BasePeer::TYPE_COLNAME, BasePeer::TYPE_PHPNAME);
         }
     }
 
@@ -964,66 +989,39 @@ abstract class BaseVisitPeer {
 	}
 
 	/**
-	 * Retrieve a single object by pkey.
-	 *
-	 * @param      int $pk the primary key.
-	 * @param      PropelPDO $con the connection to use
-	 * @return     Visit
+	 * Retrieve object using using composite pkey values.
+	 * @param      int $id
+	   @param      string $culture
+	   
+	 * @param      PropelPDO $con
+	 * @return     ProductI18n
 	 */
-	public static function retrieveByPK($pk, PropelPDO $con = null)
-	{
-
-		if (null !== ($obj = VisitPeer::getInstanceFromPool((string) $pk))) {
-			return $obj;
+	public static function retrieveByPK($id, $culture, PropelPDO $con = null) {
+		$key = serialize(array((string) $id, (string) $culture));
+ 		if (null !== ($obj = ProductI18nPeer::getInstanceFromPool($key))) {
+ 			return $obj;
 		}
 
 		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+			$con = Propel::getConnection(ProductI18nPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
+		$criteria = new Criteria(ProductI18nPeer::DATABASE_NAME);
+		$criteria->add(ProductI18nPeer::ID, $id);
+		$criteria->add(ProductI18nPeer::CULTURE, $culture);
+		$v = ProductI18nPeer::doSelect($criteria, $con);
 
-		$criteria = new Criteria(VisitPeer::DATABASE_NAME);
-		$criteria->add(VisitPeer::ID, $pk);
-
-		$v = VisitPeer::doSelect($criteria, $con);
-
-		return !empty($v) > 0 ? $v[0] : null;
+		return !empty($v) ? $v[0] : null;
 	}
-
-	/**
-	 * Retrieve multiple objects by pkey.
-	 *
-	 * @param      array $pks List of primary keys
-	 * @param      PropelPDO $con the connection to use
-	 * @throws     PropelException Any exceptions caught during processing will be
-	 *		 rethrown wrapped into a PropelException.
-	 */
-	public static function retrieveByPKs($pks, PropelPDO $con = null)
-	{
-		if ($con === null) {
-			$con = Propel::getConnection(VisitPeer::DATABASE_NAME, Propel::CONNECTION_READ);
-		}
-
-		$objs = null;
-		if (empty($pks)) {
-			$objs = array();
-		} else {
-			$criteria = new Criteria(VisitPeer::DATABASE_NAME);
-			$criteria->add(VisitPeer::ID, $pks, Criteria::IN);
-			$objs = VisitPeer::doSelect($criteria, $con);
-		}
-		return $objs;
-	}
-
-} // BaseVisitPeer
+} // BaseProductI18nPeer
 
 // This is the static code needed to register the MapBuilder for this table with the main Propel class.
 //
-// NOTE: This static code cannot call methods on the VisitPeer class, because it is not defined yet.
-// If you need to use overridden methods, you can add this code to the bottom of the VisitPeer class:
+// NOTE: This static code cannot call methods on the ProductI18nPeer class, because it is not defined yet.
+// If you need to use overridden methods, you can add this code to the bottom of the ProductI18nPeer class:
 //
-// Propel::getDatabaseMap(VisitPeer::DATABASE_NAME)->addTableBuilder(VisitPeer::TABLE_NAME, VisitPeer::getMapBuilder());
+// Propel::getDatabaseMap(ProductI18nPeer::DATABASE_NAME)->addTableBuilder(ProductI18nPeer::TABLE_NAME, ProductI18nPeer::getMapBuilder());
 //
 // Doing so will effectively overwrite the registration below.
 
-Propel::getDatabaseMap(BaseVisitPeer::DATABASE_NAME)->addTableBuilder(BaseVisitPeer::TABLE_NAME, BaseVisitPeer::getMapBuilder());
+Propel::getDatabaseMap(BaseProductI18nPeer::DATABASE_NAME)->addTableBuilder(BaseProductI18nPeer::TABLE_NAME, BaseProductI18nPeer::getMapBuilder());
 
