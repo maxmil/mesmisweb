@@ -7,6 +7,10 @@
     <link rel="shortcut icon" href="/favicon.ico" />
   </head>
   <body>
+    <div id="language">
+      English
+      Español
+    </div>
     <?php echo $sf_content ?>
   </body>
 </html>
