@@ -6,7 +6,7 @@ class cultureFilter extends sfFilter
   {
     $culture = $this->getContext()->getRequest()->getParameter('culture');
     if (!empty($culture)){
-      $user    = $this->getContext()->getUser();
+      $user = $this->getContext()->getUser();
       $user->setCulture($culture);
     }
 

@@ -38,7 +38,7 @@ propel:
   product:
     _attributes:     { phpName: Product }
     id:              ~
-    mimetype:       { type: varchar(20) }
+    mimetype:        { type: varchar(20) }
     state:           { type: varchar(10), default: PUBLISHED }
     created_at:      ~
     updated_at:      ~
@@ -52,5 +52,6 @@ propel:
   download:
     user_id:         ~
     product_id:      ~
+    culture:         { isCulture: true, type: varchar(7), required: true }
     created_at:      ~
     

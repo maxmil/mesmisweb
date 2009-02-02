@@ -51,6 +51,7 @@ class productActions extends sfActions
     $download = new Download();
     $download->setProduct($product);
     $download->setUser($user);
+    $download->setCulture($this->getUser()->getCulture());
     $download->save();
 
     // Stream the file or forward to url

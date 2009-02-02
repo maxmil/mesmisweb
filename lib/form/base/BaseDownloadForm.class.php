@@ -15,6 +15,7 @@ class BaseDownloadForm extends BaseFormPropel
     $this->setWidgets(array(
       'user_id'    => new sfWidgetFormPropelChoice(array('model' => 'User', 'add_empty' => true)),
       'product_id' => new sfWidgetFormPropelChoice(array('model' => 'Product', 'add_empty' => true)),
+      'culture'    => new sfWidgetFormInput(),
       'created_at' => new sfWidgetFormDateTime(),
       'id'         => new sfWidgetFormInputHidden(),
     ));
@@ -22,6 +23,7 @@ class BaseDownloadForm extends BaseFormPropel
     $this->setValidators(array(
       'user_id'    => new sfValidatorPropelChoice(array('model' => 'User', 'column' => 'id', 'required' => false)),
       'product_id' => new sfValidatorPropelChoice(array('model' => 'Product', 'column' => 'id', 'required' => false)),
+      'culture'    => new sfValidatorString(array('max_length' => 7)),
       'created_at' => new sfValidatorDateTime(array('required' => false)),
       'id'         => new sfValidatorPropelChoice(array('model' => 'Download', 'column' => 'id', 'required' => false)),
     ));

@@ -169,6 +169,7 @@ CREATE TABLE `download`
 (
 	`user_id` INTEGER,
 	`product_id` INTEGER,
+	`culture` VARCHAR(7)  NOT NULL,
 	`created_at` DATETIME,
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (`id`),
