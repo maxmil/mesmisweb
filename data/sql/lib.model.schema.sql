@@ -128,6 +128,7 @@ DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product`
 (
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
+	`mimetype` VARCHAR(20),
 	`state` VARCHAR(10) default 'PUBLISHED',
 	`created_at` DATETIME,
 	`updated_at` DATETIME,

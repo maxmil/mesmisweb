@@ -15,8 +15,6 @@ class BaseContentForm extends BaseFormPropel
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
       'alias'      => new sfWidgetFormInput(),
-      'title'      => new sfWidgetFormTextarea(),
-      'body'       => new sfWidgetFormTextarea(),
       'state'      => new sfWidgetFormInput(),
       'created_at' => new sfWidgetFormDateTime(),
       'updated_at' => new sfWidgetFormDateTime(),
@@ -25,8 +23,6 @@ class BaseContentForm extends BaseFormPropel
     $this->setValidators(array(
       'id'         => new sfValidatorPropelChoice(array('model' => 'Content', 'column' => 'id', 'required' => false)),
       'alias'      => new sfValidatorString(array('max_length' => 50, 'required' => false)),
-      'title'      => new sfValidatorString(),
-      'body'       => new sfValidatorString(array('required' => false)),
       'state'      => new sfValidatorString(array('max_length' => 10, 'required' => false)),
       'created_at' => new sfValidatorDateTime(array('required' => false)),
       'updated_at' => new sfValidatorDateTime(array('required' => false)),
@@ -44,5 +40,14 @@ class BaseContentForm extends BaseFormPropel
     return 'Content';
   }
 
+  public function getI18nModelName()
+  {
+    return 'ContentI18n';
+  }
+
+  public function getI18nFormClass()
+  {
+    return 'ContentI18nForm';
+  }
 
 }

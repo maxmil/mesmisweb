@@ -162,4 +162,59 @@ ContentI18n:
     body: Here are the links
     culture: en
 
+Product:
+  product1:
+    mimetype: 	application/pdf
+    state: PUBLISHED
+  product2:
+    state: PUBLISHED
+  product3:
+    mimetype: application/x-compressed
+    state: PUBLISHED
+
+ProductI18n:
+  product1es:
+    id: product1
+    title: Pdf muy interesante
+    descrip: Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre.
+    photo_filename: item1.jpg
+    attach_filename: product_es.pdf
+    culture: es
+  product1en:
+    id: product1
+    title: Very interesting pdf
+    descrip: You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time.
+    photo_filename: item1.jpg
+    attach_filename: product_en.pdf
+    culture: en
+  product2es:
+    id: product2
+    title: Mesmis interactivo en linea
+    descrip: Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea.
+    photo_filename: item1.jpg
+    url: mesmis_interactivo
+    culture: es
+  product2en:
+    id: product2
+    title: Mesmis interactive on-line
+    descrip: Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line.
+    photo_filename: item1.jpg
+    url: mesmis_interactivo
+    culture: en
+  product3es:
+    id: product3
+    title: Descargar mesmis interactivo
+    descrip: Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina.
+    photo_filename: item1.jpg
+    attach_filename: test.zip
+    culture: es
+  product3en:
+    id: product3
+    title: Download mesmis interactive
+    descrip: Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer.
+    photo_filename: item1.jpg
+    attach_filename: test.zip
+    culture: en
+
+
 

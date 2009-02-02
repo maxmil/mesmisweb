@@ -8,6 +8,16 @@ news_items_list:
   requirements: { sf_culture: (?:es|en) }
   param: { module: news, action: index }
 
+poduct_action:
+  url: /:sf_culture/products/:action/:id
+  requirements: { sf_culture: (?:es|en) }
+  param: { module: product}
+
+products_list:
+  url: /:sf_culture/products
+  requirements: { sf_culture: (?:es|en) }
+  param: { module: product, action: index }
+
 content:
   url:   /:sf_culture/content/:alias
   requirements: { sf_culture: (?:es|en) }

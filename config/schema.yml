@@ -38,6 +38,7 @@ propel:
   product:
     _attributes:     { phpName: Product }
     id:              ~
+    mimetype:       { type: varchar(20) }
     state:           { type: varchar(10), default: PUBLISHED }
     created_at:      ~
     updated_at:      ~
