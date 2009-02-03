@@ -4,7 +4,98 @@
 }
 
 body{
+  font-family: arial;
   font-size: 12px;
+}
+
+input{
+  border: solid 1px #666;
+}
+
+#overlay{
+  background-color: #ffffff;
+  filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  display: none;
+  z-index: 1;
+}
+
+#dialogWrapper{
+  width: 100%;
+  position: fixed;
+  top: 200px;
+  display: none;
+  z-index: 2;
+}
+
+#dialog{
+  width: 419px;
+  margin: auto;
+}
+
+#dialog div.top{
+  background: url('../images/dialog_bg_top.png');
+  height: 21px;
+}
+
+#dialog div.middle{
+  background: url('../images/dialog_bg_middle.png');
+  padding: 0px 25px 0px 25px;
+}
+
+#dialog div.bottom{
+  background: url('../images/dialog_bg_bottom.png');
+  height: 21px;
+}
+
+#dialogCont{
+}
+
+#dialogCont p{
+  padding: 5px 0px 5px 0px;
+}
+
+#dialogCont h3{
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+#dialogCont #email{
+  width: 220px;
+}
+
+#dialogCont #register label{
+  position: absolute;
+}
+
+div.input{
+  padding-bottom: 5px;
+}
+
+div.btns{
+  margin-top: 5px;
+}
+
+#register div.input input, #register div.input div, #register div.btns{
+  margin-left: 130px;
+}
+
+div.error{
+  color: #c00;
+}
+
+input.error{
+  background-color: #eea;
+  border: 1px solid #c00;
 }
 
 td.niSum{

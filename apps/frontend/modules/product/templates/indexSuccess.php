@@ -7,10 +7,16 @@
     return this.replace(/^\s+|\s+$/g,"");
   }
 
+  function addError(field, msg){
+      clearErrors(field);
+      Element.insert(field.parentNode, '<div class="error">' + msg + '</div>');
+      Element.addClassName(field, 'error');
+  }
+
   function validateEmail() {
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     if(reg.test($F('email')) == false) {
-      Element.insert($('email').parentNode, '<div class="error"><?php echo __('El e-mail introducido no es válido') ?></div>');
+      addError($('email'), '<?php echo __('* El e-mail introducido no es válido') ?>');
       return false;
     }
     return true;
@@ -19,31 +25,45 @@
   function validateRegister(){
     var errors;
     if($F('name').trim().length == 0) {
-      clearErrors($('name'));
-      Element.insert($('name').parentNode, '<div class="error">* Campo obligatorio</div>');
+      addError($('name'), '* <?php echo __('Campo obligatorio') ?>');
       errors = true;
     }
     if($F('surname1').trim().length == 0) {
-      clearErrors($('surname1'));
-      Element.insert($('surname1').parentNode, '<div class="error">* Campo obligatorio</div>');
-      errors = true;
+      addError($('surname1'), '* <?php echo __('Campo obligatorio') ?>');errors = true;
     }
     if($F('institution').trim().length == 0) {
-      clearErrors($('institution'));
-      Element.insert($('institution').parentNode, '<div class="error">* Campo obligatorio</div>');
-      errors = true;
+      addError($('institution'), '* <?php echo __('Campo obligatorio') ?>');errors = true;
     }
     return !errors;
   }
 
   function clearErrors(field){
-    Element.select(field.parentNode, '.error').each(function(e){Element.remove(e)})
+    Element.removeClassName(field, 'error');
+    Element.select(field.parentNode, '.error').each(function(e){Element.remove(e)});
+  }
+
+  function showDialog(){
+    $('overlay').style.display = 'block';
+    $('dialogWrapper').style.display = 'block';
+  }
+
+  function closeDialog(){
+    $('overlay').style.display = 'none';
+    $('dialogWrapper').style.display = 'none';
+    $('dialogCont').innerHTML = '';
   }
   
   //]]>
 </script>
 
-<div id="register"></div>
+<div id="overlay"></div>
+<div id="dialogWrapper">
+  <div id="dialog">
+      <div class="top"></div>
+      <div id="dialogCont" class="middle"></div>
+      <div class="bottom"></div>
+  </div>
+</div>
 
 <table>
 <?php foreach($pager->getResults() as $product): ?>
@@ -52,7 +72,7 @@
     <td class="prSum">
       <div class="prTitle">
         <?php echo link_to_remote($product->getTitle(), array(
-           'update' => 'register',
+           'update' => 'dialogCont',
            'url' => 'product/download?id=' . $product->getId(),
            'script' => 'true'
         )) ?>
