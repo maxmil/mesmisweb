@@ -4,7 +4,7 @@
 }
 
 body{
-  font-family: Arial;
+  font-family: Helvetica, Arial;
   font-size: 11px;
   background-image: url('../images/main_bg.png');
   background-color: #729d5c;
@@ -15,6 +15,10 @@ body{
 a, a:hover, a:visited{
   color: #3fa81a;
   text-decoration: none;
+}
+
+p{
+  padding-bottom: 10px;
 }
 
 #wrapper {
@@ -62,14 +66,19 @@ a, a:hover, a:visited{
 }
 
 #menuPhoto {
-  padding: 17px 0px 0px 17px;
+  padding: 7px 0px 0px 8px;
 }
 
 #menuBar {
-  padding-top: 8px;
-  padding-left: 17px;
+  padding: 1px 17px;
   font-size: 13px;
   color: #3fa81a;
+  height: 40px;
+}
+
+#menuBar div{
+  float: left;
+  height: 18px;
 }
 
 #menuBar .highlight{
@@ -80,6 +89,7 @@ a, a:hover, a:visited{
 
 #menuBar .link{
   padding: 7px 24px;
+  white-space: nowrap;
 }
 
 #menuBar .selected{
@@ -88,6 +98,10 @@ a, a:hover, a:visited{
 
 #menuBar .selected a{
   color: #fff;
+}
+
+#menuBar .menuSeparator{
+  padding-top: 5px;
 }
 
 /* Content */
@@ -105,8 +119,6 @@ a, a:hover, a:visited{
   margin-bottom: 20px;
   clear: both;
 }
-
-/* Footer */
 
 /* Buttons */
 .btn, .btn:hover, .btn:visited {
@@ -130,9 +142,27 @@ input{
   border: solid 1px #666;
 }
 
+input.submit{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 10px;
+  background-color: #3aaf08;
+  padding: 2px 10px;
+  border: 0px;
+  cursor: pointer;
+}
+
 input.error{
   background-color: #eea;
   border: 1px solid #c00;
+}
+
+div.input{
+  padding-bottom: 5px;
+}
+
+div.btns{
+  margin-top: 5px;
 }
 
 /* Dialogs */
@@ -181,41 +211,11 @@ input.error{
   height: 21px;
 }
 
-#dialogCont{
-}
-
-#dialogCont p{
-  padding: 5px 0px 5px 0px;
-}
-
-#dialogCont h3{
+#dialog h3{
   text-align: center;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
-#dialogCont #email{
-  width: 220px;
-}
-
-#dialogCont #register label{
-  position: absolute;
-}
-
-div.input{
-  padding-bottom: 5px;
-}
-
-div.btns{
-  margin-top: 5px;
-}
-
-#register div.input input, #register div.input div, #register div.btns{
-  margin-left: 130px;
-}
-
-div.error{
-  color: #c00;
-}
 
 /* Miscelaneous */
 
@@ -229,6 +229,10 @@ div.error{
   height: 20px;
   margin-top: 10px;
   border-top: 1px solid #ccc;
+}
+
+.error{
+  color: #c00;
 }
 
 /* Text */
@@ -312,4 +316,45 @@ h2{
 
 .niReadMore{
   padding: 20px 0px;
+}
+
+/* Product Module */
+#products{
+  padding: 0px 26px;
+}
+
+.pr{
+  padding-top: 30px;
+  clear: right;
+}
+
+.prPhotoCont{
+  float: right;
+  margin: 0px;
+  padding: 0px 0px 20px 20px;
+  background-color: #fff;
+}
+
+.prPhoto{
+  float: left;
+  border: 4px solid #666;
+}
+
+.prContent .separator{
+  margin: 5px 0px;
+  height: 5px;
+}
+
+/* Login and registration */
+#email{
+  width: 200px;
+  height: 17px;
+}
+
+#register label{
+  position: absolute;
+}
+
+#register div.input input, #register div.input div, #register div.btns{
+  margin-left: 130px;
 }

@@ -1,4 +1,5 @@
 <?php use_helper('Date') ?>
+<?php decorate_with('layout_sidebar') ?>
 
 <div id="news">
   <div class="navBar"><a href="#" onclick="history.go(-1);return false;" class="btn"><?php echo __('<< Other stories') ?></a></div>

@@ -27,8 +27,8 @@
       <?php echo object_input_tag($user, 'getInstitution', array('onfocus' => 'clearErrors(this)')) ?>
     </div>
     <div class="btns">
-      <?php echo submit_tag('Enviar') ?>
-      <input type="reset" value="<?php echo __('Cancelar') ?>" onclick="closeDialog()" />
+      <?php echo submit_tag('Enviar', 'class="submit"') ?>
+      <input type="reset" value="<?php echo __('Cancelar') ?>" onclick="closeDialog()" class="submit"/>
     </div>
   </form>
 </div>

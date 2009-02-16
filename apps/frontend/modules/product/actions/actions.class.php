@@ -33,8 +33,8 @@ class productActions extends sfActions
     $this->id = $request->getParameter('id');
 
     // Get the product
-    $product = ProductPeer::retrieveByPK($this->id);
-    $this->forward404If(empty($product));
+    $this->product = ProductPeer::retrieveByPK($this->id);
+    $this->forward404If(empty($this->product));
 
     // Get the user
     $user = UserPeer::retrieveByPK($this->getUser()->getAttribute('userId'));
@@ -49,19 +49,19 @@ class productActions extends sfActions
 
     // Save the download
     $download = new Download();
-    $download->setProduct($product);
+    $download->setProduct($this->product);
     $download->setUser($user);
     $download->setCulture($this->getUser()->getCulture());
     $download->save();
 
     // Stream the file or forward to url
-    $fileName = $product->getAttachFilename();
+    $fileName = $this->product->getAttachFilename();
     if(!empty($fileName)){
 
       $filePath = sfConfig::get('sf_data_dir') . DIRECTORY_SEPARATOR . 'products' . DIRECTORY_SEPARATOR . $fileName;
       
       $response = $this->getResponse();
-      $response->setContentType($product->getMimeType());
+      $response->setContentType($this->product->getMimeType());
       $response->setHttpHeader('Content-Disposition', 'attachment; filename='. $fileName);
       $response->setHttpHeader('Content-Length', filesize($filePath));
       $response->sendHttpHeaders();
@@ -73,11 +73,11 @@ class productActions extends sfActions
     } else {
 
       // If partial with this name exists then render else redirect to url
-      $partial = $this->getContext()->getModuleDirectory() . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . '_' . $product->getUrl() . '.php';
+      $partial = $this->getContext()->getModuleDirectory() . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . '_' . $this->product->getUrl() . '.php';
       if (is_readable($partial)) {
-         return $this->renderPartial($product->getUrl());
+         return $this->renderPartial($this->product->getUrl());
       } else {
-         return $this->redirect($product->getUrl());
+         return $this->redirect($this->product->getUrl());
       }
     }
   }

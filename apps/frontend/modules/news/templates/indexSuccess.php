@@ -1,4 +1,5 @@
 <?php use_helper('Date', 'News') ?>
+<?php decorate_with('layout_sidebar') ?>
 
 <div id="news">
   <?php include_partial('navBar', array('pager' => $pager)); ?>

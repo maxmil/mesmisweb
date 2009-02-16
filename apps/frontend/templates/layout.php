@@ -7,14 +7,7 @@
     <link rel="shortcut icon" href="/favicon.ico" />
   </head>
   <body>
-    <div id="overlay"></div>
-    <div id="dialogWrapper">
-      <div id="dialog">
-          <div class="top"></div>
-          <div id="dialogCont" class="middle"></div>
-          <div class="bottom"></div>
-      </div>
-    </div>
+    <?php echo include_partial('global/dialog') ?>
     <div id="wrapper">
       <?php echo include_partial('global/header') ?>
       <?php echo include_partial('global/menu') ?>
