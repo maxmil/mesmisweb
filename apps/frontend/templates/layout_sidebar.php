@@ -7,23 +7,23 @@
     <link rel="shortcut icon" href="/favicon.ico" />
   </head>
   <body>
-    <div id="overlay"></div>
-    <div id="dialogWrapper">
-      <div id="dialog">
-          <div class="top"></div>
-          <div id="dialogCont" class="middle"></div>
-          <div class="bottom"></div>
-      </div>
-    </div>
     <div id="wrapper">
       <?php echo include_partial('global/header') ?>
       <?php echo include_partial('global/menu') ?>
       <div id="content">
         <div id="contentMiddle">
-          <?php echo $sf_content ?>
+          <div id="sideBarRight"><?php include_partial('global/sidebar_links') ?></div>
+          <div id="contentLeft">
+            <div id="contentPane"><?php echo $sf_content ?></div>
+            <div id="sponsors">
+              <span><?php echo __('Partners') ?></span>
+              <div id="sponsorLogos"><?php echo image_tag('sponsors.gif') ?></div>
+            </div>
+          </div>
         </div>
         <div id="contentBottom"></div>
       </div>
     </div>
   </body>
 </html>
+

@@ -20,7 +20,7 @@ class newsActions extends sfActions
     $c = new Criteria();
     $c->add(NewsItemPeer::STATE, NewsItemPeer::STATE_PUBLISHED);
     $c->addDescendingOrderByColumn(NewsItemPeer::PRIORITY);
-    $pager = new sfPropelPager('NewsItem', 5);
+    $pager = new sfPropelPager('NewsItem', 3);
     $pager->setCriteria($c);
     $pager->setPage($this->getRequestParameter('page', 1));
     $pager->init();

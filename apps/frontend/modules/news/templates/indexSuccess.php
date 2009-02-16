@@ -1,25 +1,19 @@
-<?php use_helper('Date') ?>
+<?php use_helper('Date', 'News') ?>
 
-<table>
-<?php foreach($pager->getResults() as $newsItem): ?>
-  <tr>
-    <td class="niPhoto"><?php echo image_tag('/uploads/'. $newsItem->getPhotoFilename()) ?></td>
-    <td class="niSum">
-      <div class="niCreatedAt"><?php echo format_date($newsItem->getCreatedAt(), 'dd/MM/yyyy')  ?></div>
-      <div class="niTitle"><?php echo link_to($newsItem->getTitle(), 'news/view?id=' . $newsItem->getId()) ?></div>
-      <div class="niDescrip"><?php echo $newsItem->getBody() ?></div>
-    </td>
-  </tr>
-<?php endforeach; ?>
-</table>
-
-<?php if ($pager->haveToPaginate()): ?>
-  <?php echo link_to('&laquo;', 'news/index?page='.$pager->getFirstPage()) ?>
-  <?php echo link_to('&lt;', 'news/index?page='.$pager->getPreviousPage()) ?>
-  <?php $links = $pager->getLinks(); foreach ($links as $page): ?>
-    <?php echo ($page == $pager->getPage()) ? $page : link_to($page, 'news/index?page='.$page) ?>
-    <?php if ($page != $pager->getCurrentMaxLink()): ?> - <?php endif ?>
-  <?php endforeach ?>
-  <?php echo link_to('&gt;', 'news/index?page='.$pager->getNextPage()) ?>
-  <?php echo link_to('&raquo;', 'news/index?page='.$pager->getLastPage()) ?>
-<?php endif ?>
+<div id="news">
+  <?php include_partial('navBar', array('pager' => $pager)); ?>
+  <?php foreach($pager->getResults() as $newsItem): ?>
+    <div class="ni">
+      <div class="title">
+        <div class="niCreatedAt"><?php echo format_date($newsItem->getCreatedAt(), 'dd/MM/yyyy')  ?></div>
+        <?php echo link_to('<h2>' . $newsItem->getTitle() . '</h2>', 'news/view?id=' . $newsItem->getId()) ?>
+      </div>
+      <div class="separator"></div>
+      <div class="niPhoto"><?php echo image_tag('/uploads/'. $newsItem->getPhotoFilename()) ?></div>
+      <div class="niContent">
+        <?php echo news_summary($newsItem) ?>
+      </div>
+    </div>
+  <?php endforeach; ?>
+  <div id="navBarBtm"><?php include_partial('navBar', array('pager' => $pager)); ?></div>
+</div>
