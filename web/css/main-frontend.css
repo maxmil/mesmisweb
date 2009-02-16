@@ -5,7 +5,7 @@
 
 body{
   font-family: Helvetica, Arial;
-  font-size: 11px;
+  font-size: 12px;
   background-image: url('../images/main_bg.png');
   background-color: #729d5c;
   background-repeat: repeat-x;
@@ -29,12 +29,12 @@ p{
 /* Header */
 #header{
   width: 100%;
-  height: 110px;
+  height: 90px;
 }
 
 #logo{
   position: absolute;
-  top: 30px;
+  top: 20px;
 }
 
 #langSelect{
@@ -88,7 +88,7 @@ p{
 }
 
 #menuBar .link{
-  padding: 7px 24px;
+  padding: 7px 17px;
   white-space: nowrap;
 }
 
@@ -357,4 +357,70 @@ h2{
 
 #register div.input input, #register div.input div, #register div.btns{
   margin-left: 130px;
+}
+
+/* Static content */
+#staticSideBar{
+  position: fixed;
+  width: 190px;
+  padding: 10px 0px 20px 10px;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
+
+#staticSideBar ul{
+  padding-left: 10px;
+}
+
+#staticSideBar li{
+  list-style: none;
+  border-top: 1px dashed #999;
+}
+
+#staticSideBar li div{
+  padding: 8px 0px;
+}
+
+#staticSideBar li a{
+  color: #888;
+}
+
+#staticSideBar .arrow{
+  float: right;
+  color: #3fa81a;
+  position: relative;
+  top: -2px;
+}
+
+#staticContent{
+  background: url('../images/sidebar_separator.png') left repeat-y;
+  margin-left: 210px;
+  padding: 0px 7px 0px 4px;
+}
+
+#staticContent h1{
+  padding: 10px 20px 0px 20px;
+  font-weight: normal;
+  color: #3fa81a;
+}
+
+#staticContent h2{
+  text-transform: none;
+  font-weight: bold;
+  font-size: 1.4em;
+  letter-spacing: 0px;
+  padding-bottom: 10px;
+}
+
+#staticContent .separator{
+  height: 10px;
+}
+
+#staticContent .section{
+  padding: 0px 20px 20px 20px;
+}
+
+#staticContent ul{
+  padding: 0px 0px 10px 20px;
 }
