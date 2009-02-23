@@ -1,7 +1,7 @@
 <?php use_helper('Menu') ?>
 
 <div id="menu">
-  <div id="menuPhoto"><?php echo image_tag('menu_photo_1.jpg', 'id="menuPhoto"') ?></div>
+  <div id="menuPhoto"><?php echo image_tag('menu_photo_' . rand(0, 9). '.jpg', 'id="menuPhoto"') ?></div>
   <div id="menuBar">
     <?php if(is_selected('HOME')): ?>
       <div class="link selected"><?php echo link_to(__('<span class="highlight">Inicio</span>'), 'news/index') ?></div>
