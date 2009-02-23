@@ -5,11 +5,11 @@
       <ul>
         <li><div><a class="arrow" href="#1.1">>></a><a href="#1.1">Antecedentes</a></div></li>
         <li><div><a class="arrow" href="#1.2">>></a><a href="#1.2">¿Que és el MESMIS?</a></div></li>
-        <li><div><a class="arrow" href="#1.3">>></a><a href="#1.3">¿A quién está dirigido?</a></div></li>
-        <li><div><a class="arrow" href="#1.4">>></a><a href="#1.4">Otros materiales</a></div></li>
+        <li><div><a class="arrow" href="#1.3">>></a><a href="#1.3">¿A quién està dirigido?</a></div></li>
+        <li><div><a class="arrow" href="#1.3">>></a><a href="#1.4">Estructura operativa</a></div></li>
       </ul>
     </li>
-    <li><div><a class="arrow" href="#2">>></a><a href="#2">Info. relacionada</a></div></li>
+    <li><div><a class="arrow" href="#2">>></a><a href="#2">Otros materiales</a></div></li>
   </ul>
 </div>
 <div>

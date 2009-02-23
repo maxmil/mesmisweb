@@ -42,8 +42,8 @@
 
 <div id="products">
   <h1><?php echo __('Descarga de recursos') ?></h1>
-  <p>Parece ser la primera vez que usted descarga recursos.</p>
-  <p>Por favor rellene el siguiente formulario con sus datos.  A continuación empezará su descarga.</p>
+  <p><?php echo __('Parece ser la primera vez que usted descarga recursos.') ?></p>
+  <p><?php echo __('Por favor rellene el siguiente formulario con sus datos.  A continuación empezará su descarga.') ?></p>
   <form id="registerFrm" action="<?php echo url_for('product/register?id=' .  $id) ?>" onsubmit="return validateRegister();">
     <?php echo object_input_hidden_tag($user, 'getEmail') ?>
     <div class="input">
@@ -63,7 +63,7 @@
       <?php echo object_input_tag($user, 'getInstitution', array('onfocus' => 'clearErrors(this)')) ?>
     </div>
     <div class="btns">
-      <?php echo submit_tag('Enviar', 'class="submit"') ?>
+      <?php echo submit_tag(__('Enviar'), 'class="submit"') ?>
       <input type="reset" value="<?php echo __('Cancelar') ?>" onclick="history.go(-2)" class="submit"/>
     </div>
   </form>

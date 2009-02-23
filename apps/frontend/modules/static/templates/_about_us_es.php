@@ -53,7 +53,7 @@
         <li>Colaboración con grupos de trabajo internacionales, incluyendo el proyecto FESLM de la FAO.</li>
         <li>Desarrollo de MESMIS Interactivo, un programa de simulación didáctico, amigable e interactivo acerca de la aplicación del marco MESMIS.</li>
       </ul>
-      <?php echo image_tag('static/about_us_1.jpg', 'alt="Distribución de los estudios de caso de MESMIS"') ?>
+      <?php echo image_tag('static/mesmis-casestudies.png', 'alt="Distribución de los estudios de caso de MESMIS"') ?>
       <p>Para mayor información sobre las aplicaciones del marco favor de consultar la Colección sobre sustentabilidad</p>
     </div>
     <div class="section">

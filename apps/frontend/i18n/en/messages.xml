@@ -1,22 +1,110 @@
 <?xml version="1.0"?>
 <xliff version="1.0">
-  <file orginal="global" source-language="es" datatype="plaintext" date="2009-01-30T18:48:54Z">
+  <file orginal="global" source-language="es" datatype="plaintext" date="2009-02-23T13:42:04Z">
     <body>
-      <trans-unit id="1">
-        <source>El Proyecto Mesmis</source>
-        <target>The Mesmis project</target>
+      <trans-unit id="5">
+        <source>&lt;span class="highlight"&gt;Inicio&lt;/span&gt;</source>
+        <target>&lt;span class="highlight"&gt;Home&lt;/span&gt;</target>
       </trans-unit>
-      <trans-unit id="2">
-        <source>El Marco Mesmis</source>
-        <target>The Mesmis Framework</target>
+      <trans-unit id="6">
+        <source>El proyecto &lt;span class="highlight"&gt;Mesmis&lt;/span&gt;</source>
+        <target>The &lt;span class="highlight"&gt;Mesmis&lt;/span&gt; project</target>
       </trans-unit>
-      <trans-unit id="3">
-        <source>Recursos</source>
-        <target>Resources</target>
+      <trans-unit id="7">
+        <source>El marco &lt;span class="highlight"&gt;Mesmis&lt;/span&gt;</source>
+        <target>The &lt;span class="highlight"&gt;Mesmis&lt;/span&gt; framework</target>
       </trans-unit>
-      <trans-unit id="4">
-        <source>V&#xED;nculos Relacionados</source>
-        <target>Links</target>
+      <trans-unit id="8">
+        <source>&lt;span class="highlight"&gt;Recursos&lt;/span&gt;</source>
+        <target>&lt;span class="highlight"&gt;Resources&lt;/span&gt;</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>&lt;span class="highlight"&gt;P&#xE1;ginas&lt;/span&gt; relacionadas</source>
+        <target>Related &lt;span class="highlight"&gt;P&#xE1;ginas&lt;/span&gt;</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>&lt;span class="highlight"&gt;Contactar&lt;/span&gt;</source>
+        <target>&lt;span class="highlight"&gt;Contact&lt;/span&gt;</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Copresentado por</source>
+        <target>Co-hosted by</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>&lt;strong&gt;MESMIS&lt;/strong&gt; INTERACTIVO</source>
+        <target>&lt;strong&gt;MESMIS&lt;/strong&gt; INTERACTIVE</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Visitar</source>
+        <target>Visit</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>&lt;strong&gt;SUSTENTA&lt;/strong&gt;</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Leer m&#xE1;s &gt;&gt;</source>
+        <target>Read more &gt;&gt;</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>&lt;&lt; Noticias m&#xE1;s recentes</source>
+        <target>&lt;&lt; More recent news</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Noticias anteriores &gt;&gt;</source>
+        <target>Older news &gt;&gt;</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>&lt;&lt; Volver</source>
+        <target>&lt;&lt; Back</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>* El e-mail introducido no es v&#xE1;lido</source>
+        <target>* The e-mail introduced is invalid</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Campo obligatorio</source>
+        <target>Required field</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>Descarga de recursos</source>
+        <target>Resource download</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>Para descargar el recurso &lt;strong&gt;%1%&lt;/strong&gt; por favor escribe su direcci&#xF3;n &lt;strong&gt;e-mail&lt;/strong&gt;.</source>
+        <target>In order to download the resource &lt;strong&gt;%1%&lt;/strong&gt; please insert your &#xF3;n &lt;strong&gt;e-mail&lt;/strong&gt; address.</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>Cancelar</source>
+        <target>Cancel</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>Parece ser la primera vez que usted descarga recursos.</source>
+        <target>It apears that this is the first time you have downloaded resources.</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>Por favor rellene el siguiente formulario con sus datos.  A continuaci&#xF3;n empezar&#xE1; su descarga.</source>
+        <target>Please fill out the following form with your contact information. Once sent, your download will begin.</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Nombre</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>Primer apellido</source>
+        <target>Surname</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Segundo apellido</source>
+        <target>Second surname (if applicable)</target>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>Instituci&#xF3;n</source>
+        <target>Institution</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Enviar</source>
+        <target>Send</target>
       </trans-unit>
     </body>
   </file>

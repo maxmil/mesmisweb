@@ -6,8 +6,8 @@
 
 <div id="register">
   <h3><?php echo __('Descarga de recursos') ?></h3>
-  <p>Parece ser la primera vez que usted descarga recursos.</p>
-  <p>Por favor rellene el siguiente formulario con sus datos.  A continuación empezará su descarga.</p>
+  <p><?php echo __('Parece ser la primera vez que usted descarga recursos.') ?></p>
+  <p><?php echo __('Por favor rellene el siguiente formulario con sus datos.  A continuación empezará su descarga.') ?></p>
   <form id="registerFrm" onsubmit="if(validateRegister()) new Ajax.Updater('register', '<?php echo url_for('product/register?id=' .  $id) ?>', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;">
     <?php echo object_input_hidden_tag($user, 'getEmail') ?>
     <div class="input">
@@ -27,7 +27,7 @@
       <?php echo object_input_tag($user, 'getInstitution', array('onfocus' => 'clearErrors(this)')) ?>
     </div>
     <div class="btns">
-      <?php echo submit_tag('Enviar', 'class="submit"') ?>
+      <?php echo submit_tag(__('Enviar'), 'class="submit"') ?>
       <input type="reset" value="<?php echo __('Cancelar') ?>" onclick="closeDialog()" class="submit"/>
     </div>
   </form>
