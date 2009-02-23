@@ -2,7 +2,7 @@
 <?php decorate_with('layout_sidebar') ?>
 
 <div id="news">
-  <div class="navBar"><a href="#" onclick="history.go(-1);return false;" class="btn"><?php echo __('<< Other stories') ?></a></div>
+  <div class="navBar"><a href="#" onclick="history.go(-1);return false;" class="btn"><?php echo __('<< Volver') ?></a></div>
   <div class="ni">
     <div class="title">
       <div class="niCreatedAt"><?php echo format_date($newsItem->getCreatedAt(), 'dd/MM/yyyy')  ?></div>
@@ -14,5 +14,5 @@
       <?php echo $newsItem->getBody() ?>
     </div>
   </div>
-  <div id="navBarBtm" class="navBar"><a href="#" onclick="history.go(-1);return false;" class="btn"><?php echo __('<< Other stories') ?></a></div>
+  <div id="navBarBtm" class="navBar"><a href="#" onclick="history.go(-1);return false;" class="btn"><?php echo __('<< Volver') ?></a></div>
 </div>

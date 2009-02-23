@@ -1,149 +1,19 @@
-# # Populate this file with data to be loaded by your ORM's *:data-load task.
-# # You can create multiple files in this directory (i.e. 010_users.yml,
-# # 020_articles.yml, etc) which will be loaded in alphabetical order.
-# # 
-# # See documentation for your ORM's *:data-load task for more information.
-# 
-# User:
-#   fabien:
-#     username: fabien
-#     password: changeme
-#     name:     Fabien Potencier
-#     email:    fabien.potencier@symfony-project.com
-#   kris:
-#     username: Kris.Wallsmith
-#     password: changeme
-#     name:     Kris Wallsmith
-#     email:    kris.wallsmith@symfony-project.com
-
 NewsItem:
-  item1:
-    photo_filename: item1.jpg
-    priority: 10
-  item2:
-    photo_filename: item1.jpg
-    priority: 10
-  item3:
-    photo_filename: item1.jpg
-    priority: 10
-  item4:
-    photo_filename: item1.jpg
-    priority: 10
-  item5:
-    photo_filename: item1.jpg
-    priority: 10
-  item6:
-    photo_filename: item1.jpg
-    priority: 10
-  item7:
-    photo_filename: item1.jpg
-    priority: 10
-  item8:
-    photo_filename: item1.jpg
-    priority: 100
-  item9:
-    photo_filename: item1.jpg
-    priority: 100
-    state: UNPUBLISHED
-  item10:
-    photo_filename: item1.jpg
-    priority: 10
+  mesmisLibro:
+    photo_filename: libro_mesmis.jpg
+  mesmisInteractivo:
+    photo_filename: mesmis_interactivo.png
 
 NewsItemI18n:
-  item1es:
-    id: item1
-    title: Nuevo libro disponible
-    body: Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis. Se ha publicado una nueva versión del libro mesmis.
+  mesmisLibro_es:
+    id: mesmisLibro
+    title: Libro: Evaluación de sustentabilidad: un enfoque dinámico y multi-dimensional
+    body: <p>Este volumen es una lectura esencial para los interesados en el tema de sustentabilidad y su aplicación a los sistemas de manejo de recursos naturales. Presenta una revisión detallada de los temas de frontera en las evaluaciones de sustentabilidad así como un análisis crítico de más de 40 estudios de caso que han aplicado el marco MESMIS lo largo de Iberoamérica.</p><p>Marta Astier, Omar Masera y Yankuic Galván (Coordinadores)<br />Publicado por el Centro de Investigaciones en Geografía Ambiental (CIGA-UNAM), el Centro de Investigaciones en Ecosistemas (CIEco-UNAM), El Colegio de la Frontera Sur (ECOSUR), el Grupo Interdisciplinario de Tecnología Rural Apropiada (GIRA A.C.), la Fundación Instituto de Agricultura Ecológica y Sostenible y la Sociedad Española de Agricultura Ecológica (SEAE)<br />ISBN 978-84-612-5641-9<br />200 páginas</p><p>En la silenciosa construcción de la sociedad sustentable, una dimensión clave es la del manejo de los recursos naturales. Este libro, el cuarto de una serie, hace un recuento de los avances logrados durante más de una década en la aplicación de una metodología agroecológica original y sobre todo útil, de obligada lectura para quienes están involucrados en la creación de sistemas productivos alternativos.</p><p align="right">Victor Toledo</p><p>Este volumen es una lectura esencial para los interesados en el tema de sustentabilidad y su aplicación a los sistemas de manejo de recursos naturales. Presenta la oportunidad poco común de acceder tanto a una revisión detallada de los principales temas de frontera en las evaluaciones de sustentabilidad como de aprender de la experiencia práctica de 10 años de aplicación del marco MESMIS en más de 40 estudios de caso a lo largo de Iberoamérica.</p><p>Interrogantes clave cómo ¿Qué marcos de evaluación de sustentabilidad se han desarrollado en la última década? ¿Qué tipo de indicadores son más apropiados y cómo pueden integrarse de manera transparente, sin perder la multidimensionalidad del análisis? ¿Cómo realizar una evaluación de sustentabilidad multi-escalar?¿Cómo podemos incorporar una perspectiva de sistemas dinámicos en la evaluación? ¿Qué dilemas institucionales y éticos enfrenta el discurso sobre sustentabilidad? ¿Cuáles son las lecciones más importantes de los diversos estudios de caso? son abordados a cabalidad en este libro.</p><p>Como complemento al texto, y dando respuesta a la carencia crítica de materiales didácticos en la literatura sobre evaluaciones de sustentabilidad, este volumen incluye también un CD con programas amistosos de simulación interactiva que ayudan a entender la naturaleza dinámica del concepto de sustentabilidad y la compleja interdependencia entre sus dimensiones social, económica y ambiental.</p><h2>CONTENIDO</h2><ul class="bookContents"><li>Prefacio</li><li>Sección I. La experiencia del marco MESMIS<ul><li><strong>1. El proyecto de evaluación de sustentabilidad MESMIS</strong><br />Omar Masera, Marta Astier, Santiago López-Ridaura, Yankuic Galván-Miyoshi, Tamara Ortiz-Ávila, Luis E. García-Barrios, Raúl García-Barrios,Carlos González y Erika Speelman</li><li><strong>2. Sistematización y análisis de las experiencias de evaluación con el marco MESMIS: lecciones para el futuro</strong><br />Erika N. Speelman, Marta Astier y Yankuic Galván-Miyoshi</li></ul></li><li>Sección II. Temas estratégicos en las evaluaciones de sustentabilidad<ul><li><strong>3. Las evaluaciones de sustentabilidad</strong><br />Yankuic Galván-Miyoshi, Omar Masera y Santiago López-Ridaura</li><li><strong>4. Caracterización de sistemas de manejo de recursos naturales</strong><br />Tamara Ortiz-Ávila</li><li><strong>5. Formulación de indicadores socioambientales para evaluaciones de sustentabilidad de sistemas de manejo complejos</strong><br />Marta Astier y Carlos González</li><li><strong>6. Integración de indicadores en la evaluación de sustentabilidad: de los índices agregados a la representación multicriterio</strong><br />Yankuic Galván-Miyoshi</li><li><strong>7. La evaluación multiescalar de la sustentabilidad: retos y avances metodológicos</strong><br />Santiago López-Ridaura</li><li><strong>8. Construcción y uso de modelos dinámicos sencillos para evaluar estrategias de manejo productivo de recursos bióticos. Una guía básica ilustrada</strong><br />Luis García-Barrios, Omar Masera y Raúl García-Barrios</li><li><strong>9. Simuladores de escenarios complejos socioambientales: herramientas de apoyo para entender, evaluar y negociar estrategias sustentables de manejo de recursos naturales</strong><br />Luis García-Barrios y Max Pimm</li><li><strong>10. La sociedad controlable y la sustentabilidad</strong><br />Raúl García-Barrios y Luis García-Barrios</li><li><strong>11. Retos para los análisis de sustentabilidad de los SMRN</strong><br />Marta Astier, Yankuic Galván y Omar Masera</li></ul></li><li>Sección III. Herramientas pedagógicas interactivas<ul><li><strong>12. Proyecto MESMIS</strong><br />Yankuic Galván-Miyoshi</li><li><strong>13. Paso a paso con el MESMIS</strong><br />Yankuic Galván-Miyoshi, Max Pimm, Tamara Ortiz-Ávila, Marta Astier y Omar Masera</li><li><strong>14. Sustentabilidad y sistemas dinámicos</strong><br />Luis García-Barrios y Max Pimm</li><li><strong>15. Diseño sustentable y negociación social</strong><br />Luis García-Barrios y Max Pimm</li></ul></li></ul>
     culture: es
-  item1en:
-    id: item1
-    title: New book available
-    body: A new edition of Mesmis is available. A new edition of Mesmis is available. A new edition of Mesmis is available. A new edition of Mesmis is available. A new edition of Mesmis is available. A new edition of Mesmis is available. A new edition of Mesmis is available. A new edition of Mesmis is available....
-    culture: en
-  item2es:
-    id: item2
-    title: Llegan marciando a morelia
-    body: Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos. Hoy en el CIECO aparecieron dos marcianos.
-    culture: es
-  item2en:
-    id: item2
-    title: Aliens in Morelia
-    body: Today in CIECO two aliens were seen. Today in CIECO two aliens were seen.Today in CIECO two aliens were seen.Today in CIECO two aliens were seen.Today in CIECO two aliens were seen.Today in CIECO two aliens were seen.Today in CIECO two aliens were seen.Today in CIECO two aliens were seen..
-    culture: en
-  item3es:
-    id: item3
-    title: No hay noticias
-    body: Nada que comentar
-    culture: es
-  item3en:
-    id: item3
-    title: There is no news
-    body: Nothing to comment on.
-    culture: en
-  item4es:
-    id: item4
-    title: En 2012 se acaba el mundo
-    body: Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido. Pues eso es lo que dicen, personalmente aun no estoy convencido.
-    culture: es
-  item4en:
-    id: item4
-    title: The end of the world in 2012
-    body: This is what they say. Personally i'm not convinced. This is what they say. Personally i'm not convinced. This is what they say. Personally i'm not convinced. This is what they say. Personally i'm not convinced. This is what they say. Personally i'm not convinced. This is what they say. Personally i'm not convinced. This is what they say. Personally i'm not convinced. This is what they say. Personally i'm not convinced. This is what they say. Personally i'm not convinced. This is what they say. Personally i'm not convinced. This is what they say. Personally i'm not convinced.
-    culture: en
-  item5es:
-    id: item5
-    title: Mexico 10 - Estados Unidos 0
-    body: Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos. Que patada les dieron los méxicanos ayer a los estados unidos.
-    culture: es
-  item5en:
-    id: item5
-    title: Mexico 10 - USA 0
-    body: What a thrashing in yesterdays match between Mecixo and the USA. What a thrashing in yesterdays match between Mecixo and the USA. What a thrashing in yesterdays match between Mecixo and the USA. What a thrashing in yesterdays match between Mecixo and the USA. What a thrashing in yesterdays match between Mecixo and the USA. What a thrashing in yesterdays match between Mecixo and the USA. What a thrashing in yesterdays match between Mecixo and the USA. What a thrashing in yesterdays match between Mecixo and the USA. 
-    culture: en
-  item6es:
-    id: item6
-    title: Todos somos contentos
-    body: Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año? Aparentamente somos más contentos de lo que eramos hace un año?
-    culture: es
-  item6en:
-    id: item6
-    title: Everyone is happy
-    body: Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. Apparently we are on average more happy than this time a year ago. 
-    culture: en
-  item7es:
-    id: item7
-    title: Ya no se me ocurren más noticias
-    body: Con lo cual está tien poco texto.
-    culture: es
-  item7en:
-    id: item7
-    title: I can't think of any more news
-    body: Which is why this news item has hardly any content.
-    culture: en
-  item8es:
-    id: item8
-    title: La noticia más importante
-    body: Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia. Es que no hay noticia.
-    culture: es
-  item8en:
-    id: item8
-    title: The most important piece of news
-    body: Is that there is no news. Is that there is no news. Is that there is no news. Is that there is no news. Is that there is no news. Is that there is no news. Is that there is no news. Is that there is no news. Is that there is no news. Is that there is no news. Is that there is no news. Is that there is no news. Is that there is no news.
-    culture: en
-  item9es:
-    id: item9
-    title: Una noticia no publicada
-    body: No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. No estoy publicado. v
-    culture: es
-  item9en:
-    id: item9
-    title: This news item is unpublished
-    body: I am not published. I am not published. I am not published. I am not published. I am not published. I am not published. I am not published. I am not published. I am not published. I am not published. I am not published. I am not published. I am not published. I am not published. I am not published. I am not published. 
-    culture: en
-  item10es:
-    id: item10
-    title: Noticia sin traducción
-    body: Sólo existo en español no tengo traducción en inglés.
+  mesmisInteractivo_es:
+    id: mesmisInteractivo
+    title: MESMIS Interactivo
+    body: <p>MESMIS interactivo es un programa didáctico y amigable que permite al usuario reforzar los conceptos y las bases metodológicas del marco de evaluación de la sustentabilidad MESMIS. Mediante programas de simulación interactiva, MESMIS interactivo expone la naturaleza dinámica del concepto de sustentabilidad y la compleja interdependencia entre sus dimensiones social, económica y ambiental.</p><p>Este material se distribuye como parte del libro “Evaluación de sustentabilidad: un enfoque dinámico y multidimensional” [link] publicado por el Centro de Investigaciones en Geografía Ambiental (CIGA-UNAM), el Centro de Investigaciones en Ecosistemas (CIEco-UNAM), El Colegio de la Frontera Sur (ECOSUR), el Grupo Interdisciplinario de Tecnología Rural Apropiada (GIRA A.C.), la Fundación Instituto de Agricultura Ecológica y Sostenible y la Sociedad Española de Agricultura Ecológica (SEAE)<br />ISBN 978-84-612-5641-9</p><p>MESMIS interactivo es una herramienta diseñada para la enseñanza del concepto de sustentabilidad y su evaluación desde la perspectiva de sistemas dinámicos. MESMIS interactivo contiene programas amistosos de simulación interactiva que ayudan a entender la naturaleza dinámica del concepto de sustentabilidad y la compleja interdependencia entre sus dimensiones social, económica y ambiental. Este material incluye cuatro módulos principales:</p><ol><li>Proyecto MESMIS, detalla los componentes y principales logros del "proyecto evaluación de sustentabilidad MESMIS"</li><li>Paso a paso con el MESMIS, ofrece un ejemplo de la aplicación del marco a través de un estudio de caso de una manera interactiva y didáctica</li><li>Sustentabilidad y Sistemas Dinámicos presenta los atributos de sustentabilidad desde la perspectiva de sistemas dinámicos utilizando un ejercicio de simulación interactiva</li><li>Diseño Sustentable y Negociación Social muestra, a través de una historia interactiva, el reto y las oportunidades que nos pueden ofrecer las herramientas de evaluación en el diseño de sistemas sustentables en situaciones restrictivas y con conflictos entre actores sociales con intereses divergentes</li></ol>
     culture: es
 
 Content:

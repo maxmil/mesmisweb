@@ -16,7 +16,7 @@
           <div id="contentLeft">
             <div id="contentPane"><?php echo $sf_content ?></div>
             <div id="sponsors">
-              <span><?php echo __('Partners') ?></span>
+              <span><?php echo __('Copresentado por') ?></span>
               <div id="sponsorLogos"><?php echo image_tag('sponsors.gif') ?></div>
             </div>
           </div>

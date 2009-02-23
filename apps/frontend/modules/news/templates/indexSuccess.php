@@ -11,7 +11,7 @@
       </div>
       <div class="separator"></div>
       <div class="niPhoto"><?php echo image_tag('/uploads/'. $newsItem->getPhotoFilename()) ?></div>
-      <div class="niContent">
+      <div class="niContent" style="margin-left:210px">
         <?php echo news_summary($newsItem) ?>
       </div>
     </div>

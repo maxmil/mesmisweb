@@ -17,6 +17,10 @@ a, a:hover, a:visited{
   text-decoration: none;
 }
 
+ul,ol {
+  padding-left: 20px;
+}
+
 p{
   padding-bottom: 10px;
 }
@@ -238,6 +242,20 @@ div.btns{
   height: 20px;
   margin-top: 10px;
   border-top: 1px solid #ccc;
+}
+
+.bookContents ul li{
+  list-style: none;
+  font-weight: normal;
+  padding: 5px 0px;
+  font-size: 11px;
+}
+
+.bookContents li{
+  list-style: square;
+  font-weight: bold;
+  font-size: 14px;
+  padding-top: 10px;
 }
 
 .error{
