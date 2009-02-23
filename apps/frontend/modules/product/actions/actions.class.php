@@ -39,10 +39,15 @@ class productActions extends sfActions
     // Get the user
     $user = UserPeer::retrieveByPK($this->getUser()->getAttribute('userId'));
     if (empty($user)){
-      return $this->renderPartial('getEmail');
+      if($request->isXmlHttpRequest()){
+        return $this->renderPartial('getEmail');
+      }else{
+        return "GetEmail";
+      }
     }
 
-    // If this is ajax request then just return download partial
+    // If this is ajax request then just return download partial which will call
+    // this action as a full page request
     if($request->isXmlHttpRequest()){
       return $this->renderPartial('download');
     }
@@ -97,7 +102,12 @@ class productActions extends sfActions
     if (empty($users)){
       $this->user = new User();
       $this->user->setEmail($email);
-      return $this->renderPartial('register');
+      if($request->isXmlHttpRequest()){
+        return $this->renderPartial('register');
+      }else{
+        return "Register";
+      }
+      
     } else {
       $user = $users[0];
     }

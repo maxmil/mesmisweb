@@ -21,6 +21,14 @@ p{
   padding-bottom: 10px;
 }
 
+h1{
+  padding: 20px 0px;
+  font-weight: normal;
+  color: #3fa81a;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
 #wrapper {
   width: 774px;
   margin: auto;
@@ -111,6 +119,7 @@ p{
 
 #contentMiddle{
   background: url('../images/content_bg_middle.png') repeat-y;
+  min-height: 500px;
 }
 
 #contentBottom{
@@ -351,11 +360,11 @@ h2{
   height: 17px;
 }
 
-#register label{
+#registerFrm label{
   position: absolute;
 }
 
-#register div.input input, #register div.input div, #register div.btns{
+#registerFrm div.input input, #registerFrm div.input div, #registerFrm div.btns{
   margin-left: 130px;
 }
 
