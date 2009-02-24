@@ -71,7 +71,7 @@ class productActions extends sfActions
       
       $response = $this->getResponse();
       $response->setContentType($this->product->getMimeType());
-      $response->setHttpHeader('Content-Disposition', 'attachment; filename='. $fileName);
+      $response->setHttpHeader('Content-Disposition', 'attachment; filename='. $this->product->getResource());
       $response->setHttpHeader('Content-Length', filesize($filePath));
       $response->sendHttpHeaders();
       

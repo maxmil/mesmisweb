@@ -60,38 +60,41 @@
   <?php foreach($pager->getResults() as $product): ?>
     <div class="pr">
 
-        <?php
-          switch ($product->getType()){
-            case ProductPeer::TYPE_FILE:
-              echo '<div class="prIcon">' . link_to_remote(image_tag('/images/ico-'. strtolower($product->getType()) . '.png'), array(
-                'update' => 'dialogCont',
-                'url' => 'product/download?id=' . $product->getId(),
-                'script' => 'true')) . '</div>';
-              echo '<h3>' . link_to_remote($product->getTitle(), array(
-                'update' => 'dialogCont',
-                'url' => 'product/download?id=' . $product->getId(),
-                'script' => 'true')) . '</h3>';
-              break;
-            case ProductPeer::TYPE_MILINK:
-              echo '<div class="prIcon">' . link_to_remote(image_tag('/images/ico-'. strtolower($product->getType()) . '.png'), array(
-                'update' => 'dialogCont',
-                'url' => 'product/open?id=' . $product->getId(),
-                'script' => 'true')) . '</div>';
-              echo '<h3>' . link_to_remote($product->getTitle(), array(
-                'update' => 'dialogCont',
-                'url' => 'product/open?id=' . $product->getId(),
-                'script' => 'true')) . '</h3>';
-              break;
-            case ProductPeer::TYPE_EMAIL:
-              echo '<div class="prIcon"><a href="mailto:' . $product->getResource() . '">' . image_tag('/images/ico-'. strtolower($product->getType()) . '.png') . '</a></div>';
-              echo '<h3><a href="mailto:' . $product->getResource() . '">' . $product->getTitle() . '</a></h3>';
-              break;
-            case ProductPeer::TYPE_URL:
-              echo '<div class="prIcon">' . link_to(image_tag('/images/ico-'. strtolower($product->getType()) . '.png'), $product->getResource()). '</div>';
-              echo '<h3>' . link_to($product->getTitle(), $product->getResource()) . '</h3>';
-              break;
-          }
-        ?>
+        <?php if($product->getType() == ProductPeer::TYPE_FILE): ?>
+          <div class="prIcon">
+          <?php echo link_to_remote(image_tag('/images/ico-'. strtolower($product->getType()) . '.png'), array(
+              'update' => 'dialogCont',
+              'url' => 'product/download?id=' . $product->getId(),
+              'script' => 'true')) ?>
+          </div>
+          <h3>
+           <?php echo link_to_remote($product->getTitle(), array(
+              'update' => 'dialogCont',
+              'url' => 'product/download?id=' . $product->getId(),
+              'script' => 'true')) ?>
+          </h3>
+        <?php elseif($product->getType() == ProductPeer::TYPE_MILINK): ?>
+          <div class="prIcon">
+            <a href="" onclick="openMI('<?php echo $sf_request->getRelativeUrlRoot() ?>', '<?php echo $sf_user->getCulture() ?>');return false">
+              <?php echo image_tag('/images/ico-'. strtolower($product->getType()) . '.png') ?>
+            </a>
+          </div>
+          <h3>
+            <a href="" onclick="openMI('<?php echo $sf_request->getRelativeUrlRoot() ?>', '<?php echo $sf_user->getCulture() ?>');return false">
+              <?php echo $product->getTitle() ?>
+            </a>
+          </h3>
+        <?php elseif($product->getType() == ProductPeer::TYPE_EMAIL): ?>
+          <div class="prIcon">
+            <a href="mailto:<?php echo $product->getResource() ?>"><?php echo image_tag('/images/ico-'. strtolower($product->getType()) . '.png') ?></a>
+          </div>
+          <h3><a href="mailto:<?php echo $product->getResource() ?>"><?php echo $product->getTitle() ?></a></h3>
+        <?php elseif($product->getType() == ProductPeer::TYPE_URL): ?>
+          <div class="prIcon">
+            <?php echo link_to(image_tag('/images/ico-'. strtolower($product->getType()) . '.png'), $product->getResource(), array('target' => 'blank')) ?>
+          </div>
+          <h3><?php echo link_to($product->getTitle(), $product->getResource(), array('target' => 'blank')) ?></h3>
+        <?php endif; ?>
       <div class="prDescrip"><?php echo $product->getDescrip() ?></div>
     </div>
   <?php endforeach; ?>
