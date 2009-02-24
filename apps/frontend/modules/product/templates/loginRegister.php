@@ -41,9 +41,9 @@
 </script>
 
 <div id="products">
-  <h1><?php echo __('Descarga de recursos') ?></h1>
-  <p><?php echo __('Parece ser la primera vez que usted descarga recursos.') ?></p>
-  <p><?php echo __('Por favor rellene el siguiente formulario con sus datos.  A continuación empezará su descarga.') ?></p>
+  <h1><?php echo __('Acceso a recursos') ?></h1>
+  <p><?php echo __('Parece ser la primera vez que usted accede a recursos.') ?></p>
+  <p><?php echo __('Por favor rellene el siguiente formulario con sus datos.  A continuación accederá al recurso solicitado.') ?></p>
   <form id="registerFrm" action="<?php echo url_for('product/register?id=' .  $id) ?>" onsubmit="return validateRegister();">
     <?php echo object_input_hidden_tag($user, 'getEmail') ?>
     <div class="input">

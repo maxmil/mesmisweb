@@ -13,23 +13,19 @@ class BaseProductI18nForm extends BaseFormPropel
   public function setup()
   {
     $this->setWidgets(array(
-      'title'           => new sfWidgetFormInput(),
-      'descrip'         => new sfWidgetFormTextarea(),
-      'photo_filename'  => new sfWidgetFormInput(),
-      'attach_filename' => new sfWidgetFormInput(),
-      'url'             => new sfWidgetFormInput(),
-      'id'              => new sfWidgetFormInputHidden(),
-      'culture'         => new sfWidgetFormInputHidden(),
+      'title'    => new sfWidgetFormInput(),
+      'descrip'  => new sfWidgetFormTextarea(),
+      'resource' => new sfWidgetFormInput(),
+      'id'       => new sfWidgetFormInputHidden(),
+      'culture'  => new sfWidgetFormInputHidden(),
     ));
 
     $this->setValidators(array(
-      'title'           => new sfValidatorString(array('max_length' => 255)),
-      'descrip'         => new sfValidatorString(array('required' => false)),
-      'photo_filename'  => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'attach_filename' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'url'             => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'id'              => new sfValidatorPropelChoice(array('model' => 'Product', 'column' => 'id', 'required' => false)),
-      'culture'         => new sfValidatorPropelChoice(array('model' => 'ProductI18n', 'column' => 'culture', 'required' => false)),
+      'title'    => new sfValidatorString(array('max_length' => 255)),
+      'descrip'  => new sfValidatorString(array('required' => false)),
+      'resource' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'id'       => new sfValidatorPropelChoice(array('model' => 'Product', 'column' => 'id', 'required' => false)),
+      'culture'  => new sfValidatorPropelChoice(array('model' => 'ProductI18n', 'column' => 'culture', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('product_i18n[%s]');

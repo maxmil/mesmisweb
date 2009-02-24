@@ -52,28 +52,47 @@
     $('dialogWrapper').style.display = 'none';
     $('dialogCont').innerHTML = '';
   }
-  
+
   //]]>
 </script>
 
 <div id="products">
   <?php foreach($pager->getResults() as $product): ?>
     <div class="pr">
-      <h2>
-        <?php echo link_to_remote($product->getTitle(), array(
-           'update' => 'dialogCont',
-           'url' => 'product/download?id=' . $product->getId(),
-           'script' => 'true'
-        )) ?>
-      </h2>
-      <div class="separator"></div>
-      <?php if($product->getPhotoFilename() != null && $product->getPhotoFilename() != ''): ?>
-        <div class="prPhotoCont"><div class="prPhoto"><?php echo image_tag('/uploads/'. $product->getPhotoFilename()) ?></div></div>
-      <?php endif; ?>
-      <div class="prContent">
-        <?php echo $product->getDescrip() ?>
-      </div>
+
+        <?php
+          switch ($product->getType()){
+            case ProductPeer::TYPE_FILE:
+              echo '<div class="prIcon">' . link_to_remote(image_tag('/images/ico-'. strtolower($product->getType()) . '.png'), array(
+                'update' => 'dialogCont',
+                'url' => 'product/download?id=' . $product->getId(),
+                'script' => 'true')) . '</div>';
+              echo '<h3>' . link_to_remote($product->getTitle(), array(
+                'update' => 'dialogCont',
+                'url' => 'product/download?id=' . $product->getId(),
+                'script' => 'true')) . '</h3>';
+              break;
+            case ProductPeer::TYPE_MILINK:
+              echo '<div class="prIcon">' . link_to_remote(image_tag('/images/ico-'. strtolower($product->getType()) . '.png'), array(
+                'update' => 'dialogCont',
+                'url' => 'product/open?id=' . $product->getId(),
+                'script' => 'true')) . '</div>';
+              echo '<h3>' . link_to_remote($product->getTitle(), array(
+                'update' => 'dialogCont',
+                'url' => 'product/open?id=' . $product->getId(),
+                'script' => 'true')) . '</h3>';
+              break;
+            case ProductPeer::TYPE_EMAIL:
+              echo '<div class="prIcon"><a href="mailto:' . $product->getResource() . '">' . image_tag('/images/ico-'. strtolower($product->getType()) . '.png') . '</a></div>';
+              echo '<h3><a href="mailto:' . $product->getResource() . '">' . $product->getTitle() . '</a></h3>';
+              break;
+            case ProductPeer::TYPE_URL:
+              echo '<div class="prIcon">' . link_to(image_tag('/images/ico-'. strtolower($product->getType()) . '.png'), $product->getResource()). '</div>';
+              echo '<h3>' . link_to($product->getTitle(), $product->getResource()) . '</h3>';
+              break;
+          }
+        ?>
+      <div class="prDescrip"><?php echo $product->getDescrip() ?></div>
     </div>
   <?php endforeach; ?>
 </div>
-<div style="clear:both"></div>

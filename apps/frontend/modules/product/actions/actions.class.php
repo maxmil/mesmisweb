@@ -27,6 +27,11 @@ class productActions extends sfActions
     $this->pager = $pager;
   }
 
+  public function executeOpen(sfWebRequest $request)
+  {
+    $this->forward('product', 'download');
+  }
+
   public function executeDownload(sfWebRequest $request)
   {
 
@@ -59,11 +64,10 @@ class productActions extends sfActions
     $download->setCulture($this->getUser()->getCulture());
     $download->save();
 
-    // Stream the file or forward to url
-    $fileName = $this->product->getAttachFilename();
-    if(!empty($fileName)){
+    // Stream the file or render partial
+    if($this->product->getType() == ProductPeer::TYPE_FILE){
 
-      $filePath = sfConfig::get('sf_data_dir') . DIRECTORY_SEPARATOR . 'products' . DIRECTORY_SEPARATOR . $fileName;
+      $filePath = sfConfig::get('sf_data_dir') . DIRECTORY_SEPARATOR . 'products' . DIRECTORY_SEPARATOR . $this->product->getResource();
       
       $response = $this->getResponse();
       $response->setContentType($this->product->getMimeType());
@@ -76,14 +80,8 @@ class productActions extends sfActions
       return sfView::NONE;
 
     } else {
-
-      // If partial with this name exists then render else redirect to url
-      $partial = $this->getContext()->getModuleDirectory() . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . '_' . $this->product->getUrl() . '.php';
-      if (is_readable($partial)) {
-         return $this->renderPartial($this->product->getUrl());
-      } else {
-         return $this->redirect($this->product->getUrl());
-      }
+      $this->logMessage($this->product->getResource());
+      return $this->renderPartial($this->product->getResource());
     }
   }
 
@@ -91,7 +89,11 @@ class productActions extends sfActions
   {
 
     $this->id = $request->getParameter('id');
-    $email = $request->getParameter('email');
+    $email = $request->getParameter('e-mail');
+
+    // Get the product
+    $this->product = ProductPeer::retrieveByPK($this->id);
+    $this->forward404If(empty($this->product));
 
     // Check that user is registered
     $c = new Criteria();
@@ -128,6 +130,10 @@ class productActions extends sfActions
   public function executeRegister(sfRequest $request)
   {
     $this->id = $request->getParameter('id');
+
+    // Get the product
+    $this->product = ProductPeer::retrieveByPK($this->id);
+    $this->forward404If(empty($this->product));
 
     // Define new user
     $user = new User();

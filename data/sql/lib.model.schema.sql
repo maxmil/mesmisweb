@@ -44,6 +44,26 @@ CREATE TABLE `visit`
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
+#-- comment
+#-----------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `comment`;
+
+
+CREATE TABLE `comment`
+(
+	`user_id` INTEGER,
+	`comment` TEXT,
+	`created_at` DATETIME,
+	`id` INTEGER  NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY (`id`),
+	INDEX `comment_FI_1` (`user_id`),
+	CONSTRAINT `comment_FK_1`
+		FOREIGN KEY (`user_id`)
+		REFERENCES `user` (`id`)
+)Type=InnoDB;
+
+#-----------------------------------------------------------------------------
 #-- content
 #-----------------------------------------------------------------------------
 
@@ -119,6 +139,39 @@ CREATE TABLE `news_item_i18n`
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
+#-- product_group
+#-----------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `product_group`;
+
+
+CREATE TABLE `product_group`
+(
+	`id` INTEGER  NOT NULL AUTO_INCREMENT,
+	`alias` VARCHAR(20),
+	PRIMARY KEY (`id`)
+)Type=InnoDB;
+
+#-----------------------------------------------------------------------------
+#-- product_group_i18n
+#-----------------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `product_group_i18n`;
+
+
+CREATE TABLE `product_group_i18n`
+(
+	`title` VARCHAR(255)  NOT NULL,
+	`id` INTEGER  NOT NULL,
+	`culture` VARCHAR(7)  NOT NULL,
+	PRIMARY KEY (`id`,`culture`),
+	CONSTRAINT `product_group_i18n_FK_1`
+		FOREIGN KEY (`id`)
+		REFERENCES `product_group` (`id`)
+		ON DELETE CASCADE
+)Type=InnoDB;
+
+#-----------------------------------------------------------------------------
 #-- product
 #-----------------------------------------------------------------------------
 
@@ -128,11 +181,18 @@ DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product`
 (
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
+	`product_group_id` INTEGER,
 	`mimetype` VARCHAR(20),
+	`priority` INTEGER,
+	`type` VARCHAR(10),
 	`state` VARCHAR(10) default 'PUBLISHED',
 	`created_at` DATETIME,
 	`updated_at` DATETIME,
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+	INDEX `product_FI_1` (`product_group_id`),
+	CONSTRAINT `product_FK_1`
+		FOREIGN KEY (`product_group_id`)
+		REFERENCES `product_group` (`id`)
 )Type=InnoDB;
 
 #-----------------------------------------------------------------------------
@@ -146,9 +206,7 @@ CREATE TABLE `product_i18n`
 (
 	`title` VARCHAR(255)  NOT NULL,
 	`descrip` TEXT,
-	`photo_filename` VARCHAR(255),
-	`attach_filename` VARCHAR(255),
-	`url` VARCHAR(255),
+	`resource` VARCHAR(255),
 	`id` INTEGER  NOT NULL,
 	`culture` VARCHAR(7)  NOT NULL,
 	PRIMARY KEY (`id`,`culture`),

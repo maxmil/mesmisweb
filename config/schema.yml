@@ -12,6 +12,10 @@ propel:
     user_id:         ~
     ip:              { type: varchar(15) }
     created_at:      ~
+  comment:
+    user_id:         ~
+    comment:         { type: longvarchar }
+    created_at:      ~
   content:
     _attributes:     { phpName: Content }
     id:              ~
@@ -35,10 +39,20 @@ propel:
     _attributes:     { phpName: NewsItemI18n }
     title:           { type: varchar(255), required: true }
     body:            { type: longvarchar }
+  product_group:
+    _attributes:     { phpName: ProductGroup }
+    id:              ~
+    alias:           { type: varchar(20) }
+  product_group_i18n:
+    _attributes:     { phpName: ProductGroupI18n }
+    title:           { type: varchar(255), required: true }
   product:
     _attributes:     { phpName: Product }
     id:              ~
+    product_group_id: ~
     mimetype:        { type: varchar(20) }
+    priority:        { type: integer }
+    type:            { type: varchar(10) }
     state:           { type: varchar(10), default: PUBLISHED }
     created_at:      ~
     updated_at:      ~
@@ -46,9 +60,7 @@ propel:
     _attributes:     { phpName: ProductI18n }
     title:           { type: varchar(255), required: true }
     descrip:         { type: longvarchar }
-    photo_filename:  { type: varchar(255) }
-    attach_filename: { type: varchar(255) }
-    url:             { type: varchar(255) }
+    resource:        { type: varchar(255) }
   download:
     user_id:         ~
     product_id:      ~

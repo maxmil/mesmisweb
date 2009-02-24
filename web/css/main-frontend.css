@@ -33,6 +33,10 @@ h1{
   text-transform: uppercase;
 }
 
+a img{
+  border: 0px;
+}
+
 #wrapper {
   width: 774px;
   margin: auto;
@@ -355,21 +359,11 @@ h2{
   clear: right;
 }
 
-.prPhotoCont{
+.prIcon{
   float: right;
-  margin: 0px;
-  padding: 0px 0px 20px 20px;
-  background-color: #fff;
 }
 
-.prPhoto{
-  float: left;
-  border: 4px solid #666;
-}
-
-.prContent .separator{
-  margin: 5px 0px;
-  height: 5px;
+.prDescrip{
 }
 
 /* Login and registration */

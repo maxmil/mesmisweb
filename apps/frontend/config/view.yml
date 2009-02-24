@@ -11,7 +11,7 @@ default:
 
   stylesheets:    [main-frontend.css]
 
-  javascripts:    [%SF_PROTOTYPE_WEB_DIR%/js/prototype]
+  javascripts:    [%SF_PROTOTYPE_WEB_DIR%/js/prototype, frontend]
 
   has_layout:     on
   layout:         layout

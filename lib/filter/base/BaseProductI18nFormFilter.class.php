@@ -15,19 +15,15 @@ class BaseProductI18nFormFilter extends BaseFormFilterPropel
   public function setup()
   {
     $this->setWidgets(array(
-      'title'           => new sfWidgetFormFilterInput(),
-      'descrip'         => new sfWidgetFormFilterInput(),
-      'photo_filename'  => new sfWidgetFormFilterInput(),
-      'attach_filename' => new sfWidgetFormFilterInput(),
-      'url'             => new sfWidgetFormFilterInput(),
+      'title'    => new sfWidgetFormFilterInput(),
+      'descrip'  => new sfWidgetFormFilterInput(),
+      'resource' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'title'           => new sfValidatorPass(array('required' => false)),
-      'descrip'         => new sfValidatorPass(array('required' => false)),
-      'photo_filename'  => new sfValidatorPass(array('required' => false)),
-      'attach_filename' => new sfValidatorPass(array('required' => false)),
-      'url'             => new sfValidatorPass(array('required' => false)),
+      'title'    => new sfValidatorPass(array('required' => false)),
+      'descrip'  => new sfValidatorPass(array('required' => false)),
+      'resource' => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('product_i18n_filters[%s]');
@@ -45,13 +41,11 @@ class BaseProductI18nFormFilter extends BaseFormFilterPropel
   public function getFields()
   {
     return array(
-      'title'           => 'Text',
-      'descrip'         => 'Text',
-      'photo_filename'  => 'Text',
-      'attach_filename' => 'Text',
-      'url'             => 'Text',
-      'id'              => 'ForeignKey',
-      'culture'         => 'Text',
+      'title'    => 'Text',
+      'descrip'  => 'Text',
+      'resource' => 'Text',
+      'id'       => 'ForeignKey',
+      'culture'  => 'Text',
     );
   }
 }

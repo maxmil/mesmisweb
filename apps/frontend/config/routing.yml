@@ -1,10 +1,15 @@
+# mesmis interactivo
+mesmis_interactivo:
+  url: /mesmis-interactivo
+  param: { module: product, action: open, id: 16, sf_culture: es}
+
 # homepages
 homepage:
   url:   /
   param: { module: news, action: index }
 
 hompage_culture:
-  url:   /:culture
+  url:   /:sf_culture
   requirements: { sf_culture: (?:es|en) }
   param: { module: news, action: index }
 

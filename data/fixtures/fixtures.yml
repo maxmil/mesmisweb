@@ -1,17 +1,35 @@
 NewsItem:
-  mesmisLibro:
+  niMesmisLibro:
     photo_filename: libro_mesmis.jpg
-  mesmisInteractivo:
+  niMesmisInteractivo:
     photo_filename: mesmis_interactivo.png
 
 NewsItemI18n:
-  mesmisLibro_es:
-    id: mesmisLibro
+  niMesmisLibro_es:
+    id: niMesmisLibro
     title: Lanzamiento del cuarto volumen de la serie evaluación de sustentabilidad
     body: <p><a href="">Descargar</a></p><p>En la silenciosa construcción de la sociedad sustentable, una dimensión clave es la del manejo de los recursos naturales. Este libro, el cuarto de una serie, hace un recuento de los avances logrados durante más de una década en la aplicación de una metodología agroecológica original y sobre todo útil, de obligada lectura para quienes están involucrados en la creación de sistemas productivos alternativos.</p><p align="right">Victor Toledo</p><p>Este volumen es una lectura esencial para los interesados en el tema de sustentabilidad y su aplicación a los sistemas de manejo de recursos naturales. Presenta una revisión detallada de los temas de frontera en las evaluaciones de sustentabilidad así como un análisis crítico de más de 40 estudios de caso que han aplicado el marco MESMIS lo largo de Iberoamérica.</p><p>Este volumen es una lectura esencial para los interesados en el tema de sustentabilidad y su aplicación a los sistemas de manejo de recursos naturales. Presenta la oportunidad poco común de acceder tanto a una revisión detallada de los principales temas de frontera en las evaluaciones de sustentabilidad como de aprender de la experiencia práctica de 10 años de aplicación del marco MESMIS en más de 40 estudios de caso a lo largo de Iberoamérica.</p><p>Interrogantes clave cómo ¿Qué marcos de evaluación de sustentabilidad se han desarrollado en la última década? ¿Qué tipo de indicadores son más apropiados y cómo pueden integrarse de manera transparente, sin perder la multidimensionalidad del análisis? ¿Cómo realizar una evaluación de sustentabilidad multi-escalar?¿Cómo podemos incorporar una perspectiva de sistemas dinámicos en la evaluación? ¿Qué dilemas institucionales y éticos enfrenta el discurso sobre sustentabilidad? ¿Cuáles son las lecciones más importantes de los diversos estudios de caso? son abordados a cabalidad en este libro.</p><p>Como complemento al texto, y dando respuesta a la carencia crítica de materiales didácticos en la literatura sobre evaluaciones de sustentabilidad, este volumen incluye también un CD con programas amistosos de simulación interactiva que ayudan a entender la naturaleza dinámica del concepto de sustentabilidad y la compleja interdependencia entre sus dimensiones social, económica y ambiental.</p><h3>Evaluación de sustentabilidad: un enfoque dinámico y multi-dimensional</h3><p>Marta Astier, Omar Masera y Yankuic Galván (Coordinadores)<br />Publicado por el Centro de Investigaciones en Geografía Ambiental (CIGA-UNAM), el Centro de Investigaciones en Ecosistemas (CIEco-UNAM), El Colegio de la Frontera Sur (ECOSUR), el Grupo Interdisciplinario de Tecnología Rural Apropiada (GIRA A.C.), la Fundación Instituto de Agricultura Ecológica y Sostenible y la Sociedad Española de Agricultura Ecológica (SEAE)<br />ISBN 978-84-612-5641-9<br />200 páginas</p><h3>CONTENIDO</h3><ul class="bookContents"><li>Prefacio</li><li>Sección I. La experiencia del marco MESMIS<ul><li><strong>1. El proyecto de evaluación de sustentabilidad MESMIS</strong><br />Omar Masera, Marta Astier, Santiago López-Ridaura, Yankuic Galván-Miyoshi, Tamara Ortiz-Ávila, Luis E. García-Barrios, Raúl García-Barrios,Carlos González y Erika Speelman</li><li><strong>2. Sistematización y análisis de las experiencias de evaluación con el marco MESMIS: lecciones para el futuro</strong><br />Erika N. Speelman, Marta Astier y Yankuic Galván-Miyoshi</li></ul></li><li>Sección II. Temas estratégicos en las evaluaciones de sustentabilidad<ul><li><strong>3. Las evaluaciones de sustentabilidad</strong><br />Yankuic Galván-Miyoshi, Omar Masera y Santiago López-Ridaura</li><li><strong>4. Caracterización de sistemas de manejo de recursos naturales</strong><br />Tamara Ortiz-Ávila</li><li><strong>5. Formulación de indicadores socioambientales para evaluaciones de sustentabilidad de sistemas de manejo complejos</strong><br />Marta Astier y Carlos González</li><li><strong>6. Integración de indicadores en la evaluación de sustentabilidad: de los índices agregados a la representación multicriterio</strong><br />Yankuic Galván-Miyoshi</li><li><strong>7. La evaluación multiescalar de la sustentabilidad: retos y avances metodológicos</strong><br />Santiago López-Ridaura</li><li><strong>8. Construcción y uso de modelos dinámicos sencillos para evaluar estrategias de manejo productivo de recursos bióticos. Una guía básica ilustrada</strong><br />Luis García-Barrios, Omar Masera y Raúl García-Barrios</li><li><strong>9. Simuladores de escenarios complejos socioambientales: herramientas de apoyo para entender, evaluar y negociar estrategias sustentables de manejo de recursos naturales</strong><br />Luis García-Barrios y Max Pimm</li><li><strong>10. La sociedad controlable y la sustentabilidad</strong><br />Raúl García-Barrios y Luis García-Barrios</li><li><strong>11. Retos para los análisis de sustentabilidad de los SMRN</strong><br />Marta Astier, Yankuic Galván y Omar Masera</li></ul></li><li>Sección III. Herramientas pedagógicas interactivas<ul><li><strong>12. Proyecto MESMIS</strong><br />Yankuic Galván-Miyoshi</li><li><strong>13. Paso a paso con el MESMIS</strong><br />Yankuic Galván-Miyoshi, Max Pimm, Tamara Ortiz-Ávila, Marta Astier y Omar Masera</li><li><strong>14. Sustentabilidad y sistemas dinámicos</strong><br />Luis García-Barrios y Max Pimm</li><li><strong>15. Diseño sustentable y negociación social</strong><br />Luis García-Barrios y Max Pimm</li></ul></li></ul>
     culture: es
-  mesmisInteractivo_es:
-    id: mesmisInteractivo
+  niMesmisInteractivo_es:
+    id: niMesmisInteractivo
+    title: Lanzamiento MESMIS Interactivo
+    body: <p><a href="">Acceder a MESMIS interactivo</a></p><p>MESMIS interactivo es un programa didáctico y amigable que permite al usuario reforzar los conceptos y las bases metodológicas del marco de evaluación de la sustentabilidad MESMIS. Mediante programas de simulación interactiva, MESMIS interactivo expone la naturaleza dinámica del concepto de sustentabilidad y la compleja interdependencia entre sus dimensiones social, económica y ambiental.</p><p>Este material se distribuye como parte del libro “Evaluación de sustentabilidad: un enfoque dinámico y multidimensional” [link] publicado por el Centro de Investigaciones en Geografía Ambiental (CIGA-UNAM), el Centro de Investigaciones en Ecosistemas (CIEco-UNAM), El Colegio de la Frontera Sur (ECOSUR), el Grupo Interdisciplinario de Tecnología Rural Apropiada (GIRA A.C.), la Fundación Instituto de Agricultura Ecológica y Sostenible y la Sociedad Española de Agricultura Ecológica (SEAE)<br />ISBN 978-84-612-5641-9</p><p>MESMIS interactivo es una herramienta diseñada para la enseñanza del concepto de sustentabilidad y su evaluación desde la perspectiva de sistemas dinámicos. MESMIS interactivo contiene programas amistosos de simulación interactiva que ayudan a entender la naturaleza dinámica del concepto de sustentabilidad y la compleja interdependencia entre sus dimensiones social, económica y ambiental. Este material incluye cuatro módulos principales:</p><ol><li>Proyecto MESMIS, detalla los componentes y principales logros del "proyecto evaluación de sustentabilidad MESMIS"</li><li>Paso a paso con el MESMIS, ofrece un ejemplo de la aplicación del marco a través de un estudio de caso de una manera interactiva y didáctica</li><li>Sustentabilidad y Sistemas Dinámicos presenta los atributos de sustentabilidad desde la perspectiva de sistemas dinámicos utilizando un ejercicio de simulación interactiva</li><li>Diseño Sustentable y Negociación Social muestra, a través de una historia interactiva, el reto y las oportunidades que nos pueden ofrecer las herramientas de evaluación en el diseño de sistemas sustentables en situaciones restrictivas y con conflictos entre actores sociales con intereses divergentes</li></ol>
+    culture: es
+
+NewsItem:
+  niMesmisLibro:
+    photo_filename: libro_mesmis.jpg
+  niMesmisInteractivo:
+    photo_filename: mesmis_interactivo.png
+
+NewsItemI18n:
+  niMesmisLibro_es:
+    id: niMesmisLibro
+    title: Lanzamiento del cuarto volumen de la serie evaluación de sustentabilidad
+    body: <p><a href="">Descargar</a></p><p>En la silenciosa construcción de la sociedad sustentable, una dimensión clave es la del manejo de los recursos naturales. Este libro, el cuarto de una serie, hace un recuento de los avances logrados durante más de una década en la aplicación de una metodología agroecológica original y sobre todo útil, de obligada lectura para quienes están involucrados en la creación de sistemas productivos alternativos.</p><p align="right">Victor Toledo</p><p>Este volumen es una lectura esencial para los interesados en el tema de sustentabilidad y su aplicación a los sistemas de manejo de recursos naturales. Presenta una revisión detallada de los temas de frontera en las evaluaciones de sustentabilidad así como un análisis crítico de más de 40 estudios de caso que han aplicado el marco MESMIS lo largo de Iberoamérica.</p><p>Este volumen es una lectura esencial para los interesados en el tema de sustentabilidad y su aplicación a los sistemas de manejo de recursos naturales. Presenta la oportunidad poco común de acceder tanto a una revisión detallada de los principales temas de frontera en las evaluaciones de sustentabilidad como de aprender de la experiencia práctica de 10 años de aplicación del marco MESMIS en más de 40 estudios de caso a lo largo de Iberoamérica.</p><p>Interrogantes clave cómo ¿Qué marcos de evaluación de sustentabilidad se han desarrollado en la última década? ¿Qué tipo de indicadores son más apropiados y cómo pueden integrarse de manera transparente, sin perder la multidimensionalidad del análisis? ¿Cómo realizar una evaluación de sustentabilidad multi-escalar?¿Cómo podemos incorporar una perspectiva de sistemas dinámicos en la evaluación? ¿Qué dilemas institucionales y éticos enfrenta el discurso sobre sustentabilidad? ¿Cuáles son las lecciones más importantes de los diversos estudios de caso? son abordados a cabalidad en este libro.</p><p>Como complemento al texto, y dando respuesta a la carencia crítica de materiales didácticos en la literatura sobre evaluaciones de sustentabilidad, este volumen incluye también un CD con programas amistosos de simulación interactiva que ayudan a entender la naturaleza dinámica del concepto de sustentabilidad y la compleja interdependencia entre sus dimensiones social, económica y ambiental.</p><h3>Evaluación de sustentabilidad: un enfoque dinámico y multi-dimensional</h3><p>Marta Astier, Omar Masera y Yankuic Galván (Coordinadores)<br />Publicado por el Centro de Investigaciones en Geografía Ambiental (CIGA-UNAM), el Centro de Investigaciones en Ecosistemas (CIEco-UNAM), El Colegio de la Frontera Sur (ECOSUR), el Grupo Interdisciplinario de Tecnología Rural Apropiada (GIRA A.C.), la Fundación Instituto de Agricultura Ecológica y Sostenible y la Sociedad Española de Agricultura Ecológica (SEAE)<br />ISBN 978-84-612-5641-9<br />200 páginas</p><h3>CONTENIDO</h3><ul class="bookContents"><li>Prefacio</li><li>Sección I. La experiencia del marco MESMIS<ul><li><strong>1. El proyecto de evaluación de sustentabilidad MESMIS</strong><br />Omar Masera, Marta Astier, Santiago López-Ridaura, Yankuic Galván-Miyoshi, Tamara Ortiz-Ávila, Luis E. García-Barrios, Raúl García-Barrios,Carlos González y Erika Speelman</li><li><strong>2. Sistematización y análisis de las experiencias de evaluación con el marco MESMIS: lecciones para el futuro</strong><br />Erika N. Speelman, Marta Astier y Yankuic Galván-Miyoshi</li></ul></li><li>Sección II. Temas estratégicos en las evaluaciones de sustentabilidad<ul><li><strong>3. Las evaluaciones de sustentabilidad</strong><br />Yankuic Galván-Miyoshi, Omar Masera y Santiago López-Ridaura</li><li><strong>4. Caracterización de sistemas de manejo de recursos naturales</strong><br />Tamara Ortiz-Ávila</li><li><strong>5. Formulación de indicadores socioambientales para evaluaciones de sustentabilidad de sistemas de manejo complejos</strong><br />Marta Astier y Carlos González</li><li><strong>6. Integración de indicadores en la evaluación de sustentabilidad: de los índices agregados a la representación multicriterio</strong><br />Yankuic Galván-Miyoshi</li><li><strong>7. La evaluación multiescalar de la sustentabilidad: retos y avances metodológicos</strong><br />Santiago López-Ridaura</li><li><strong>8. Construcción y uso de modelos dinámicos sencillos para evaluar estrategias de manejo productivo de recursos bióticos. Una guía básica ilustrada</strong><br />Luis García-Barrios, Omar Masera y Raúl García-Barrios</li><li><strong>9. Simuladores de escenarios complejos socioambientales: herramientas de apoyo para entender, evaluar y negociar estrategias sustentables de manejo de recursos naturales</strong><br />Luis García-Barrios y Max Pimm</li><li><strong>10. La sociedad controlable y la sustentabilidad</strong><br />Raúl García-Barrios y Luis García-Barrios</li><li><strong>11. Retos para los análisis de sustentabilidad de los SMRN</strong><br />Marta Astier, Yankuic Galván y Omar Masera</li></ul></li><li>Sección III. Herramientas pedagógicas interactivas<ul><li><strong>12. Proyecto MESMIS</strong><br />Yankuic Galván-Miyoshi</li><li><strong>13. Paso a paso con el MESMIS</strong><br />Yankuic Galván-Miyoshi, Max Pimm, Tamara Ortiz-Ávila, Marta Astier y Omar Masera</li><li><strong>14. Sustentabilidad y sistemas dinámicos</strong><br />Luis García-Barrios y Max Pimm</li><li><strong>15. Diseño sustentable y negociación social</strong><br />Luis García-Barrios y Max Pimm</li></ul></li></ul>
+    culture: es
+  niMesmisInteractivo_es:
+    id: niMesmisInteractivo
     title: Lanzamiento MESMIS Interactivo
     body: <p><a href="">Acceder a MESMIS interactivo</a></p><p>MESMIS interactivo es un programa didáctico y amigable que permite al usuario reforzar los conceptos y las bases metodológicas del marco de evaluación de la sustentabilidad MESMIS. Mediante programas de simulación interactiva, MESMIS interactivo expone la naturaleza dinámica del concepto de sustentabilidad y la compleja interdependencia entre sus dimensiones social, económica y ambiental.</p><p>Este material se distribuye como parte del libro “Evaluación de sustentabilidad: un enfoque dinámico y multidimensional” [link] publicado por el Centro de Investigaciones en Geografía Ambiental (CIGA-UNAM), el Centro de Investigaciones en Ecosistemas (CIEco-UNAM), El Colegio de la Frontera Sur (ECOSUR), el Grupo Interdisciplinario de Tecnología Rural Apropiada (GIRA A.C.), la Fundación Instituto de Agricultura Ecológica y Sostenible y la Sociedad Española de Agricultura Ecológica (SEAE)<br />ISBN 978-84-612-5641-9</p><p>MESMIS interactivo es una herramienta diseñada para la enseñanza del concepto de sustentabilidad y su evaluación desde la perspectiva de sistemas dinámicos. MESMIS interactivo contiene programas amistosos de simulación interactiva que ayudan a entender la naturaleza dinámica del concepto de sustentabilidad y la compleja interdependencia entre sus dimensiones social, económica y ambiental. Este material incluye cuatro módulos principales:</p><ol><li>Proyecto MESMIS, detalla los componentes y principales logros del "proyecto evaluación de sustentabilidad MESMIS"</li><li>Paso a paso con el MESMIS, ofrece un ejemplo de la aplicación del marco a través de un estudio de caso de una manera interactiva y didáctica</li><li>Sustentabilidad y Sistemas Dinámicos presenta los atributos de sustentabilidad desde la perspectiva de sistemas dinámicos utilizando un ejercicio de simulación interactiva</li><li>Diseño Sustentable y Negociación Social muestra, a través de una historia interactiva, el reto y las oportunidades que nos pueden ofrecer las herramientas de evaluación en el diseño de sistemas sustentables en situaciones restrictivas y con conflictos entre actores sociales con intereses divergentes</li></ol>
     culture: es
@@ -32,59 +50,129 @@ ContentI18n:
     body: Here are the links
     culture: en
 
+ProductGroup:
+  pgMesmisInteractivo:
+    alias: MESMISINT
+  pgBook:
+    alias: BOOK
+  pgArticle:
+    alias: ARTICLE
+  pgThesis:
+    alias: THESIS
+  pgReport:
+    alias: REPORT
+  pgManual:
+    alias: MANUAL
+  pgSupport:
+    alias: SUPPORT
+
+ProductGroupI18n:
+  pgMesmisInteractivo_es:
+    id: pgMesmisInteractivo
+    title: MESMIS Interactivo
+    culture: es
+  pgBook_es:
+    id: pgBook
+    title: Libros
+    culture: es
+  pgArticle_es:
+    id: pgArticle
+    title: Artículos en revistas
+    culture: es
+  pgThesis_es:
+    id: pgThesis
+    title: Tesis
+    culture: es
+  pgReport_es:
+    id: pgReport
+    title: Reportes y documentos de trabajo
+    culture: es
+  pgManual_es:
+    id: pgManual
+    title: Divulgación y manuales técnicos
+    culture: es
+  pgSupport_es:
+    id: pgSupport
+    title: Material de apoyo
+    culture: es
+  pgMesmisInteractivo_en:
+    id: pgMesmisInteractivo
+    title: MESMIS Interactive
+    culture: en
+  pgBook_en:
+    id: pgBook
+    title: Books
+    culture: en
+  pgArticle_en:
+    id: pgArticle
+    title: Articles
+    culture: en
+  pgThesis_en:
+    id: pgThesis
+    title: Thesis
+    culture: en
+  pgReport_en:
+    id: pgReport
+    title: Reports
+    culture: en
+  pgManual_en:
+    id: pgManual
+    title: Technical manuals
+    culture: en
+  pgSupport_en:
+    id: pgSupport
+    title: Support material
+    culture: en
+
 Product:
-  product1:
-    mimetype: 	application/pdf
-    state: PUBLISHED
-  product2:
-    state: PUBLISHED
-  product3:
+  pMesmisInteractivoLink:
+    product_group_id: pgMesmisInteractivo
+    type: MILINK
+  pMesmisInteractivoCd:
+    product_group_id: pgMesmisInteractivo
     mimetype: application/x-compressed
-    state: PUBLISHED
+    type: FILE
+  pTestProd:
+    product_group_id: pgBook
+    mimetype: application/pdf
+    type: FILE
+  pTestProd2:
+    product_group_id: pgBook
+    type: URL
+  pTestProd3:
+    product_group_id: pgBook
+    type: EMAIL
 
 ProductI18n:
-  product1es:
-    id: product1
-    title: Pdf muy interesante
-    descrip: Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre. Puedes descargar este pdf super interesante para leer en tu tiempo libre.
-    photo_filename: item1.jpg
-    attach_filename: product_es.pdf
-    culture: es
-  product1en:
-    id: product1
-    title: Very interesting pdf
-    descrip: You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time. You can download this extremely interesting pdf to read in your free time.
-    photo_filename: item1.jpg
-    attach_filename: product_en.pdf
-    culture: en
-  product2es:
-    id: product2
-    title: Mesmis interactivo en linea
+  pMesmisInteractivoLink_es:
+    id: pMesmisInteractivoLink
+    title: MESMIS INTERACTIVO en línea
     descrip: Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea. Aceso directo a mesmis interactivo en línea.
-    photo_filename: item1.jpg
-    url: mesmis_interactivo
+    resource: mesmis_interactivo
     culture: es
-  product2en:
-    id: product2
-    title: Mesmis interactive on-line
-    descrip: Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line. Direct access to Mesmis interactive on-line.
-    photo_filename: item1.jpg
-    url: mesmis_interactivo
-    culture: en
-  product3es:
-    id: product3
-    title: Descargar mesmis interactivo
-    descrip: Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina. Descargar mesmis interactivo para guardarlo en tu maquina.
-    photo_filename: item1.jpg
-    attach_filename: test.zip
+  pMesmisInteractivoCd_es:
+    id: pMesmisInteractivoCd
+    title: Descargar MESMIS Interactivo
+    descrip: Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar.
+    resource: mesmis-interactivo.zip
     culture: es
-  product3en:
-    id: product3
-    title: Download mesmis interactive
-    descrip: Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer. Download mesmis interactive tu your computer.
-    photo_filename: item1.jpg
-    attach_filename: test.zip
-    culture: en
-
+  pTestProd_es:
+    id: pTestProd
+    title: Producto pdf de prueba
+    descrip: Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar Descargar.
+    resource: product_es.pdf
+    culture: es
+  pTestProd2_es:
+    id: pTestProd2
+    title: Producto pdf de prueba
+    descrip: Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. 
+    resource: http://www.google.com
+    culture: es
+  pTestProd3_es:
+    id: pTestProd3
+    title: Producto pdf de prueba
+    descrip: Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir. Abrir.
+    resource: agroecologia@gira.org.mx
+    culture: es
 
 
