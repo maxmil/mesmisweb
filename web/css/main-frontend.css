@@ -366,6 +366,22 @@ h2{
 .prDescrip{
 }
 
+/* Comments */
+#comment{
+  padding: 0px 26px 40px 26px;
+}
+
+#comment textarea{
+  padding: 2px;
+  width: 100%;
+  height: 200px;
+}
+
+#commentFrm .submit{
+  float: right;
+  margin: 10px 0px 100px 0px;
+}
+
 /* Login and registration */
 #email{
   width: 200px;

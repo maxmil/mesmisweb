@@ -5,6 +5,7 @@
     <?php include_metas() ?>
     <?php include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico" />
+    <?php echo include_partial('global/js') ?>
   </head>
   <body>
     <div id="wrapper">

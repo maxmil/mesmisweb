@@ -47,6 +47,12 @@ static:
   requirements: { sf_culture: (?:es|en) }
   param: { module: static, action: index }
 
+# comment module
+comment:
+  url:   /:sf_culture/comment/:action
+  requirements: { sf_culture: (?:es|en) }
+  param: { module: comment}
+
 # generic modules
 default_index:
   url:   /:culture/:module

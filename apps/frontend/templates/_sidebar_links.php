@@ -1,10 +1,7 @@
 <div id="sidebarLinks">
   <div class="sideBarLink">
-    <div class="sideBarLinkTitle">
-      <a href="" onclick="openMI('<?php echo $sf_request->getRelativeUrlRoot() ?>', '<?php echo $sf_user->getCulture() ?>');return false"><?php echo __('<strong>MESMIS</strong> INTERACTIVO') ?></a>
-    </div>
-    <div class="sideBarLinkDescrip">Aquí va la descripción breve de MESMIS INTERACTIVO</div>
-    <a class="readMore" href=""><?php echo __('Visitar') ?> <strong>>></strong></a>
+    <div class="sideBarLinkTitle"><?php echo __('<strong>MESMIS</strong> INTERACTIVO') ?></div>
+    <a href="" onclick="openMI();return false"><?php echo image_tag('logo-mesmis-interactivo.png') ?></a>
   </div>
   <?php /*
     <div class="sideBarLink">

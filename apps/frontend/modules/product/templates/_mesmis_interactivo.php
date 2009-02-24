@@ -13,7 +13,7 @@
       #sfWebDebug{ height: auto; top: 600px; z-index: 1000}
     </style>
   </head>
-  <body>
+  <body onload="window.onunload=function(){try{opener.closeMI('<?php echo $sf_user->getAttribute('userEmail') ?>')}catch(e){}}">
   <div>
     <iframe src="<?php echo $sf_request->getRelativeUrlRoot() ?>/mi/mesmis-interactivo.html" height="100%" width="100%"></iframe>
   </div>

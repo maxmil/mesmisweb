@@ -75,7 +75,7 @@
           </h3>
         <?php elseif($product->getType() == ProductPeer::TYPE_MILINK): ?>
           <div class="prIcon">
-            <a href="" onclick="openMI('<?php echo $sf_request->getRelativeUrlRoot() ?>', '<?php echo $sf_user->getCulture() ?>');return false">
+            <a href="" onclick="openMI();return false">
               <?php echo image_tag('/images/ico-'. strtolower($product->getType()) . '.png') ?>
             </a>
           </div>
