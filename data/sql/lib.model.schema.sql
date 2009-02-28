@@ -182,7 +182,8 @@ CREATE TABLE `product`
 (
 	`id` INTEGER  NOT NULL AUTO_INCREMENT,
 	`product_group_id` INTEGER,
-	`mimetype` VARCHAR(20),
+	`mimetype` VARCHAR(50),
+	`icon` VARCHAR(50),
 	`priority` INTEGER,
 	`type` VARCHAR(10),
 	`state` VARCHAR(10) default 'PUBLISHED',

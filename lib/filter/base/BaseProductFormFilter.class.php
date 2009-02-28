@@ -17,6 +17,7 @@ class BaseProductFormFilter extends BaseFormFilterPropel
     $this->setWidgets(array(
       'product_group_id' => new sfWidgetFormPropelChoice(array('model' => 'ProductGroup', 'add_empty' => true)),
       'mimetype'         => new sfWidgetFormFilterInput(),
+      'icon'             => new sfWidgetFormFilterInput(),
       'priority'         => new sfWidgetFormFilterInput(),
       'type'             => new sfWidgetFormFilterInput(),
       'state'            => new sfWidgetFormFilterInput(),
@@ -27,6 +28,7 @@ class BaseProductFormFilter extends BaseFormFilterPropel
     $this->setValidators(array(
       'product_group_id' => new sfValidatorPropelChoice(array('required' => false, 'model' => 'ProductGroup', 'column' => 'id')),
       'mimetype'         => new sfValidatorPass(array('required' => false)),
+      'icon'             => new sfValidatorPass(array('required' => false)),
       'priority'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'type'             => new sfValidatorPass(array('required' => false)),
       'state'            => new sfValidatorPass(array('required' => false)),
@@ -52,6 +54,7 @@ class BaseProductFormFilter extends BaseFormFilterPropel
       'id'               => 'Number',
       'product_group_id' => 'ForeignKey',
       'mimetype'         => 'Text',
+      'icon'             => 'Text',
       'priority'         => 'Number',
       'type'             => 'Text',
       'state'            => 'Text',

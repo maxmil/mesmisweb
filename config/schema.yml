@@ -67,4 +67,4 @@ propel:
     product_id:      ~
     culture:         { isCulture: true, type: varchar(7), required: true }
     created_at:      ~
-    
+

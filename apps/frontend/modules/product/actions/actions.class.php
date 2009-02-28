@@ -126,7 +126,7 @@ class productActions extends sfActions
     // Save visit
     $visit = new Visit();
     $visit->setUser($user);
-    $visit->setIp($request->getRemoteAddress());
+    $visit->setIp($_SERVER['REMOTE_ADDR']);
     $visit->save();
 
     return $this->renderPartial('download');
@@ -163,7 +163,7 @@ class productActions extends sfActions
     // Save visit
     $visit = new Visit();
     $visit->setUser($user);
-    $visit->setIp($request->getRemoteAddress());
+    $visit->setIp($_SERVER['REMOTE_ADDR']);
     $visit->save();
 
     return $this->renderPartial('download');

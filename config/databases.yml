@@ -1,3 +1,8 @@
+#all:
+#  propel:
+#    class:          sfPropelDatabase
+#    param:
+#      dsn:          mysql://root@localhost/dbname
 dev:
   propel:
     param:
