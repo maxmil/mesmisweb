@@ -1,8 +1,10 @@
 NewsItem:
   niMesmisLibro:
     photo_filename: libro_mesmis.jpg
+    created_at: 2009-03-06 00:00:00
   niMesmisInteractivo:
     photo_filename: mesmis_interactivo.png
+    created_at: 2007-04-18 00:00:00
 
 NewsItemI18n:
   niMesmisLibro_es:
@@ -184,7 +186,7 @@ Product:
     priority: 150
   pMesmisInteractivoCd:
     product_group_id: pgMesmisInteractivo
-    mimetype: application/x-compressed
+    mimetype: application/octetstream
     icon: ico-cd.png
     type: FILE
     priority: 160
@@ -272,5 +274,5 @@ ProductI18n:
     id: pMesmisInteractivoCd
     title: Software: Descargar MESMIS Interactivo
     descrip: Descargar el CD mesmis en formato ISO para. Desde el formato ISO se puede grabar un CD-ROM personal para utilizar fuera de línea.
-    resource: mesmis-interactivo.zip
+    resource: mesmis-interactivo.iso
     culture: es
