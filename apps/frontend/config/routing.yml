@@ -1,7 +1,7 @@
 # mesmis interactivo
 mesmis_interactivo:
   url: /mesmis-interactivo
-  param: { module: product, action: open, id: 16, sf_culture: es}
+  param: { module: product, action: openMI, sf_culture: es}
 
 # homepages
 homepage:

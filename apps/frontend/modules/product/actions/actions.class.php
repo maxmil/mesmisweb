@@ -19,16 +19,21 @@ class productActions extends sfActions
   {
     $c = new Criteria();
     $c->add(ProductPeer::STATE, ProductPeer::STATE_PUBLISHED);
-    $c->addDescendingOrderByColumn(ProductPeer::UPDATED_AT);
-    $pager = new sfPropelPager('Product', 5);
+    $c->addAscendingOrderByColumn(ProductPeer::PRIORITY);
+    $pager = new sfPropelPager('Product', 20);
     $pager->setCriteria($c);
     $pager->setPage($this->getRequestParameter('page', 1));
     $pager->init();
     $this->pager = $pager;
   }
 
-  public function executeOpen(sfWebRequest $request)
+  public function executeOpenMI(sfWebRequest $request)
   {
+    $c = new Criteria();
+    $c->add(ProductPeer::STATE, ProductPeer::STATE_PUBLISHED);
+    $c->add(ProductPeer::TYPE, ProductPeer::TYPE_MILINK);
+    $products = ProductPeer::doSelect($c);
+    $request->setParameter('id', $products[0]->getId());
     $this->forward('product', 'download');
   }
 

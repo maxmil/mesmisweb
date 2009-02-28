@@ -4,6 +4,7 @@
 
 <div id="comment">
   <h1><?php echo __('Opinar') ?></h1>
+  <div class="separator"></div>
   <p><?php echo __('Gracias por haber probado Mesmis Interactivo, esperamos que le haya gustado.') ?></p>
 	<p><?php echo __('Para poder seguir mejorandolo te agradecer&iacute;amos sus comentarios.') ?></p>
   <form id="commentFrm" action="<?php echo url_for('comment/save') ?>">

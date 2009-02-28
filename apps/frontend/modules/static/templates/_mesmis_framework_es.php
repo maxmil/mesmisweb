@@ -74,9 +74,9 @@
     <div class="section">
       <a name="2"></a>
       <h2>Otros materiales de consulta</h2>
-      <p>La colección sobre sustentabilidad</p>
-      <p>MESMIS interactivo</p>
-      <p>Material de apoyo</p>
+      <p><a href="http://www.ciga.unam.mx/ciga/images/stories/publicaciones/sustentabilidad/GIRA_CS3_final.pdf" target="blank">La colección sobre sustentabilidad</a></p>
+      <p><a href="#" onclick="openMI();return false;">MESMIS interactivo</a>
+      <p><?php echo link_to('Material de apoyo', 'product/index') ?></p>
     </div>
   </div>
 </div>

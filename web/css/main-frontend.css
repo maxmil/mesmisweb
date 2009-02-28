@@ -26,15 +26,26 @@ p{
 }
 
 h1{
-  padding: 20px 0px;
+  padding: 20px 0px 0px 0px;
   font-weight: normal;
   color: #3fa81a;
   font-size: 2em;
   text-transform: uppercase;
 }
 
+h2{
+  text-transform: uppercase;
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  font-weight: Normal;
+}
+
 a img{
   border: 0px;
+}
+
+a.plainLink {
+  color: #666;
 }
 
 #wrapper {
@@ -266,12 +277,8 @@ div.btns{
   color: #c00;
 }
 
-/* Text */
-h2{
-  text-transform: uppercase;
-  font-size: 1.7em;
-  letter-spacing: -1px;
-  font-weight: Normal;
+.big {
+  font-size: 14px;
 }
 
 /* Side Bar */
@@ -349,13 +356,27 @@ h2{
   padding: 20px 0px;
 }
 
+/* Content */
+#contentModule{
+  padding: 0px 26px 40px 26px;
+}
+
 /* Product Module */
 #products{
-  padding: 0px 26px;
+  padding: 0px 26px 40px 26px;
+}
+
+#products h1{
+  width: 400px;
+}
+
+#products .navBar{
+  float: right;
+  padding-right: 0px;
 }
 
 .pr{
-  padding-top: 30px;
+  padding-bottom: 30px;
   clear: right;
 }
 
@@ -364,6 +385,7 @@ h2{
 }
 
 .prDescrip{
+  padding-right: 30px;
 }
 
 /* Comments */

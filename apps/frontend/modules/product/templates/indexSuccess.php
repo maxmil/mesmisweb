@@ -15,8 +15,8 @@
 
   function validateEmail() {
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    if(reg.test($F('email')) == false) {
-      addError($('email'), '<?php echo __('* El e-mail introducido no es válido') ?>');
+    if(reg.test($F('e-mail')) == false) {
+      addError($('e-mail'), '<?php echo __('* El e-mail introducido no es válido') ?>');
       return false;
     }
     return true;
@@ -57,12 +57,15 @@
 </script>
 
 <div id="products">
+  <?php include_partial('navBar', array('pager' => $pager)); ?>
+  <h1>Recursos</h1>
+  <div class="separator"></div>
   <?php foreach($pager->getResults() as $product): ?>
     <div class="pr">
 
         <?php if($product->getType() == ProductPeer::TYPE_FILE): ?>
           <div class="prIcon">
-          <?php echo link_to_remote(image_tag('/images/ico-'. strtolower($product->getType()) . '.png'), array(
+          <?php echo link_to_remote(image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))), array(
               'update' => 'dialogCont',
               'url' => 'product/download?id=' . $product->getId(),
               'script' => 'true')) ?>
@@ -76,7 +79,7 @@
         <?php elseif($product->getType() == ProductPeer::TYPE_MILINK): ?>
           <div class="prIcon">
             <a href="" onclick="openMI();return false">
-              <?php echo image_tag('/images/ico-'. strtolower($product->getType()) . '.png') ?>
+              <?php echo image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))) ?>
             </a>
           </div>
           <h3>
@@ -86,16 +89,17 @@
           </h3>
         <?php elseif($product->getType() == ProductPeer::TYPE_EMAIL): ?>
           <div class="prIcon">
-            <a href="mailto:<?php echo $product->getResource() ?>"><?php echo image_tag('/images/ico-'. strtolower($product->getType()) . '.png') ?></a>
+            <a href="mailto:<?php echo $product->getResource() ?>"><?php echo image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))) ?></a>
           </div>
           <h3><a href="mailto:<?php echo $product->getResource() ?>"><?php echo $product->getTitle() ?></a></h3>
         <?php elseif($product->getType() == ProductPeer::TYPE_URL): ?>
           <div class="prIcon">
-            <?php echo link_to(image_tag('/images/ico-'. strtolower($product->getType()) . '.png'), $product->getResource(), array('target' => 'blank')) ?>
+            <?php echo link_to(image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))), $product->getResource(), array('target' => 'blank')) ?>
           </div>
           <h3><?php echo link_to($product->getTitle(), $product->getResource(), array('target' => 'blank')) ?></h3>
         <?php endif; ?>
       <div class="prDescrip"><?php echo $product->getDescrip() ?></div>
     </div>
   <?php endforeach; ?>
+  <?php include_partial('navBar', array('pager' => $pager)); ?>
 </div>

@@ -3,7 +3,7 @@
   if($product->getType() == ProductPeer::TYPE_MILINK) {
     echo javascript_tag("
       try{closeDialog();}catch(e){};
-      document.location = '" . url_for('product/open?id=' . $id) . "';
+      document.location = '" . url_for('product/openMI') . "';
     ");
   } else {
     echo javascript_tag("

@@ -50,7 +50,8 @@ propel:
     _attributes:     { phpName: Product }
     id:              ~
     product_group_id: ~
-    mimetype:        { type: varchar(20) }
+    mimetype:        { type: varchar(50) }
+    icon:            { type: varchar(50) }
     priority:        { type: integer }
     type:            { type: varchar(10) }
     state:           { type: varchar(10), default: PUBLISHED }
