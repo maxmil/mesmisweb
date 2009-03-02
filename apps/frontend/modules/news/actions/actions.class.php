@@ -17,9 +17,12 @@ class newsActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
+    $culture = $this->getContext()->getUser()->getCulture();
     $c = new Criteria();
     $c->add(NewsItemPeer::STATE, NewsItemPeer::STATE_PUBLISHED);
     $c->addDescendingOrderByColumn(NewsItemPeer::PRIORITY);
+    $c->add(NewsItemI18nPeer::CULTURE, $culture);
+    $c->addJoin(NewsItemPeer::ID, NewsItemI18nPeer::ID);
     $pager = new sfPropelPager('NewsItem', 3);
     $pager->setCriteria($c);
     $pager->setPage($this->getRequestParameter('page', 1));

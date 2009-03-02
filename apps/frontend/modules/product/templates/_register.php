@@ -7,7 +7,7 @@
 <div id="register">
   <h3><?php echo __('Acceso a recursos') ?></h3>
   <p><?php echo __('Parece ser la primera vez que usted accede a recursos.') ?></p>
-  <p><?php echo __('Por favor rellene el siguiente formulario con sus datos.  A continuación accederá al recurso solicitado') ?></p>
+  <p><?php echo __('Por favor rellene el siguiente formulario con sus datos.  A continuación accederá al recurso solicitado.') ?></p>
   <form id="registerFrm" onsubmit="if(validateRegister()) new Ajax.Updater('register', '<?php echo url_for('product/register?id=' .  $id) ?>', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;">
     <?php echo object_input_hidden_tag($user, 'getEmail') ?>
     <div class="input">

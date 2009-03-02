@@ -17,8 +17,11 @@ class productActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
+    $culture = $this->getContext()->getUser()->getCulture();
     $c = new Criteria();
     $c->add(ProductPeer::STATE, ProductPeer::STATE_PUBLISHED);
+    $c->add(ProductI18nPeer::CULTURE, $culture);
+    $c->addJoin(ProductPeer::ID, ProductI18nPeer::ID);
     $c->addAscendingOrderByColumn(ProductPeer::PRIORITY);
     $pager = new sfPropelPager('Product', 20);
     $pager->setCriteria($c);
