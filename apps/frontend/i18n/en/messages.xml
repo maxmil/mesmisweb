@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="en" datatype="plaintext" original="messages" date="2009-03-02T09:57:01Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>&lt;span class="highlight"&gt;Inicio&lt;/span&gt;</source>
+        <target>&lt;span class="highlight"&gt;Home&lt;/span&gt;</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>El proyecto &lt;span class="highlight"&gt;Mesmis&lt;/span&gt;</source>
+        <target>The &lt;span class="highlight"&gt;Mesmis&lt;/span&gt; project</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>El marco &lt;span class="highlight"&gt;Mesmis&lt;/span&gt;</source>
+        <target>The &lt;span class="highlight"&gt;Mesmis&lt;/span&gt; framework</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>&lt;span class="highlight"&gt;Recursos&lt;/span&gt;</source>
+        <target>&lt;span class="highlight"&gt;Resources&lt;/span&gt;</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>&lt;span class="highlight"&gt;P&#xE1;ginas&lt;/span&gt; relacionadas</source>
+        <target>Related &lt;span class="highlight"&gt;Pages&lt;/span&gt;</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>&lt;span class="highlight"&gt;Contactar&lt;/span&gt;</source>
+        <target>&lt;span class="highlight"&gt;Contact&lt;/span&gt;</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Copresentado por</source>
+        <target>Co-hosted by</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>&lt;strong&gt;MESMIS&lt;/strong&gt; INTERACTIVO</source>
+        <target>&lt;strong&gt;MESMIS&lt;/strong&gt; INTERACTIVE</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Leer m&#xE1;s &gt;&gt;</source>
+        <target>Read more &gt;&gt;</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>&lt;&lt; Noticias m&#xE1;s recentes</source>
+        <target>&lt;&lt; More recent stories</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Noticias anteriores &gt;&gt;</source>
+        <target>Older stories &gt;&gt;</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>&lt;&lt; Volver</source>
+        <target>&lt;&lt; Back</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>* El e-mail introducido no es v&#xE1;lido</source>
+        <target>* The e-mail introduced is not valid</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Campo obligatorio</source>
+        <target>Required field</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Acceso a recursos</source>
+        <target>Access to resources</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Para acceder al recurso &lt;strong&gt;%1%&lt;/strong&gt; por favor escribe su direcci&#xF3;n &lt;strong&gt;e-mail&lt;/strong&gt;.</source>
+        <target>In order to access the resource &lt;strong&gt;%1%&lt;/strong&gt; please insert your &lt;strong&gt;e-mail&lt;/strong&gt; address.</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Aceptar</source>
+        <target>Ok</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>Cancelar</source>
+        <target>Cancel</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Parece ser la primera vez que usted accede a recursos.</source>
+        <target>It appears that this is the first time that you have accessed resources.</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>Por favor rellene el siguiente formulario con sus datos.  A continuaci&#xF3;n acceder&#xE1; al recurso solicitado.</source>
+        <target>Please fill out the following form. Once sent your will be redirected to the resource.</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>Nombre</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>Primer apellido</source>
+        <target>Surname</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>Segundo apellido</source>
+        <target>Second surname</target>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>Instituci&#xF3;n</source>
+        <target>Intitution</target>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Enviar</source>
+        <target>Send</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>&lt;&lt; Anterior</source>
+        <target>&lt;&lt; Previous</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>Siguiente &gt;&gt;</source>
+        <target>Next &gt;&gt;</target>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Opinar</source>
+        <target>Your opinion</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>Gracias, su comentario ha sido guardado y será tomado en cuenta.</source>
+        <target>Thankyou your comment has been saved and will be taken into account.</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>Gracias por haber probado Mesmis Interactivo, esperamos que le haya gustado.</source>
+        <target>Thankyou for having tried Mesims Interactivo, we hope that you have enjoyed it.</target>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>Para poder seguir mejorandolo te agradecer&amp;iacute;amos sus comentarios.</source>
+        <target>We would be grateful to receive your comments in order to continue improving.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
