@@ -351,6 +351,23 @@ div.btns{
   padding: 5px 0px;
 }
 
+#search.sideBarLink{
+  height: 50px;
+}
+
+.sideBarLink #searchBox{
+  float: left;
+  width: 150px;
+}
+
+.sideBarLink #searchBtn{
+  float: right;
+  width: 20px;
+  margin-left: 5px;
+  font-size: 8.5px;
+  border: solid 1px #666;
+}
+
 #sponsors{
   clear: both;
   margin-right: 4px;

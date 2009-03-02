@@ -128,6 +128,10 @@
         <source>Para poder seguir mejorandolo te agradecer&amp;iacute;amos sus comentarios.</source>
         <target>We would be grateful to receive your comments in order to continue improving.</target>
       </trans-unit>
+      <trans-unit id="34">
+        <source>Buscar</source>
+        <target>Search</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
