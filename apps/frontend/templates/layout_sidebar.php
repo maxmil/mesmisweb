@@ -25,6 +25,7 @@
         <div id="contentBottom"></div>
       </div>
     </div>
+    <?php echo include_partial('global/analytics') ?>
   </body>
 </html>
 
