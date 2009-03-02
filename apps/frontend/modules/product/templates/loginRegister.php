@@ -40,8 +40,9 @@
   //]]>
 </script>
 
-<div id="products">
+<div id="main">
   <h1><?php echo __('Acceso a recursos') ?></h1>
+  <div class="separator"></div>
   <p><?php echo __('Parece ser la primera vez que usted accede a recursos.') ?></p>
   <p><?php echo __('Por favor rellene el siguiente formulario con sus datos.  A continuación accederá al recurso solicitado.') ?></p>
   <form id="registerFrm" action="<?php echo url_for('product/register?id=' .  $id) ?>" onsubmit="return validateRegister();">
@@ -64,9 +65,10 @@
     </div>
     <div class="btns">
       <?php echo submit_tag(__('Enviar'), 'class="submit"') ?>
-      <input type="reset" value="<?php echo __('Cancelar') ?>" onclick="history.go(-2)" class="submit"/>
+      <input type="reset" value="<?php echo __('Cancelar') ?>" onclick="if(window.opener){window.close()}else{history.go(-2)}" class="submit"/>
     </div>
   </form>
+  <p><?php echo link_to(__('Política de privacidad'), 'static/index?content=privacypolicy') ?></p>
 </div>
 
 

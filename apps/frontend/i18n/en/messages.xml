@@ -29,7 +29,7 @@
         <target>&lt;span class="highlight"&gt;Contact&lt;/span&gt;</target>
       </trans-unit>
       <trans-unit id="7">
-        <source>Copresentado por</source>
+        <source>Un proyecto de</source>
         <target>Co-hosted by</target>
       </trans-unit>
       <trans-unit id="8">
@@ -65,7 +65,7 @@
         <target>Access to resources</target>
       </trans-unit>
       <trans-unit id="17">
-        <source>Para acceder al recurso &lt;strong&gt;%1%&lt;/strong&gt; por favor escribe su direcci&#xF3;n &lt;strong&gt;e-mail&lt;/strong&gt;.</source>
+        <source>Para acceder al recurso &lt;strong&gt;%1%&lt;/strong&gt; por favor escriba su direcci&#xF3;n &lt;strong&gt;e-mail&lt;/strong&gt;.</source>
         <target>In order to access the resource &lt;strong&gt;%1%&lt;/strong&gt; please insert your &lt;strong&gt;e-mail&lt;/strong&gt; address.</target>
       </trans-unit>
       <trans-unit id="18">

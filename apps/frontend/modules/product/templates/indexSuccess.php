@@ -73,7 +73,10 @@
       <div class="section">
         <a name="pg<?php echo $productGroup->getId() ?>"></a>
         <h2><?php echo $productGroup->getTitle() ?></h2>
-        <?php foreach($productGroup->getProducts() as $product): ?>
+        <?php 
+          $c = new Criteria();
+          $c->addAscendingOrderByColumn(ProductPeer::PRIORITY);
+          foreach($productGroup->getProducts($c) as $product): ?>
           <?php if($product->getTitle()): ?>
             <div class="pr">
               <?php if($product->getType() == ProductPeer::TYPE_FILE): ?>
@@ -102,9 +105,9 @@
                 </h3>
               <?php elseif($product->getType() == ProductPeer::TYPE_EMAIL): ?>
                 <div class="prIcon">
-                  <a href="mailto:<?php echo $product->getResource() ?>"><?php echo image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))) ?></a>
+                  <a href="<?php echo $product->getResource() ?>" target="blank"><?php echo image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))) ?></a>
                 </div>
-                <h3><a href="mailto:<?php echo $product->getResource() ?>"><?php echo $product->getTitle() ?></a></h3>
+                <h3><a href="<?php echo $product->getResource() ?>" target="blank"><?php echo $product->getTitle() ?></a></h3>
               <?php elseif($product->getType() == ProductPeer::TYPE_URL): ?>
                 <div class="prIcon">
                   <?php echo link_to(image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))), $product->getResource(), array('target' => 'blank')) ?>

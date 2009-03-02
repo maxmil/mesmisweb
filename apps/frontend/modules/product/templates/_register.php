@@ -31,6 +31,7 @@
       <input type="reset" value="<?php echo __('Cancelar') ?>" onclick="closeDialog()" class="submit"/>
     </div>
   </form>
+  <p><?php echo link_to(__('Política de privacidad'), 'static/index?content=privacypolicy') ?></p>
 </div>
 
 

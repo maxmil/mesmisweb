@@ -12,6 +12,9 @@
       <?php echo submit_tag(__('Aceptar'), 'class="submit"') ?>
       <input type="reset" value="<?php echo __('Cancelar') ?>" onclick="closeDialog()" class="submit" />
   </form>
+  <div id="privacy">
+    <?php echo link_to(__('Política de privacidad'), 'static/index?content=privacypolicy') ?>
+  </div>
 </div>
 
 

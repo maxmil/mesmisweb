@@ -39,8 +39,12 @@
       <div class="link selected"><?php echo link_to(__('<span class="highlight">Páginas</span> relacionadas'), 'content/index?alias=links') ?></div>
     <?php else: ?>
       <div class="link"><?php echo link_to(__('<span class="highlight">Páginas</span> relacionadas'), 'content/index?alias=links') ?></div>
-      <div class="menuSeparator">|</div>
+    <div class="menuSeparator">|</div>
     <?php endif; ?>
-    <div class="link"><a href="mailto:giraac@gira.org.mx"><?php echo __('<span class="highlight">Contactar</span>') ?></a></div>
+        <?php if(is_selected('CONTACT')): ?>
+      <div class="link selected"><?php echo link_to(__('<span class="highlight">Contactar</span>'), 'static/index?content=contact') ?></div>
+    <?php else: ?>
+      <div class="link"><?php echo link_to(__('<span class="highlight">Contactar</span>'), 'static/index?content=contact') ?></div>
+    <?php endif; ?>
   </div>
 </div>

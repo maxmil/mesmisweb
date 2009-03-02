@@ -7,7 +7,7 @@ body{
   font-family: Helvetica, Arial;
   font-size: 12px;
   background-image: url('../images/main_bg.png');
-  background-color: #729d5c;
+  background-color: #8bb178;
   background-repeat: repeat-x;
   color: #666;
 }
@@ -151,6 +151,10 @@ a.plainLink {
   background: url('../images/content_bg_bottom.png') repeat-x;
   margin-bottom: 20px;
   clear: both;
+}
+
+#main{
+  padding: 0px 20px 20px 20px;
 }
 
 /* Buttons */
@@ -370,16 +374,24 @@ div.btns{
 
 #sponsors{
   clear: both;
-  margin-right: 4px;
+  margin-right: 7px;
   margin-left: 6px;
   border-top: 1px solid #ccc;
   padding: 20px 0px 20px 30px;
   font-size: 1.2em;
   font-weight: bold;
+  height: 150px;
 }
 
-#sponsorLogos{
-  padding-top: 20px;
+#sponsorLogos div{
+  padding: 15px;
+  float: left;
+}
+
+#credits {
+  float: right;
+  text-align: right;
+  padding-right: 30px;
 }
 
 /* News Module */
@@ -472,7 +484,7 @@ div.btns{
 }
 
 /* Login and registration */
-#email{
+#e-mail{
   width: 200px;
   height: 17px;
 }
@@ -483,6 +495,12 @@ div.btns{
 
 #registerFrm div.input input, #registerFrm div.input div, #registerFrm div.btns{
   margin-left: 130px;
+}
+
+#insertEmail #privacy{
+  padding: 10px 10px 0px 0px;
+  text-align: right;
+  
 }
 
 /* Static content */
@@ -505,6 +523,10 @@ div.btns{
   font-size: 1.4em;
   letter-spacing: 0px;
   padding-bottom: 10px;
+}
+
+#staticContent h3{
+  text-transform: none;
 }
 
 #staticContent .separator{

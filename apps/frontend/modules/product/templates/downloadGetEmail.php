@@ -31,16 +31,19 @@
   //]]>
 </script>
 
-<div id="products">
+<div id="main">
   <div id="insertEmail">
     <h1><?php echo __('Acceso a recursos') ?></h1>
+    <div class="separator"></div>
     <p><?php echo __('Para acceder al recurso <strong>%1%</strong> por favor escribe su dirección <strong>e-mail</strong>.', array('%1%' => $product->getTitle())) ?></p>
     <form id="emailFrm" action="<?php echo url_for('product/login?id=' .  $id) ?>" onsubmit=" return validateEmail()">
       <?php echo input_tag('e-mail', '', array('onfocus' => 'clearErrors(this)')) ?>
       </ br>
       <?php echo submit_tag(__('Aceptar'), 'class="submit"') ?>
-      <input type="reset" value="<?php echo __('Cancelar') ?>" onclick="history.go(-1)" class="submit" />
+      <input type="reset" value="<?php echo __('Cancelar') ?>" onclick="if(window.opener){window.close()}else{history.go(-1)}" class="submit" />
     </form>
+    <br />
+    <p><?php echo link_to(__('Política de privacidad'), 'static/index?content=privacypolicy') ?></p>
   </div>
 </div>
 
