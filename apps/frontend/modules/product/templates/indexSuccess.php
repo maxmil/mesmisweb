@@ -74,44 +74,46 @@
         <a name="pg<?php echo $productGroup->getId() ?>"></a>
         <h2><?php echo $productGroup->getTitle() ?></h2>
         <?php foreach($productGroup->getProducts() as $product): ?>
-          <div class="pr">
-            <?php if($product->getType() == ProductPeer::TYPE_FILE): ?>
-              <div class="prIcon">
-              <?php echo link_to_remote(image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))), array(
-                  'update' => 'dialogCont',
-                  'url' => 'product/download?id=' . $product->getId(),
-                  'script' => 'true')) ?>
-              </div>
-              <h3>
-               <?php echo link_to_remote($product->getTitle(), array(
-                  'update' => 'dialogCont',
-                  'url' => 'product/download?id=' . $product->getId(),
-                  'script' => 'true')) ?>
-              </h3>
-            <?php elseif($product->getType() == ProductPeer::TYPE_MILINK): ?>
-              <div class="prIcon">
-                <a href="" onclick="openMI();return false">
-                  <?php echo image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))) ?>
-                </a>
-              </div>
-              <h3>
-                <a href="" onclick="openMI('<?php echo $sf_request->getRelativeUrlRoot() ?>', '<?php echo $sf_user->getCulture() ?>');return false">
-                  <?php echo $product->getTitle() ?>
-                </a>
-              </h3>
-            <?php elseif($product->getType() == ProductPeer::TYPE_EMAIL): ?>
-              <div class="prIcon">
-                <a href="mailto:<?php echo $product->getResource() ?>"><?php echo image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))) ?></a>
-              </div>
-              <h3><a href="mailto:<?php echo $product->getResource() ?>"><?php echo $product->getTitle() ?></a></h3>
-            <?php elseif($product->getType() == ProductPeer::TYPE_URL): ?>
-              <div class="prIcon">
-                <?php echo link_to(image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))), $product->getResource(), array('target' => 'blank')) ?>
-              </div>
-              <h3><?php echo link_to($product->getTitle(), $product->getResource(), array('target' => 'blank')) ?></h3>
-            <?php endif; ?>
-            <div class="prDescrip"><?php echo $product->getDescrip() ?></div>
-          </div>
+          <?php if($product->getTitle()): ?>
+            <div class="pr">
+              <?php if($product->getType() == ProductPeer::TYPE_FILE): ?>
+                <div class="prIcon">
+                <?php echo link_to_remote(image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))), array(
+                    'update' => 'dialogCont',
+                    'url' => 'product/download?id=' . $product->getId(),
+                    'script' => 'true')) ?>
+                </div>
+                <h3>
+                 <?php echo link_to_remote($product->getTitle(), array(
+                    'update' => 'dialogCont',
+                    'url' => 'product/download?id=' . $product->getId(),
+                    'script' => 'true')) ?>
+                </h3>
+              <?php elseif($product->getType() == ProductPeer::TYPE_MILINK): ?>
+                <div class="prIcon">
+                  <a href="" onclick="openMI();return false">
+                    <?php echo image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))) ?>
+                  </a>
+                </div>
+                <h3>
+                  <a href="" onclick="openMI('<?php echo $sf_request->getRelativeUrlRoot() ?>', '<?php echo $sf_user->getCulture() ?>');return false">
+                    <?php echo $product->getTitle() ?>
+                  </a>
+                </h3>
+              <?php elseif($product->getType() == ProductPeer::TYPE_EMAIL): ?>
+                <div class="prIcon">
+                  <a href="mailto:<?php echo $product->getResource() ?>"><?php echo image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))) ?></a>
+                </div>
+                <h3><a href="mailto:<?php echo $product->getResource() ?>"><?php echo $product->getTitle() ?></a></h3>
+              <?php elseif($product->getType() == ProductPeer::TYPE_URL): ?>
+                <div class="prIcon">
+                  <?php echo link_to(image_tag('/images/'. ($product->getIcon() ? $product->getIcon() : ('ico-' . strtolower($product->getType()) . '.png'))), $product->getResource(), array('target' => 'blank')) ?>
+                </div>
+                <h3><?php echo link_to($product->getTitle(), $product->getResource(), array('target' => 'blank')) ?></h3>
+              <?php endif; ?>
+              <div class="prDescrip"><?php echo $product->getDescrip() ?></div>
+            </div>
+          <?php endif; ?>
         <?php endforeach; ?>
       </div>
     <?php endif; ?>
