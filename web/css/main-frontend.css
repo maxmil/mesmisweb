@@ -287,7 +287,45 @@ div.btns{
   font-size: 14px;
 }
 
-/* Side Bar */
+/* leftSideBar */
+#leftSideBar{
+  position: fixed;
+  width: 190px;
+  padding: 10px 0px 20px 10px;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
+
+#leftSideBar ul{
+  padding-left: 10px;
+}
+
+#leftSideBar ul > li:first-child{
+  border: none;
+}
+
+#leftSideBar li{
+  list-style: none;
+  border-top: 1px dashed #999;
+}
+
+ #leftSideBar li div{
+  padding: 8px 0px;
+}
+
+#leftSideBar li a{
+  color: #888;
+}
+
+#leftSideBar .arrow{
+  float: right;
+  color: #3fa81a;
+  position: relative;
+  top: -2px;
+}
+
+/* Side Bar right */
 #contentLeft{
   margin-right: 220px;
   background: url('../images/sidebar_separator.png') right repeat-y;
@@ -369,7 +407,9 @@ div.btns{
 
 /* Product Module */
 #products{
-  padding: 0px 26px 40px 26px;
+  background: url('../images/sidebar_separator.png') left repeat-y;
+  margin-left: 210px;
+  padding: 0px 20px 40px 20px;
 }
 
 #products h1{
@@ -382,8 +422,12 @@ div.btns{
 }
 
 .pr{
-  padding-bottom: 30px;
+  padding-top: 30px;
   clear: right;
+}
+
+.pr h3{
+  padding-right: 30px;
 }
 
 .prIcon{
@@ -425,39 +469,6 @@ div.btns{
 }
 
 /* Static content */
-#staticSideBar{
-  position: fixed;
-  width: 190px;
-  padding: 10px 0px 20px 10px;
-  font-weight: bold;
-  font-size: 1.1em;
-  text-transform: uppercase;
-}
-
-#staticSideBar ul{
-  padding-left: 10px;
-}
-
-#staticSideBar li{
-  list-style: none;
-  border-top: 1px dashed #999;
-}
-
-#staticSideBar li div{
-  padding: 8px 0px;
-}
-
-#staticSideBar li a{
-  color: #888;
-}
-
-#staticSideBar .arrow{
-  float: right;
-  color: #3fa81a;
-  position: relative;
-  top: -2px;
-}
-
 #staticContent{
   background: url('../images/sidebar_separator.png') left repeat-y;
   margin-left: 210px;

@@ -1,4 +1,4 @@
-<div id="staticSideBar">
+<div id="leftSideBar">
   <ul>
     <li style="border: none">
       <div><a class="arrow" href="#1">>></a><a href="#1">El marco MESMIS</a></div>
