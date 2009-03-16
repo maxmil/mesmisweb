@@ -291,6 +291,14 @@ div.btns{
   font-size: 14px;
 }
 
+.backToTop{
+  text-align: right;
+}
+
+.backToTop a{
+  text-decoration: underline;
+}
+
 /* leftSideBar */
 #leftSideBar{
   float: left;
@@ -539,12 +547,4 @@ div.btns{
 
 #staticContent ul{
   padding: 0px 0px 10px 20px;
-}
-
-#staticContent .backToTop{
-  text-align: right;
-}
-
-#staticContent .backToTop a{
-  text-decoration: underline;
 }

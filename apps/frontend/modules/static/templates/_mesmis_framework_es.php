@@ -24,7 +24,7 @@
       <p>Se ha tratado de paliar el problema mediante un esfuerzo "aditivo", es decir, simplemente añadiendo técnicas convencionales. Sin embargo, un análisis profundo de los requisitos de sustentabilidad implica un esfuerzo conceptual y práctico cualitativamente distinto. En particular, no se tienen marcos desarrollados para evaluaciones de sistemas de manejo de recursos naturales en el contexto campesino de los países del Tercer Mundo. Existe un trabajo relativamente amplio en el desarrollo de indicadores de tipo biofísico, especialmente para subsistemas muy concretos en condiciones controladas (indicadores de sustentabilidad del recurso suelo o para un cultivo determinado). Existe también un desarrollo relativamente amplio de indicadores económicos, principalmente dirigido a condiciones de agricultura comercial. Sin embargo, no se ha trabajado todavía lo suficiente en la incorporación de criterios de tipo social e institucional y en sistemas de manejo complejos (por ejemplo sistemas agrosilvopastoriles) o de muy largo plazo  como son los sistemas forestales.</p>
       <p>Por otro lado, las propuestas de evaluación de sustentabilidad normalmente quedan en marcos muy generales y laxos, destinados a evaluaciones "rápidas", o en propuestas tan detalladas que se pueden realizar sólo en condiciones experimentales. Faltan esfuerzos para establecer marcos de evaluación que sean realmente operativos en condiciones de campo y que simultáneamente estén basados en una evaluación rigurosa de sustentabilidad.</p>
       <p>Finalmente, los análisis de sustentabilidad tienen generalmente un matiz meramente calificadores (i.e. si el sistema es sustentable o no lo es). No se ha logrado todavía desarrollar procedimientos mediante los cuales la evaluación de sustentabilidad se convierta en un instrumento necesario para mejorar el perfil socioambiental de los diversos sistemas de manejo o tecnologías bajo análisis.</p>
-      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
+      <div class="backToTop"><a href="#" onclick="gotoTop();return false"><?php echo __('Regresar') ?></a></div>
     </div>
     <div class="section">
       <a name="1.2"></a>
@@ -38,13 +38,13 @@
         <li>Presenta una estructura flexible para adaptarse a diferentes niveles de información y capacidades técnicas disponibles localmente. Asimismo, propone un proceso de evaluación participativo que enfatiza dinámicas de grupo y una retroalimentación continua del equipo evaluador.</li>
         <li>Constituye una herramienta en desarrollo. La experiencia de su aplicación permitirá mejorar el propio marco. En este sentido, debe entenderse al MESMIS como un método para organizar (mas no agotar) la discusión sobre sustentabilidad y la forma de hacer operativo el concepto.</li>
       </ul>
-      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
+      <div class="backToTop"><a href="#" onclick="gotoTop();return false"><?php echo __('Regresar') ?></a></div>
     </div>
     <div class="section">
       <a name="1.3"></a>
       <h2>A QUIEN ESTÁ DIRIGIDO</h2>
       <p>El MESMIS está dirigido a instituciones de investigación, organizaciones no gubernamentales y organizaciones de productores involucradas en el diseño, el desarrollo y la difusión de sistemas de manejo de recursos naturales.</p>
-      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
+      <div class="backToTop"><a href="#" onclick="gotoTop();return false"><?php echo __('Regresar') ?></a></div>
     </div>
     <div class="section">
       <a name="1.4"></a>
@@ -73,7 +73,7 @@
       <p>Al realizar estos seis pasos se habrá avanzado en la conceptualización de los sistemas y los aspectos que se desea mejorar, para hacerlos más sustentables, y con esto se da inicio a un nuevo ciclo de evaluación.</p>
       <?php echo image_tag('static/ciclo_mesmis.png', 'alt="Figura. 2. El ciclo de evaluación"') ?>
       <p align="center">Figura. 2. El ciclo de evaluación</p>
-      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
+      <div class="backToTop"><a href="#" onclick="gotoTop();return false"><?php echo __('Regresar') ?></a></div>
     </div>
     <div class="section">
       <a name="2"></a>
@@ -81,7 +81,7 @@
       <p><a href="http://mesmis.gira.org.mx/es/products#pg122" target="blank">La colección sobre sustentabilidad</a></p>
       <p><a href="http://mesmis.gira.org.mx/es/products#pg121" target="blank">MESMIS interactivo</a>
       <p><?php echo link_to('Material de apoyo', 'product/index') ?></p>
-      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
+      <div class="backToTop"><a href="#" onclick="gotoTop();return false"><?php echo __('Regresar') ?></a></div>
     </div>
   </div>
 </div>

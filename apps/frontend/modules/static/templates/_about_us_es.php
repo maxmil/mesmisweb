@@ -39,7 +39,7 @@
       <h3>4. Generación y difusión de materiales de apoyo.</h3>
       <p>El proyecto MESMIS busca también la generación de materiales para brindar las bases teóricas y metodológicas en torno al concepto de sustentabilidad y su evaluación, con el objetivo de promover su discusión y puesta en práctica. Estos materiales incluyen publicaciones en forma de artículos arbitrados y de divulgación, libros, reportes y documentos de trabajo, así como la base de datos SUSTENTA que ofrece un conjunto de referencias selectas sobre el tema de sustentabilidad y su evaluación.</p>
       <p>Información más detallada sobre el proyecto MESMIS, las áreas de investigación y la sistematización de los estudios de caso se puede consultar <a href="http://www.ciga.unam.mx/ciga/images/stories/publicaciones/sustentabilidad/GIRA_CS3_final.pdf" target="blank">Astier et al. 2008</a></p>
-      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
+      <div class="backToTop"><a href="#" onclick="gotoTop();return false"><?php echo __('Regresar') ?></a></div>
     </div>
     <div class="section">
       <a name="1.2"></a>
@@ -56,7 +56,7 @@
       </ul>
       <?php echo image_tag('static/mesmis-casestudies.png', 'alt="Distribución de los estudios de caso de MESMIS"') ?>
       <p>Para mayor información sobre las aplicaciones del marco favor de consultar la <a href="http://mesmis.gira.org.mx/es/products#pg122" target="blank">Colección sobre sustentabilidad</a></p>
-      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
+      <div class="backToTop"><a href="#" onclick="gotoTop();return false"><?php echo __('Regresar') ?></a></div>
     </div>
     <div class="section">
       <a name="1.3"></a>
@@ -65,7 +65,7 @@
       <p>Este grupo colabora en cursos de postgrado de diferentes universidades, en talleres de capacitación, en la generación de materiales didácticos y documentos y en publicaciones nacionales e internacionales. Así mismo, todos sus miembros asesoran trabajos de investigación en tesis de licenciatura y postgrado y estudios locales, nacionales e internacionales.</p>
       <p>Cada miembro mantiene a su vez, estrechas relaciones con instituciones en Latinoamérica, España, Holanda y Francia, principalmente en el ámbito de la docencia. Esto permite generar un espacio de intercambio académico y de experiencias en la evaluación de sustentabilidad.</p>
       <p>La conformación de este grupo de investigación, ha ayudado al fortalecimiento de las bases teóricas de la evaluación de sustentabilidad y su aplicabilidad en experiencias concretas. Actualmente, se encuentra en una etapa de consolidación, cuyo objetivo es mejorar las herramientas conceptuales y prácticas, para que puedan ser utilizadas por los diferentes actores involucrados con el manejo de recursos naturales.</p>
-      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
+      <div class="backToTop"><a href="#" onclick="gotoTop();return false"><?php echo __('Regresar') ?></a></div>
     </div>
     <div class="section">
       <a name="1.4"></a>
@@ -87,7 +87,7 @@
       <p>Ha participado en investigaciones sobre cultura, política y medio ambiente en la frontera México-Estados Unidos y en el Lago de Pátzcuaro. Se interesa por las dimensiones social y cultural del desarrollo. Actualmente es asiste del proyecto MESMIS.</p>
       <h3>M. en C. Yankuic Galván-Miyoshi</h3>
       <p>Ha colaborado en el proyecto desde hace más de cinco años en diferentes áreas. Sus campos de interés son sustentabilidad, manejo de recursos naturales y cambio de uso de suelo.  Dentro del proyecto MESMIS se ha especializado en el estudio de métodos multicriterio para la integración de indicadores de sustentabilidad.</p>
-      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
+      <div class="backToTop"><a href="#" onclick="gotoTop();return false"><?php echo __('Regresar') ?></a></div>
     </div>
   </div>
 </div>

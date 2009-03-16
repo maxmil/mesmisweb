@@ -67,6 +67,7 @@
 </div>
 
 <div id="products">
+  <a name="1"></a>
   <h1>Recursos</h1>
   <?php foreach($productGroups as $productGroup): ?>
     <?php if(count($productGroup->getProducts())): ?>
@@ -119,6 +120,7 @@
             </div>
           <?php endif; ?>
         <?php endforeach; ?>
+        <div class="backToTop"><a href="#" onclick="gotoTop();return false"><?php echo __('Regresar') ?></a></div>
       </div>
     <?php endif; ?>
   <?php endforeach; ?>

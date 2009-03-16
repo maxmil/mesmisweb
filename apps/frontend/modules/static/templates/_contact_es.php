@@ -1,7 +1,7 @@
 <div id="main">
   <h1>Información de contacto</h1>
   <div class="separator"></div>
-  <p>Si estás interesado en colaborar, solicitar información del proyecto o enviarnos dudas, comentarios o sugerencias</p>
+  <p>Si estás interesada o interesado en colaborar, solicitar información del proyecto o enviarnos dudas, comentarios o sugerencias</p>
   <p>Visítanos o llámanos</p>
   <p>
     Centro Comercial, El Parian int. 17<br />
