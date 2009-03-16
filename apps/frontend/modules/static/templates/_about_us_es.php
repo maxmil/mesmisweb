@@ -3,7 +3,7 @@
     <li style="border: none">
       <div><a class="arrow" href="#1">>></a><a href="#1">Proyecto MESMIS</a></div>
       <ul>
-        <li><div><a class="arrow" href="#1.1">>></a><a href="#1.1">Que es el proyecto MESMIS</a></div></li>
+        <li style="border-top: 1px dashed #666"><div><a class="arrow" href="#1.1">&gt;&gt;</a><a href="#1.1">Que es el proyecto MESMIS</a></div></li>
         <li><div><a class="arrow" href="#1.2">>></a><a href="#1.2">Resultados</a></div></li>
         <li><div><a class="arrow" href="#1.3">>></a><a href="#1.3">Instituciones</a></div></li>
         <li><div><a class="arrow" href="#1.4">>></a><a href="#1.4">Equipo de trabajo</a></div></li>
@@ -39,6 +39,7 @@
       <h3>4. Generación y difusión de materiales de apoyo.</h3>
       <p>El proyecto MESMIS busca también la generación de materiales para brindar las bases teóricas y metodológicas en torno al concepto de sustentabilidad y su evaluación, con el objetivo de promover su discusión y puesta en práctica. Estos materiales incluyen publicaciones en forma de artículos arbitrados y de divulgación, libros, reportes y documentos de trabajo, así como la base de datos SUSTENTA que ofrece un conjunto de referencias selectas sobre el tema de sustentabilidad y su evaluación.</p>
       <p>Información más detallada sobre el proyecto MESMIS, las áreas de investigación y la sistematización de los estudios de caso se puede consultar <a href="http://www.ciga.unam.mx/ciga/images/stories/publicaciones/sustentabilidad/GIRA_CS3_final.pdf" target="blank">Astier et al. 2008</a></p>
+      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
     </div>
     <div class="section">
       <a name="1.2"></a>
@@ -55,6 +56,7 @@
       </ul>
       <?php echo image_tag('static/mesmis-casestudies.png', 'alt="Distribución de los estudios de caso de MESMIS"') ?>
       <p>Para mayor información sobre las aplicaciones del marco favor de consultar la <a href="http://mesmis.gira.org.mx/es/products#pg122" target="blank">Colección sobre sustentabilidad</a></p>
+      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
     </div>
     <div class="section">
       <a name="1.3"></a>
@@ -63,6 +65,7 @@
       <p>Este grupo colabora en cursos de postgrado de diferentes universidades, en talleres de capacitación, en la generación de materiales didácticos y documentos y en publicaciones nacionales e internacionales. Así mismo, todos sus miembros asesoran trabajos de investigación en tesis de licenciatura y postgrado y estudios locales, nacionales e internacionales.</p>
       <p>Cada miembro mantiene a su vez, estrechas relaciones con instituciones en Latinoamérica, España, Holanda y Francia, principalmente en el ámbito de la docencia. Esto permite generar un espacio de intercambio académico y de experiencias en la evaluación de sustentabilidad.</p>
       <p>La conformación de este grupo de investigación, ha ayudado al fortalecimiento de las bases teóricas de la evaluación de sustentabilidad y su aplicabilidad en experiencias concretas. Actualmente, se encuentra en una etapa de consolidación, cuyo objetivo es mejorar las herramientas conceptuales y prácticas, para que puedan ser utilizadas por los diferentes actores involucrados con el manejo de recursos naturales.</p>
+      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
     </div>
     <div class="section">
       <a name="1.4"></a>
@@ -76,7 +79,7 @@
       <p>Es investigador del Colegio de la Frontera Sur (ECOSUR) en su sede San Cristóbal de las Casas. Su línea de investigación esta enfocada a desarrollar y analizar las bases teóricas de los sistemas complejos, sus propiedades o atributos y su aplicación en la evaluación de sistemas de producción alternativos, así como en el diseño de modelos de simulación interactiva tanto para la enseñanza de conceptos sobre sistemas dinámicos como para su aplicación a problemas prácticos en el manejo de recursos naturales.</p>
       <h3>Dr. Carlos González Esquivel</h3>
       <p>Es investigador en el Centro de Investigaciones en Ciencias Agropecuarias (CICA–UAEM). Ha desarrollado una línea de investigación enfocada a la sustentabilidad de los sistemas de producción pecuarios. Su trabajo se ha centrado en la generación de herramientas teóricas y prácticas en el ámbito de los indicadores pecuarios y en su aplicación en diversos estudios de caso en el Valle de Toluca, México.</p>
-	  <h3>Dr. Santiago López-Ridaura</h3>
+	    <h3>Dr. Santiago López-Ridaura</h3>
       <p>Es investigador en el Institut National de la Recherche Agronomique (INRA) en Montpellier, Francia y colabora como asesor en GIRA A.C. Su trabajo se ha enfocado en la evaluacion y el diseño de sistemas agricolas innovadores mediante la asociación de cultivos, así como en el desarrollo e implementación de analisis multiescalares partiendo de la escala regional.</p>
       <h3>M. en C. Tamara Ortiz</h3>
       <p>Labora en la Unidad de Vinculación del Centro de Investigaciones en Ecosistema (CIECO– UNAM), desde donde promueve la articulación de la investigación con problemas concretos de la sociedad. Participa en el proyecto MESMIS desde hace varios años y ha sido un miembro clave en la promoción y organización de cursos y talleres sobre el marco. Sus temas de interés son la caracterización de sistemas de manejo y el estudio de los procesos participativos en las evaluaciones de sustentabilidad.</p>
@@ -84,6 +87,7 @@
       <p>Ha participado en investigaciones sobre cultura, política y medio ambiente en la frontera México-Estados Unidos y en el Lago de Pátzcuaro. Se interesa por las dimensiones social y cultural del desarrollo. Actualmente es asiste del proyecto MESMIS.</p>
       <h3>M. en C. Yankuic Galván-Miyoshi</h3>
       <p>Ha colaborado en el proyecto desde hace más de cinco años en diferentes áreas. Sus campos de interés son sustentabilidad, manejo de recursos naturales y cambio de uso de suelo.  Dentro del proyecto MESMIS se ha especializado en el estudio de métodos multicriterio para la integración de indicadores de sustentabilidad.</p>
+      <div class="backToTop"><a href="#1"><?php echo __('Regresar') ?></a></div>
     </div>
   </div>
 </div>

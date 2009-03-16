@@ -293,7 +293,7 @@ div.btns{
 
 /* leftSideBar */
 #leftSideBar{
-  position: fixed;
+  float: left;
   width: 190px;
   padding: 10px 0px 20px 10px;
   font-weight: bold;
@@ -539,4 +539,12 @@ div.btns{
 
 #staticContent ul{
   padding: 0px 0px 10px 20px;
+}
+
+#staticContent .backToTop{
+  text-align: right;
+}
+
+#staticContent .backToTop a{
+  text-decoration: underline;
 }

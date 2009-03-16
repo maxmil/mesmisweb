@@ -65,6 +65,7 @@
   <?php endforeach; ?>
   </ul>
 </div>
+
 <div id="products">
   <h1>Recursos</h1>
   <?php foreach($productGroups as $productGroup): ?>
