@@ -374,9 +374,10 @@ div.btns{
 
 .sideBarLink #searchBtn{
   float: right;
-  width: 20px;
+  width: 18px;
   margin-left: 5px;
   font-size: 8.5px;
+  padding: 3px 0px;
   border: solid 1px #666;
 }
 
