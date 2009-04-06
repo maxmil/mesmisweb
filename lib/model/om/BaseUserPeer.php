@@ -13,7 +13,7 @@ abstract class BaseUserPeer {
 	const CLASS_DEFAULT = 'lib.model.User';
 
 	
-	const NUM_COLUMNS = 8;
+	const NUM_COLUMNS = 9;
 
 	
 	const NUM_LAZY_LOAD_COLUMNS = 0;
@@ -38,6 +38,9 @@ abstract class BaseUserPeer {
 	const INSTITUTION = 'user.INSTITUTION';
 
 	
+	const ACCEPT_MAIL = 'user.ACCEPT_MAIL';
+
+	
 	const CREATED_AT = 'user.CREATED_AT';
 
 	
@@ -49,18 +52,18 @@ abstract class BaseUserPeer {
 
 	
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Surname1', 'Surname2', 'Email', 'Institution', 'CreatedAt', 'UpdatedAt', ),
-		BasePeer::TYPE_COLNAME => array (UserPeer::ID, UserPeer::NAME, UserPeer::SURNAME1, UserPeer::SURNAME2, UserPeer::EMAIL, UserPeer::INSTITUTION, UserPeer::CREATED_AT, UserPeer::UPDATED_AT, ),
-		BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'surname1', 'surname2', 'email', 'institution', 'created_at', 'updated_at', ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+		BasePeer::TYPE_PHPNAME => array ('Id', 'Name', 'Surname1', 'Surname2', 'Email', 'Institution', 'AcceptMail', 'CreatedAt', 'UpdatedAt', ),
+		BasePeer::TYPE_COLNAME => array (UserPeer::ID, UserPeer::NAME, UserPeer::SURNAME1, UserPeer::SURNAME2, UserPeer::EMAIL, UserPeer::INSTITUTION, UserPeer::ACCEPT_MAIL, UserPeer::CREATED_AT, UserPeer::UPDATED_AT, ),
+		BasePeer::TYPE_FIELDNAME => array ('id', 'name', 'surname1', 'surname2', 'email', 'institution', 'accept_mail', 'created_at', 'updated_at', ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
 	);
 
 	
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Surname1' => 2, 'Surname2' => 3, 'Email' => 4, 'Institution' => 5, 'CreatedAt' => 6, 'UpdatedAt' => 7, ),
-		BasePeer::TYPE_COLNAME => array (UserPeer::ID => 0, UserPeer::NAME => 1, UserPeer::SURNAME1 => 2, UserPeer::SURNAME2 => 3, UserPeer::EMAIL => 4, UserPeer::INSTITUTION => 5, UserPeer::CREATED_AT => 6, UserPeer::UPDATED_AT => 7, ),
-		BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'surname1' => 2, 'surname2' => 3, 'email' => 4, 'institution' => 5, 'created_at' => 6, 'updated_at' => 7, ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, )
+		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Name' => 1, 'Surname1' => 2, 'Surname2' => 3, 'Email' => 4, 'Institution' => 5, 'AcceptMail' => 6, 'CreatedAt' => 7, 'UpdatedAt' => 8, ),
+		BasePeer::TYPE_COLNAME => array (UserPeer::ID => 0, UserPeer::NAME => 1, UserPeer::SURNAME1 => 2, UserPeer::SURNAME2 => 3, UserPeer::EMAIL => 4, UserPeer::INSTITUTION => 5, UserPeer::ACCEPT_MAIL => 6, UserPeer::CREATED_AT => 7, UserPeer::UPDATED_AT => 8, ),
+		BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'name' => 1, 'surname1' => 2, 'surname2' => 3, 'email' => 4, 'institution' => 5, 'accept_mail' => 6, 'created_at' => 7, 'updated_at' => 8, ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, )
 	);
 
 	
@@ -124,6 +127,8 @@ abstract class BaseUserPeer {
 		$criteria->addSelectColumn(UserPeer::EMAIL);
 
 		$criteria->addSelectColumn(UserPeer::INSTITUTION);
+
+		$criteria->addSelectColumn(UserPeer::ACCEPT_MAIL);
 
 		$criteria->addSelectColumn(UserPeer::CREATED_AT);
 

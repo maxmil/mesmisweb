@@ -100,6 +100,10 @@
         <source>Instituci&#xF3;n</source>
         <target>Intitution</target>
       </trans-unit>
+      <trans-unit id="25">
+        <source>Accepto recibir comunicaciones sobre el projecto MESMIS</source>
+        <target>I would like to receive updates related to the MESMIS project</target>
+      </trans-unit>
       <trans-unit id="26">
         <source>Enviar</source>
         <target>Send</target>

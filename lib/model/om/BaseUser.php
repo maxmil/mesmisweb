@@ -33,6 +33,10 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 
 	
+	protected $accept_mail = false;
+
+
+	
 	protected $created_at;
 
 
@@ -103,6 +107,13 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 	{
 
 		return $this->institution;
+	}
+
+	
+	public function getAcceptMail()
+	{
+
+		return $this->accept_mail;
 	}
 
 	
@@ -234,6 +245,16 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 	} 
 	
+	public function setAcceptMail($v)
+	{
+
+		if ($this->accept_mail !== $v || $v === false) {
+			$this->accept_mail = $v;
+			$this->modifiedColumns[] = UserPeer::ACCEPT_MAIL;
+		}
+
+	} 
+	
 	public function setCreatedAt($v)
 	{
 
@@ -284,15 +305,17 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 
 			$this->institution = $rs->getString($startcol + 5);
 
-			$this->created_at = $rs->getTimestamp($startcol + 6, null);
+			$this->accept_mail = $rs->getBoolean($startcol + 6);
 
-			$this->updated_at = $rs->getTimestamp($startcol + 7, null);
+			$this->created_at = $rs->getTimestamp($startcol + 7, null);
+
+			$this->updated_at = $rs->getTimestamp($startcol + 8, null);
 
 			$this->resetModified();
 
 			$this->setNew(false);
 
-						return $startcol + 8; 
+						return $startcol + 9; 
 		} catch (Exception $e) {
 			throw new PropelException("Error populating User object", $e);
 		}
@@ -496,9 +519,12 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 				return $this->getInstitution();
 				break;
 			case 6:
-				return $this->getCreatedAt();
+				return $this->getAcceptMail();
 				break;
 			case 7:
+				return $this->getCreatedAt();
+				break;
+			case 8:
 				return $this->getUpdatedAt();
 				break;
 			default:
@@ -517,8 +543,9 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 			$keys[3] => $this->getSurname2(),
 			$keys[4] => $this->getEmail(),
 			$keys[5] => $this->getInstitution(),
-			$keys[6] => $this->getCreatedAt(),
-			$keys[7] => $this->getUpdatedAt(),
+			$keys[6] => $this->getAcceptMail(),
+			$keys[7] => $this->getCreatedAt(),
+			$keys[8] => $this->getUpdatedAt(),
 		);
 		return $result;
 	}
@@ -553,9 +580,12 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 				$this->setInstitution($value);
 				break;
 			case 6:
-				$this->setCreatedAt($value);
+				$this->setAcceptMail($value);
 				break;
 			case 7:
+				$this->setCreatedAt($value);
+				break;
+			case 8:
 				$this->setUpdatedAt($value);
 				break;
 		} 	}
@@ -571,8 +601,9 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		if (array_key_exists($keys[3], $arr)) $this->setSurname2($arr[$keys[3]]);
 		if (array_key_exists($keys[4], $arr)) $this->setEmail($arr[$keys[4]]);
 		if (array_key_exists($keys[5], $arr)) $this->setInstitution($arr[$keys[5]]);
-		if (array_key_exists($keys[6], $arr)) $this->setCreatedAt($arr[$keys[6]]);
-		if (array_key_exists($keys[7], $arr)) $this->setUpdatedAt($arr[$keys[7]]);
+		if (array_key_exists($keys[6], $arr)) $this->setAcceptMail($arr[$keys[6]]);
+		if (array_key_exists($keys[7], $arr)) $this->setCreatedAt($arr[$keys[7]]);
+		if (array_key_exists($keys[8], $arr)) $this->setUpdatedAt($arr[$keys[8]]);
 	}
 
 	
@@ -586,6 +617,7 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		if ($this->isColumnModified(UserPeer::SURNAME2)) $criteria->add(UserPeer::SURNAME2, $this->surname2);
 		if ($this->isColumnModified(UserPeer::EMAIL)) $criteria->add(UserPeer::EMAIL, $this->email);
 		if ($this->isColumnModified(UserPeer::INSTITUTION)) $criteria->add(UserPeer::INSTITUTION, $this->institution);
+		if ($this->isColumnModified(UserPeer::ACCEPT_MAIL)) $criteria->add(UserPeer::ACCEPT_MAIL, $this->accept_mail);
 		if ($this->isColumnModified(UserPeer::CREATED_AT)) $criteria->add(UserPeer::CREATED_AT, $this->created_at);
 		if ($this->isColumnModified(UserPeer::UPDATED_AT)) $criteria->add(UserPeer::UPDATED_AT, $this->updated_at);
 
@@ -627,6 +659,8 @@ abstract class BaseUser extends BaseObject  implements Persistent {
 		$copyObj->setEmail($this->email);
 
 		$copyObj->setInstitution($this->institution);
+
+		$copyObj->setAcceptMail($this->accept_mail);
 
 		$copyObj->setCreatedAt($this->created_at);
 

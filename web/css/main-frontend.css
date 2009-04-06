@@ -506,6 +506,11 @@ div.btns{
   margin-left: 130px;
 }
 
+#registerFrm #accept_mail{
+  margin-left: 0px;
+  margin-right: 5px;
+}
+
 #insertEmail #privacy{
   padding: 10px 10px 0px 0px;
   text-align: right;

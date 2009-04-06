@@ -6,6 +6,7 @@ propel:
     surname2:        { type: varchar(50) }
     email:           { type: varchar(255), required: true }
     institution:     { type: varchar(255) }
+    accept_mail:     { type: boolean, default: false }
     created_at:      ~
     updated_at:      ~
   visit:

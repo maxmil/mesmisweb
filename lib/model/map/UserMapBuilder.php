@@ -44,6 +44,8 @@ class UserMapBuilder {
 
 		$tMap->addColumn('INSTITUTION', 'Institution', 'string', CreoleTypes::VARCHAR, false, 255);
 
+		$tMap->addColumn('ACCEPT_MAIL', 'AcceptMail', 'boolean', CreoleTypes::BOOLEAN, false, null);
+
 		$tMap->addColumn('CREATED_AT', 'CreatedAt', 'int', CreoleTypes::TIMESTAMP, false, null);
 
 		$tMap->addColumn('UPDATED_AT', 'UpdatedAt', 'int', CreoleTypes::TIMESTAMP, false, null);

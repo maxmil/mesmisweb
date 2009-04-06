@@ -3,3 +3,7 @@
 /cache/*
 /log/*
 /web/*_dev.php
+/nbproject
+/web/.htaccess
+/config/databases.yml
+/config/ProjectConfiguration.class.php
