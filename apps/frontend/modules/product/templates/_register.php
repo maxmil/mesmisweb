@@ -3,6 +3,7 @@
 <?php use_helper('Object') ?>
 
 <?php echo javascript_tag("showDialog()") ?>
+<script type="text/javascript">submitted=false</script>
 
 <div id="register">
   <h3><?php echo __('Acceso a recursos') ?></h3>

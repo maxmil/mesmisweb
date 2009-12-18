@@ -22,8 +22,10 @@
     return true;
   }
 
+  var submitted = false;
   function validateRegister(){
-    var errors;
+    if(submitted) return false;
+    var errors = false;
     if($F('name').trim().length == 0) {
       addError($('name'), '* <?php echo __('Campo obligatorio') ?>');
       errors = true;
@@ -34,7 +36,8 @@
     if($F('institution').trim().length == 0) {
       addError($('institution'), '* <?php echo __('Campo obligatorio') ?>');errors = true;
     }
-    return !errors;
+    submitted = !errors;
+    return submitted;
   }
 
   function clearErrors(field){

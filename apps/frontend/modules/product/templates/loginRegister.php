@@ -15,8 +15,10 @@
       Element.addClassName(field, 'error');
   }
 
+  var submitted = false;
   function validateRegister(){
-    var errors;
+    if(submitted) return false;
+    var errors = false;
     if($F('name').trim().length == 0) {
       addError($('name'), '* <?php echo __('Campo obligatorio') ?>');
       errors = true;
@@ -29,7 +31,8 @@
       addError($('institution'), '* <?php echo __('Campo obligatorio') ?>');
       errors = true;
     }
-    return !errors;
+    submitted = !errors;
+    return submitted;
   }
 
   function clearErrors(field){
