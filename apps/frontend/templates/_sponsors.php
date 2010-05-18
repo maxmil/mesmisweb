@@ -1,5 +1,5 @@
 <div id="sponsors">
-  <div id="credits"><?php echo link_to('Creditos', 'static/index?content=credits') ?></div>
+  <div id="credits"><?php echo link_to(__('Creditos'), 'static/index?content=credits') ?></div>
   <span><?php echo __('Un proyecto de') ?></span>
   <div id="sponsorLogos">
     <div><a href="http://www.gira.org.mx" target="blank"><?php echo image_tag('logos/logo-gira.png') ?></a></div>
