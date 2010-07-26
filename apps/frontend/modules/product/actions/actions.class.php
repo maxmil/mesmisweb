@@ -37,7 +37,7 @@ class productActions extends sfActions
   {
 
     $this->id = $request->getParameter('id');
-
+    
     // Get the product
     $this->product = ProductPeer::retrieveByPK($this->id);
     $this->forward404If(empty($this->product));
@@ -81,7 +81,8 @@ class productActions extends sfActions
       return sfView::NONE;
 
     } else {
-      $this->logMessage($this->product->getResource());
+      $this->logMessage("Serving resource " . $this->product->getResource());
+      $this->getResponse()->setTitle($this->product->getTitle());
       return $this->renderPartial($this->product->getResource());
     }
   }
@@ -163,5 +164,17 @@ class productActions extends sfActions
     $visit->save();
 
     return $this->renderPartial('download');
+  }
+
+  public function executeLoadMI(sfWebRequest $request)
+  {
+    // Get the user
+    $user = UserPeer::retrieveByPK($this->getUser()->getAttribute('userId'));
+    if (empty($user)){
+        $this->redirect('/product/index');
+    }else{
+        return $this->renderPartial('load_mesmis_interactivo');
+    }
+
   }
 }

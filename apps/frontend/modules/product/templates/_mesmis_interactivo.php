@@ -15,7 +15,7 @@
   </head>
   <body onload="window.onunload=function(){try{opener.closeMI('<?php echo $sf_user->getAttribute('userEmail') ?>')}catch(e){}}">
   <div>
-    <iframe src="<?php echo $sf_request->getRelativeUrlRoot() ?>/mi/mesmis-interactivo.html" height="100%" width="100%"></iframe>
+    <iframe src="<?php echo $sf_request->getRelativeUrlRoot() ?>/mi/mesmis-interactivo" height="100%" width="100%"></iframe>
   </div>
  </body>
 </html>

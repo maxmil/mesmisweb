@@ -1,8 +1,23 @@
+<?php
+
+    if($sf_user->getCulture() == "en"){
+        $title = "MESMIS INTERACTIVE";
+        $targetNamesStr = "SHARED GRAPHICS (141Kb);APLICATION LOADED (493Kb)";
+        $culture = "en";
+        $loadLangStr = "LOADING TEXTS...";
+    }else{
+        $title = "MESMIS INTERACTIVO";
+        $targetNamesStr = "GRAFICOS COMPARTIDOS (141Kb);DE APLICACION CARGADO (493Kb)";
+        $culture = "es";
+        $loadLangStr = "CARGANDO TEXTOS...";
+    }
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <title>MESMIS INTERACTIVO</title>
+  <title><?php echo $title ?></title>
   <link rel="shortcut icon" href="favicon.ico">
   <script type="text/javascript" src="../js/swfobject.js"></script>
   <style type="text/css">
@@ -20,7 +35,7 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      background-color: #f60;
+      background-color: #060;
     }
 
   </style>
@@ -30,8 +45,9 @@
 
     var flashvars = {
       targetURLStr: 'mesmisLibrary.swf;mesmis-interactivo.swf',
-      targetNamesStr: 'GRAFICOS COMPARTIDOS (141Kb);DE APLICACION CARGADO (493Kb)',
-      lastURLParamsStr: 'messagesPath:intro/xml/messages_intro.xml;loadLangString:CARGANDO TEXTOS...'
+      targetNamesStr: '<?php echo $targetNamesStr ?>',
+      lastURLParamsStr: 'messagesPath:intro/xml/messages_intro_<?php echo $culture ?>.xml;loadLangString:<?php echo $loadLangStr ?>',
+      locale: '<?php echo $culture ?>'
     };
     swfobject.embedSWF('preloader.swf', 'flashcontent', '100%', '100%', '7', '', flashvars);
 

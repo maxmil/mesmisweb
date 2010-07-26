@@ -2,6 +2,14 @@
 mesmis_interactivo:
   url: /mesmis-interactivo
   param: { module: product, action: openMI, sf_culture: es}
+  
+mesmis_interactive:
+  url: /mesmis-interactive
+  param: { module: product, action: openMI, sf_culture: en}
+
+load_mesmis_interactivo:
+  url: /mi/mesmis-interactivo
+  param: { module: product, action: loadMI}
 
 # homepages
 homepage:
