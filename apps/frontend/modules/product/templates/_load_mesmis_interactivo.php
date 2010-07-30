@@ -49,7 +49,14 @@
       lastURLParamsStr: 'messagesPath:intro/xml/messages_intro_<?php echo $culture ?>.xml;loadLangString:<?php echo $loadLangStr ?>',
       locale: '<?php echo $culture ?>'
     };
-    swfobject.embedSWF('preloader.swf', 'flashcontent', '100%', '100%', '7', '', flashvars);
+    var params = {
+        allowFullScreen: true
+    }
+    swfobject.embedSWF('preloader.swf', 'flashcontent', '100%', '100%', '9', 'expressInstall.swf', flashvars, params);
+
+    function closeApp() {
+        top.close();
+    }
 
     // ]]>
   </script>
