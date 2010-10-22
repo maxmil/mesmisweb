@@ -1,8 +1,8 @@
 <?php
 
-    if($sf_user->getCulture() == "en"){
+    if($culture == "en"){
         $title = "MESMIS INTERACTIVE";
-        $targetNamesStr = "SHARED GRAPHICS (141Kb);APLICATION LOADED (493Kb)";
+        $targetNamesStr = "SHARED GRAPHICS (141Kb);APPLICATION LOADED (493Kb)";
         $culture = "en";
         $loadLangStr = "LOADING TEXTS...";
     }else{
@@ -44,7 +44,7 @@
     // <![CDATA[
 
     var flashvars = {
-      targetURLStr: 'mesmisLibrary.swf;mesmis-interactivo.swf',
+      targetURLStr: 'mesmisLibrary.swf;mesmis_interactivo.swf',
       targetNamesStr: '<?php echo $targetNamesStr ?>',
       lastURLParamsStr: 'messagesPath:intro/xml/messages_intro_<?php echo $culture ?>.xml;loadLangString:<?php echo $loadLangStr ?>',
       locale: '<?php echo $culture ?>'
@@ -56,6 +56,11 @@
 
     function closeApp() {
         top.close();
+    }
+
+    function openHomePage() {
+        var w = window.open('<?php echo $sf_request->getRelativeUrlRoot() ?>/?culture=<?php echo $culture ?>', '_blank');
+        w.focus();
     }
 
     // ]]>

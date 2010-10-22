@@ -173,7 +173,8 @@ class productActions extends sfActions
     if (empty($user)){
         $this->redirect('/product/index');
     }else{
-        return $this->renderPartial('load_mesmis_interactivo');
+        $culture = $this->getUser()->getCulture();
+        return $this->renderPartial('load_mesmis_interactivo', array('culture' => $culture));
     }
 
   }
