@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteRule    images/.*$ -    [PT]
+   RewriteRule    css/.*$ -    [PT]
+   #RewriteRule    ^$ offline.html    [L]
+   RewriteRule    (.*) offline.html [L]
+</IfModule>
