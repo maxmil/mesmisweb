@@ -1,4 +1,5 @@
 .git
+.gitignore
 /web/uploads/*
 /cache/*
 /log/*
